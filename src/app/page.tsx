@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { 
   ArrowRight, 
   Brain, 
@@ -52,12 +51,12 @@ export default function YouthNode() {
             animate="animate"
             variants={staggerContainer}
           >
-            <motion.h1 
-              className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-maple-red to-forest-green bg-clip-text text-transparent"
-              variants={fadeInUp}
-            >
-              Building Canada's Innovation Future
-            </motion.h1>
+                         <motion.h1 
+               className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-maple-red to-forest-green bg-clip-text text-transparent"
+               variants={fadeInUp}
+             >
+               Building Canada&apos;s Innovation Future
+             </motion.h1>
             <motion.p 
               className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
               variants={fadeInUp}
@@ -181,11 +180,11 @@ export default function YouthNode() {
             </motion.div>
             
             <motion.div variants={fadeInUp} className="prose prose-lg mx-auto text-muted-foreground">
-              <p className="mb-6">
-                Despite Canada's world-class education infrastructure and research institutions, 
-                our innovation output lags behind global peers. High-potential youth are undertrained 
-                in applied deep tech, and our startups struggle to find AI-ready local talent.
-              </p>
+                             <p className="mb-6">
+                 Despite Canada&apos;s world-class education infrastructure and research institutions, 
+                 our innovation output lags behind global peers. High-potential youth are undertrained 
+                 in applied deep tech, and our startups struggle to find AI-ready local talent.
+               </p>
               <p>
                 The result? Canada becomes a talent exporter rather than an innovation leader, 
                 missing out on the economic and strategic benefits of the AI revolution.
@@ -414,10 +413,10 @@ export default function YouthNode() {
                     <CardTitle className="text-forest-green">For Companies</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Shape the next generation of talent while solving your organization's 
-                      innovation challenges through partnership.
-                    </p>
+                                         <p className="text-muted-foreground">
+                       Shape the next generation of talent while solving your organization&apos;s 
+                       innovation challenges through partnership.
+                     </p>
                     <Button className="bg-forest-green hover:bg-forest-green/90 text-white w-full">
                       Partner With Us
                     </Button>
@@ -431,10 +430,10 @@ export default function YouthNode() {
                     <CardTitle className="text-maple-red">For Donors</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Invest in Canada's innovation future. Your support creates opportunities 
-                      and builds the talent pipeline of tomorrow.
-                    </p>
+                                         <p className="text-muted-foreground">
+                       Invest in Canada&apos;s innovation future. Your support creates opportunities 
+                       and builds the talent pipeline of tomorrow.
+                     </p>
                     <Button className="bg-maple-red hover:bg-maple-red/90 text-white w-full">
                       Fund the Future
                     </Button>
@@ -453,7 +452,7 @@ export default function YouthNode() {
             <div>
               <h3 className="text-2xl font-bold mb-4 text-maple-red">YouthNode</h3>
               <p className="text-background/80 mb-4">
-                Building Canada's Innovation Future
+                Building Canada&apos;s Innovation Future
               </p>
               <div className="flex items-center gap-2 text-background/80">
                 <MapPin className="h-4 w-4" />
