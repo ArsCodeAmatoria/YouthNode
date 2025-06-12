@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Brain, Cpu, Car, Shield, Users, TrendingUp, Home } from 'lucide-react';
+import { ArrowRight, Brain, Cpu, Car, Shield, Users, TrendingUp, Home, LineChart, Wallet, Coins, DollarSign } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { use } from 'react';
@@ -113,6 +113,46 @@ const programData: Record<string, {
     applications: ['Tech startup founding', 'Corporate innovation labs', 'Venture capital analysis', 'Business plan development', 'Innovation consulting'],
     careers: ['Startup Founder: Equity-based', 'Product Manager: $90K-$140K', 'Business Analyst', 'Venture Capital Analyst', 'Innovation Consultant'],
     partners: ['Y Combinator (Canadian alumni)', 'Shopify Partners Program', 'Business Development Bank of Canada', 'Regional Innovation Centers', 'Angel investor networks']
+  },
+  'quant-trading': {
+    title: 'Quantitative Trading',
+    icon: LineChart,
+    color: 'icy-blue',
+    description: 'Master the intersection of finance and mathematics. Build sophisticated trading models, analyze market patterns, and develop high-frequency trading systems for Canadian financial markets.',
+    skills: ['Statistical Arbitrage', 'Time Series Analysis', 'Machine Learning for Finance', 'Risk Management', 'High-Frequency Trading'],
+    applications: ['Market Making Strategies', 'Portfolio Optimization', 'Options Trading', 'Statistical Arbitrage Systems', 'Risk Analysis Tools'],
+    careers: ['Quantitative Trader: $150K-$300K', 'Risk Manager', 'Portfolio Manager', 'Quant Developer', 'Research Analyst'],
+    partners: ['RBC Capital Markets', 'TD Securities', 'BMO Financial Group', 'Canadian Pension Fund', 'TMX Group']
+  },
+  'algorithmic-trading': {
+    title: 'Algorithmic Trading',
+    icon: TrendingUp,
+    color: 'maple-red',
+    description: 'Design and implement automated trading systems. Learn to build, test, and deploy trading algorithms that operate in real-time across multiple Canadian and global markets.',
+    skills: ['Trading Algorithm Design', 'Backtesting Systems', 'Market Microstructure', 'Real-time Data Processing', 'Trading Infrastructure'],
+    applications: ['Automated Trading Systems', 'Market Making Bots', 'Signal Generation', 'Order Execution', 'Alpha Strategy Development'],
+    careers: ['Algo Trading Developer: $120K-$250K', 'Trading Systems Engineer', 'Strategy Developer', 'Market Structure Analyst', 'Trading Infrastructure Engineer'],
+    partners: ['CIBC Markets', 'National Bank Financial', 'Scotiabank Trading', 'Virtu Financial Canada', 'Independent Trading Group']
+  },
+  'web3-blockchain': {
+    title: 'Web3 & Blockchain',
+    icon: Wallet,
+    color: 'forest-green',
+    description: 'Build the future of decentralized finance and Web3 applications. Learn blockchain development, smart contracts, and DeFi protocols while working with Canadian crypto innovators.',
+    skills: ['Smart Contract Development', 'DeFi Protocol Design', 'Blockchain Architecture', 'Web3 Integration', 'Cryptographic Systems'],
+    applications: ['DeFi Platforms', 'NFT Marketplaces', 'DAO Frameworks', 'Cross-chain Bridges', 'Digital Asset Systems'],
+    careers: ['Blockchain Developer: $100K-$200K', 'Smart Contract Engineer', 'DeFi Protocol Designer', 'Web3 Solutions Architect', 'Crypto Product Manager'],
+    partners: ['Ethereum Foundation Canada', 'Dapper Labs', 'WonderFi', 'Ledn', 'Newton Crypto']
+  },
+  'fintech-innovation': {
+    title: 'FinTech Innovation',
+    icon: Coins,
+    color: 'icy-blue',
+    description: 'Transform traditional finance with cutting-edge technology. Build next-generation payment systems, lending platforms, and financial infrastructure for Canadian institutions.',
+    skills: ['Payment Systems Development', 'Banking APIs', 'Regulatory Technology', 'Financial Data Analysis', 'Security & Compliance'],
+    applications: ['Digital Banking Platforms', 'Payment Processing', 'Lending Systems', 'Wealth Management Tools', 'Regulatory Compliance'],
+    careers: ['FinTech Engineer: $90K-$180K', 'Product Manager', 'Solutions Architect', 'Compliance Tech Specialist', 'Digital Banking Lead'],
+    partners: ['Wealthsimple', 'Shopify Payments', 'Borrowell', 'Koho Financial', 'Nuvei']
   }
 };
 
