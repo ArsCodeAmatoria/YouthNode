@@ -949,7 +949,7 @@ export default function YouthNode() {
                      <ul className="text-sm text-muted-foreground space-y-2">
                        <li>• <strong>Bootcamp Program:</strong> Top student selection</li>
                        <li>• <strong>MVP Development:</strong> Microfunded prototypes</li>
-                       <li>• <strong>Startup Visa Support:</strong> Immigration pathway</li>
+                       <li>• <strong>Business Registration:</strong> Incorporation & legal support</li>
                        <li>• <strong>Seed Funding:</strong> Crowdfunded + donor grants</li>
                        <li>• <strong>Accelerator Network:</strong> Canadian ecosystem</li>
                        <li>• <strong>Mentorship:</strong> Industry veteran guidance</li>
