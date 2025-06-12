@@ -138,9 +138,10 @@ export default function YouthNode() {
                  </CardHeader>
                  <CardContent>
                    <p className="text-lg text-muted-foreground leading-relaxed">
-                     Equip Canadian-born Gen Z with future-critical skills through hands-on learning, 
-                     real-world work funnels, and startup creation opportunities. We bridge the gap 
-                     between traditional education and emerging technology demands.
+                     Equip Canadian-born Gen Z with future-critical skills through project-oriented, 
+                     hands-on learning experiences. Beyond technical mastery, we develop confident 
+                     communicators, skilled networkers, and innovative entrepreneurs who can pitch 
+                     ideas, run workshops, and lead the next generation of Canadian innovation.
                    </p>
                  </CardContent>
                </Card>
@@ -237,33 +238,35 @@ export default function YouthNode() {
               className="grid md:grid-cols-2 gap-8"
               variants={staggerContainer}
             >
-              <motion.div variants={fadeInUp}>
-                <Card className="border-forest-green/20 hover:border-forest-green/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-forest-green">Immersive Training Programs</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      Hands-on learning in AI development, generative art/video, quantum computing, 
-                      autonomous systems, and more. Real projects, real impact.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                             <motion.div variants={fadeInUp}>
+                 <Card className="border-forest-green/20 hover:border-forest-green/40 transition-colors">
+                   <CardHeader>
+                     <CardTitle className="text-forest-green">Project-Oriented Learning</CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <p className="text-muted-foreground">
+                       Learn by building real solutions. Our project-based approach combines technical 
+                       skills in AI, quantum computing, and emerging tech with practical application. 
+                       Students build portfolios while solving actual industry challenges.
+                     </p>
+                   </CardContent>
+                 </Card>
+               </motion.div>
 
-              <motion.div variants={fadeInUp}>
-                <Card className="border-icy-blue/20 hover:border-icy-blue/40 transition-colors">
-                  <CardHeader>
-                    <CardTitle className="text-icy-blue">Career & Startup Tracks</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      Mentorship, internships, and incubator support connecting students directly 
-                      to industry leaders and entrepreneurial opportunities.
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                             <motion.div variants={fadeInUp}>
+                 <Card className="border-icy-blue/20 hover:border-icy-blue/40 transition-colors">
+                   <CardHeader>
+                     <CardTitle className="text-icy-blue">Communication & Leadership Hub</CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <p className="text-muted-foreground">
+                       Master the art of pitching, public speaking, and workshop facilitation. 
+                       Our networking hub connects youth with mentors, peers, and industry leaders 
+                       while building essential presentation and leadership skills.
+                     </p>
+                   </CardContent>
+                 </Card>
+               </motion.div>
 
               <motion.div variants={fadeInUp}>
                 <Card className="border-maple-red/20 hover:border-maple-red/40 transition-colors">
@@ -294,10 +297,107 @@ export default function YouthNode() {
               </motion.div>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
+                 </div>
+       </section>
 
-      {/* Program Areas */}
+       {/* Learning Methodology */}
+       <section className="py-24 bg-gradient-to-br from-northern-lights/5 via-background to-forest-green/5">
+         <div className="container mx-auto px-6 lg:px-12">
+           <motion.div
+             initial="initial"
+             whileInView="animate"
+             viewport={{ once: true }}
+             variants={staggerContainer}
+             className="max-w-6xl mx-auto"
+           >
+             <motion.h2 
+               className="text-4xl lg:text-5xl font-bold mb-12 text-center"
+               variants={fadeInUp}
+             >
+               Learn by Building, Lead by Doing
+             </motion.h2>
+             
+             <motion.div 
+               className="grid lg:grid-cols-3 gap-8 mb-12"
+               variants={staggerContainer}
+             >
+               <motion.div variants={fadeInUp}>
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/15">
+                   <CardHeader>
+                     <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
+                       <Cog className="h-6 w-6 text-icy-blue" />
+                       Project-Based Learning
+                     </CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <p className="text-muted-foreground leading-relaxed">
+                       Every skill is learned through real-world projects. Build AI applications, 
+                       create quantum algorithms, design autonomous systems. Your portfolio grows 
+                       as you learn, with tangible results that demonstrate your capabilities to 
+                       future employers and collaborators.
+                     </p>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+
+               <motion.div variants={fadeInUp}>
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/15">
+                   <CardHeader>
+                     <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
+                       <Users className="h-6 w-6 text-maple-red" />
+                       Workshop Leadership
+                     </CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <p className="text-muted-foreground leading-relaxed">
+                       Learn to teach by creating and running workshops for peers and the community. 
+                       Develop curriculum, facilitate discussions, and mentor others. This peer-to-peer 
+                       teaching model reinforces your own learning while building invaluable leadership 
+                       and communication skills.
+                     </p>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+
+               <motion.div variants={fadeInUp}>
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/15">
+                   <CardHeader>
+                     <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
+                       <TrendingUp className="h-6 w-6 text-forest-green" />
+                       Pitch & Network Hub
+                     </CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <p className="text-muted-foreground leading-relaxed">
+                       Master the art of presenting ideas through regular pitch sessions, demo days, 
+                       and networking events. Connect with industry mentors, fellow innovators, and 
+                       potential collaborators. Build the confidence and relationships essential for 
+                       entrepreneurial success.
+                     </p>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+             </motion.div>
+
+             <motion.div 
+               variants={fadeInUp}
+               className="text-center bg-gradient-to-r from-icy-blue/10 via-maple-red/10 to-forest-green/10 rounded-3xl p-8"
+             >
+               <h3 className="text-2xl font-bold mb-4 text-gradient-canadian">
+                 The YouthNode Experience
+               </h3>
+               <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                 Join a community where technical excellence meets communication mastery. Our students 
+                 don&apos;t just code—they lead workshops, pitch breakthrough ideas, and build the 
+                 professional networks that will power Canada&apos;s innovation future. Every project 
+                 is an opportunity to learn, teach, and connect.
+               </p>
+             </motion.div>
+           </motion.div>
+         </div>
+       </section>
+
+       {/* Program Areas */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
@@ -326,6 +426,10 @@ export default function YouthNode() {
                  { icon: Cog, title: 'Robotics & Engineering', color: 'text-forest-green' },
                  { icon: Shield, title: 'AI Ethics & Safety', color: 'text-icy-blue' },
                  { icon: Car, title: 'Autonomous Systems', color: 'text-maple-red' },
+                 { icon: Users, title: 'Workshop Creation', color: 'text-forest-green' },
+                 { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-icy-blue' },
+                 { icon: Users, title: 'Networking & Leadership', color: 'text-maple-red' },
+                 { icon: Brain, title: 'Entrepreneurship', color: 'text-forest-green' },
                ].map((area, index) => (
                                  <motion.div key={index} variants={fadeInUp}>
                    <Card className="text-center hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
@@ -418,10 +522,11 @@ export default function YouthNode() {
                     <CardTitle className="text-icy-blue">For Students</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Ready to build the future? Join our pilot program and get hands-on experience 
-                      with cutting-edge technologies.
-                    </p>
+                                         <p className="text-muted-foreground">
+                       Ready to build the future? Join our pilot program for project-based learning, 
+                       workshop leadership, and networking opportunities that will transform you into 
+                       a confident innovator and communicator.
+                     </p>
                                          <Button className="bg-icy-blue hover:bg-icy-blue-dark text-white w-full northern-glow hover-lift">
                        Join the Pilot Program
                      </Button>
@@ -436,8 +541,9 @@ export default function YouthNode() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                                          <p className="text-muted-foreground">
-                       Shape the next generation of talent while solving your organization&apos;s 
-                       innovation challenges through partnership.
+                       Partner with us to access a pipeline of technical talent who can also 
+                       communicate, lead, and innovate. Our students bring project portfolios, 
+                       presentation skills, and real-world problem-solving experience.
                      </p>
                                          <Button className="bg-forest-green hover:bg-forest-green-dark text-white w-full maple-leaf-shadow hover-lift">
                        Partner With Us
