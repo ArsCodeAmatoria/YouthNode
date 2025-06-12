@@ -296,7 +296,7 @@ export default function FinTechInnovation() {
               className="text-xl text-muted-foreground mb-8"
               variants={fadeInUp}
             >
-              Join Canada's next generation of FinTech innovators and entrepreneurs.
+              Join Canada&apos;s next generation of FinTech innovators and entrepreneurs.
             </motion.p>
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 

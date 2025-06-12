@@ -296,7 +296,7 @@ export default function QuantTrading() {
               className="text-xl text-muted-foreground mb-8"
               variants={fadeInUp}
             >
-              Join Canada's next generation of quantitative traders and financial engineers.
+              Join Canada&apos;s next generation of quantitative traders and financial engineers.
             </motion.p>
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 

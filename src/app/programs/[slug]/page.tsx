@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Brain, Cpu, Car, Shield, Users, TrendingUp, Home, LineChart, Wallet, Coins, DollarSign } from 'lucide-react';
+import { ArrowRight, Brain, Cpu, Car, Shield, Users, TrendingUp, Home, LineChart, Wallet, Coins } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { use } from 'react';

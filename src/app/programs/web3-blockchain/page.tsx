@@ -296,7 +296,7 @@ export default function Web3Blockchain() {
               className="text-xl text-muted-foreground mb-8"
               variants={fadeInUp}
             >
-              Join Canada's next generation of blockchain developers and architects.
+              Join Canada&apos;s next generation of blockchain developers and architects.
             </motion.p>
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 

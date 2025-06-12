@@ -296,7 +296,7 @@ export default function AlgorithmicTrading() {
               className="text-xl text-muted-foreground mb-8"
               variants={fadeInUp}
             >
-              Join Canada's next generation of trading system engineers and architects.
+              Join Canada&apos;s next generation of trading system engineers and architects.
             </motion.p>
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 
