@@ -44,7 +44,10 @@ import {
   Mail,
   Twitter,
   Linkedin,
-  Github
+  Github,
+  LineChart,
+  Wallet,
+  Coins
 } from 'lucide-react';
 
 const fadeInUp = {
@@ -762,17 +765,21 @@ export default function YouthNode() {
                  { icon: Cog, title: 'Robotics & Engineering', color: 'text-forest-green', slug: 'robotics-engineering' },
                  { icon: Shield, title: 'AI Ethics & Safety', color: 'text-icy-blue', slug: 'ai-ethics-safety' },
                  { icon: Car, title: 'Autonomous Systems', color: 'text-maple-red', slug: 'autonomous-systems' },
+                 { icon: LineChart, title: 'Quantitative Trading', color: 'text-icy-blue', slug: 'quant-trading' },
+                 { icon: TrendingUp, title: 'Algorithmic Trading', color: 'text-maple-red', slug: 'algorithmic-trading' },
+                 { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-forest-green', slug: 'web3-blockchain' },
+                 { icon: Coins, title: 'FinTech Innovation', color: 'text-icy-blue', slug: 'fintech-innovation' },
                  { icon: Users, title: 'Workshop Creation', color: 'text-forest-green', slug: 'workshop-creation' },
                  { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-icy-blue', slug: 'pitching-presentations' },
                  { icon: Users, title: 'Networking & Leadership', color: 'text-maple-red', slug: 'networking-leadership' },
                  { icon: Brain, title: 'Entrepreneurship', color: 'text-forest-green', slug: 'entrepreneurship' },
-               ].map((area, index) => (
+               ].map((program, index) => (
                                  <motion.div key={index} variants={fadeInUp}>
-                   <Link href={`/programs/${area.slug}`} className="block">
+                   <Link href={`/programs/${program.slug}`} className="block">
                      <Card className="text-center hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
                        <CardContent className="pt-6">
-                         <area.icon className={`h-12 w-12 mx-auto mb-4 ${area.color} group-hover:scale-110 transition-transform duration-300`} />
-                         <h3 className="font-semibold text-sm group-hover:text-primary transition-colors duration-300">{area.title}</h3>
+                         <program.icon className={`h-12 w-12 mx-auto mb-4 ${program.color} group-hover:scale-110 transition-transform duration-300`} />
+                         <h3 className="font-semibold text-sm group-hover:text-primary transition-colors duration-300">{program.title}</h3>
                        </CardContent>
                      </Card>
                    </Link>
