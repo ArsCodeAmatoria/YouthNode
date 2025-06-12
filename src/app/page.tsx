@@ -43,7 +43,7 @@ export default function YouthNode() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-icy-blue/5 min-h-screen flex items-center justify-center">
+      <section className="relative overflow-hidden canadian-gradient min-h-screen flex items-center justify-center canadian-pattern">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -52,7 +52,7 @@ export default function YouthNode() {
             variants={staggerContainer}
           >
                          <motion.h1 
-               className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-maple-red to-forest-green bg-clip-text text-transparent"
+               className="text-5xl lg:text-7xl font-bold mb-6 text-gradient-canadian"
                variants={fadeInUp}
              >
                Building Canada&apos;s Innovation Future
@@ -63,37 +63,59 @@ export default function YouthNode() {
             >
               Empowering Gen Z with skills in AI, Deep Tech, and Emerging Industries
             </motion.p>
-            <motion.div variants={fadeInUp}>
-              <Button 
-                size="lg" 
-                className="bg-maple-red hover:bg-maple-red/90 text-white px-8 py-6 text-lg rounded-2xl group"
-                onClick={() => scrollToSection('mission')}
-              >
-                Read the Mission
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </motion.div>
+                         <motion.div variants={fadeInUp}>
+               <Button 
+                 size="lg" 
+                 className="bg-maple-red hover:bg-maple-red-dark text-white px-8 py-6 text-lg rounded-2xl group maple-leaf-shadow hover-lift northern-glow"
+                 onClick={() => scrollToSection('mission')}
+               >
+                 Read the Mission
+                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+               </Button>
+             </motion.div>
           </motion.div>
         </div>
         
-        {/* Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div 
-            className="absolute top-20 left-20 w-32 h-32 bg-icy-blue/10 rounded-full"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          />
-          <motion.div 
-            className="absolute bottom-20 right-20 w-24 h-24 bg-forest-green/10 rounded-full"
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          />
-          <motion.div 
-            className="absolute top-1/2 right-40 w-16 h-16 bg-maple-red/10 rounded-full"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 8, repeat: Infinity }}
-          />
-        </div>
+                 {/* Floating Elements */}
+         <div className="absolute inset-0 overflow-hidden pointer-events-none">
+           <motion.div 
+             className="absolute top-20 left-20 w-32 h-32 bg-icy-blue/20 rounded-full northern-glow blur-sm"
+             animate={{ 
+               y: [0, -20, 0],
+               scale: [1, 1.1, 1],
+               opacity: [0.3, 0.6, 0.3]
+             }}
+             transition={{ duration: 6, repeat: Infinity }}
+           />
+           <motion.div 
+             className="absolute bottom-20 right-20 w-24 h-24 bg-forest-green/20 rounded-full maple-leaf-shadow blur-sm"
+             animate={{ 
+               y: [0, 20, 0],
+               scale: [1, 1.2, 1],
+               opacity: [0.4, 0.7, 0.4]
+             }}
+             transition={{ duration: 4, repeat: Infinity }}
+           />
+           <motion.div 
+             className="absolute top-1/2 right-40 w-16 h-16 bg-maple-red/20 rounded-full northern-glow blur-sm"
+             animate={{ 
+               y: [0, -10, 0],
+               rotate: [0, 180, 360],
+               opacity: [0.2, 0.5, 0.2]
+             }}
+             transition={{ duration: 8, repeat: Infinity }}
+           />
+           <motion.div 
+             className="absolute top-1/3 left-1/2 w-20 h-20 bg-northern-lights/30 rounded-full blur-md"
+             animate={{ 
+               x: [-10, 10, -10],
+               y: [-5, 5, -5],
+               scale: [1, 1.3, 1],
+               opacity: [0.1, 0.4, 0.1]
+             }}
+             transition={{ duration: 10, repeat: Infinity }}
+           />
+         </div>
       </section>
 
       {/* Mission & Vision */}
@@ -106,41 +128,41 @@ export default function YouthNode() {
             variants={staggerContainer}
             className="grid lg:grid-cols-2 gap-12"
           >
-            <motion.div variants={fadeInUp}>
-              <Card className="h-full border-icy-blue/20 bg-gradient-to-br from-background to-icy-blue/5">
-                <CardHeader>
-                  <CardTitle className="text-3xl text-icy-blue flex items-center gap-3">
-                    <Users className="h-8 w-8" />
-                    Our Mission
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Equip Canadian-born Gen Z with future-critical skills through hands-on learning, 
-                    real-world work funnels, and startup creation opportunities. We bridge the gap 
-                    between traditional education and emerging technology demands.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
+                         <motion.div variants={fadeInUp}>
+               <Card className="h-full border-icy-blue/30 bg-gradient-to-br from-snow-white to-icy-blue-light/20 hover-lift frost-border">
+                 <CardHeader>
+                   <CardTitle className="text-3xl text-icy-blue-dark flex items-center gap-3">
+                     <Users className="h-8 w-8 text-icy-blue" />
+                     Our Mission
+                   </CardTitle>
+                 </CardHeader>
+                 <CardContent>
+                   <p className="text-lg text-muted-foreground leading-relaxed">
+                     Equip Canadian-born Gen Z with future-critical skills through hands-on learning, 
+                     real-world work funnels, and startup creation opportunities. We bridge the gap 
+                     between traditional education and emerging technology demands.
+                   </p>
+                 </CardContent>
+               </Card>
+             </motion.div>
 
-            <motion.div variants={fadeInUp}>
-              <Card className="h-full border-maple-red/20 bg-gradient-to-br from-background to-maple-red/5">
-                <CardHeader>
-                  <CardTitle className="text-3xl text-maple-red flex items-center gap-3">
-                    <TrendingUp className="h-8 w-8" />
-                    Our Vision
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    A Canada that no longer exports innovation—but leads it. We envision a nation 
-                    where homegrown talent drives breakthrough technologies and creates the companies 
-                    of tomorrow, right here at home.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
+                         <motion.div variants={fadeInUp}>
+               <Card className="h-full border-maple-red/30 bg-gradient-to-br from-snow-white to-maple-red-light/20 hover-lift maple-leaf-shadow">
+                 <CardHeader>
+                   <CardTitle className="text-3xl text-maple-red-dark flex items-center gap-3">
+                     <TrendingUp className="h-8 w-8 text-maple-red" />
+                     Our Vision
+                   </CardTitle>
+                 </CardHeader>
+                 <CardContent>
+                   <p className="text-lg text-muted-foreground leading-relaxed">
+                     A Canada that no longer exports innovation—but leads it. We envision a nation 
+                     where homegrown talent drives breakthrough technologies and creates the companies 
+                     of tomorrow, right here at home.
+                   </p>
+                 </CardContent>
+               </Card>
+             </motion.div>
           </motion.div>
         </div>
       </section>
@@ -305,14 +327,14 @@ export default function YouthNode() {
                  { icon: Shield, title: 'AI Ethics & Safety', color: 'text-icy-blue' },
                  { icon: Car, title: 'Autonomous Systems', color: 'text-maple-red' },
                ].map((area, index) => (
-                <motion.div key={index} variants={fadeInUp}>
-                  <Card className="text-center hover:shadow-lg transition-shadow h-full">
-                    <CardContent className="pt-6">
-                      <area.icon className={`h-12 w-12 mx-auto mb-4 ${area.color}`} />
-                      <h3 className="font-semibold text-sm">{area.title}</h3>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                                 <motion.div key={index} variants={fadeInUp}>
+                   <Card className="text-center hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                     <CardContent className="pt-6">
+                       <area.icon className={`h-12 w-12 mx-auto mb-4 ${area.color}`} />
+                       <h3 className="font-semibold text-sm">{area.title}</h3>
+                     </CardContent>
+                   </Card>
+                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
@@ -353,24 +375,24 @@ export default function YouthNode() {
                 { name: 'University of Toronto', description: 'Academic research partnerships' },
                 { name: 'UBC & SFU', description: 'Student collaboration programs' },
               ].map((partner, index) => (
-                <motion.div key={index} variants={fadeInUp}>
-                  <Card className="hover:shadow-lg transition-shadow h-full">
-                    <CardHeader>
-                      <CardTitle className="text-lg">{partner.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">{partner.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                                 <motion.div key={index} variants={fadeInUp}>
+                   <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/8">
+                     <CardHeader>
+                       <CardTitle className="text-lg text-foreground">{partner.name}</CardTitle>
+                     </CardHeader>
+                     <CardContent>
+                       <p className="text-sm text-muted-foreground">{partner.description}</p>
+                     </CardContent>
+                   </Card>
+                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Get Involved */}
-      <section className="py-24 bg-gradient-to-br from-muted/30 to-icy-blue/10">
+             {/* Get Involved */}
+       <section className="py-24 bg-gradient-to-br from-snow-white via-northern-lights/5 to-icy-blue-light/10 canadian-pattern">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial="initial"
@@ -400,9 +422,9 @@ export default function YouthNode() {
                       Ready to build the future? Join our pilot program and get hands-on experience 
                       with cutting-edge technologies.
                     </p>
-                    <Button className="bg-icy-blue hover:bg-icy-blue/90 text-white w-full">
-                      Join the Pilot Program
-                    </Button>
+                                         <Button className="bg-icy-blue hover:bg-icy-blue-dark text-white w-full northern-glow hover-lift">
+                       Join the Pilot Program
+                     </Button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -417,9 +439,9 @@ export default function YouthNode() {
                        Shape the next generation of talent while solving your organization&apos;s 
                        innovation challenges through partnership.
                      </p>
-                    <Button className="bg-forest-green hover:bg-forest-green/90 text-white w-full">
-                      Partner With Us
-                    </Button>
+                                         <Button className="bg-forest-green hover:bg-forest-green-dark text-white w-full maple-leaf-shadow hover-lift">
+                       Partner With Us
+                     </Button>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -434,9 +456,9 @@ export default function YouthNode() {
                        Invest in Canada&apos;s innovation future. Your support creates opportunities 
                        and builds the talent pipeline of tomorrow.
                      </p>
-                    <Button className="bg-maple-red hover:bg-maple-red/90 text-white w-full">
-                      Fund the Future
-                    </Button>
+                                         <Button className="bg-maple-red hover:bg-maple-red-dark text-white w-full maple-leaf-shadow hover-lift">
+                       Fund the Future
+                     </Button>
                   </CardContent>
                 </Card>
               </motion.div>
