@@ -28,6 +28,7 @@ ChartJS.register(
   Legend,
   ArcElement
 );
+import Link from 'next/link';
 import { 
   ArrowRight, 
   Brain, 
@@ -733,7 +734,7 @@ export default function YouthNode() {
        </section>
 
        {/* Program Areas */}
-      <section className="py-24 bg-muted/30">
+      <section id="programs" className="py-24 bg-muted/30">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial="initial"
@@ -753,26 +754,28 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
                              {[
-                 { icon: Brain, title: 'AI & Machine Learning', color: 'text-icy-blue' },
-                 { icon: Cpu, title: 'Generative Art & Video', color: 'text-maple-red' },
-                 { icon: Brain, title: 'Quantum Computing', color: 'text-forest-green' },
-                 { icon: Plane, title: 'Drones & Automation', color: 'text-icy-blue' },
-                 { icon: Heart, title: 'HealthTech', color: 'text-maple-red' },
-                 { icon: Cog, title: 'Robotics & Engineering', color: 'text-forest-green' },
-                 { icon: Shield, title: 'AI Ethics & Safety', color: 'text-icy-blue' },
-                 { icon: Car, title: 'Autonomous Systems', color: 'text-maple-red' },
-                 { icon: Users, title: 'Workshop Creation', color: 'text-forest-green' },
-                 { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-icy-blue' },
-                 { icon: Users, title: 'Networking & Leadership', color: 'text-maple-red' },
-                 { icon: Brain, title: 'Entrepreneurship', color: 'text-forest-green' },
+                 { icon: Brain, title: 'AI & Machine Learning', color: 'text-icy-blue', slug: 'ai-machine-learning' },
+                 { icon: Cpu, title: 'Generative Art & Video', color: 'text-maple-red', slug: 'generative-art-video' },
+                 { icon: Brain, title: 'Quantum Computing', color: 'text-forest-green', slug: 'quantum-computing' },
+                 { icon: Plane, title: 'Drones & Automation', color: 'text-icy-blue', slug: 'drones-automation' },
+                 { icon: Heart, title: 'HealthTech', color: 'text-maple-red', slug: 'healthtech' },
+                 { icon: Cog, title: 'Robotics & Engineering', color: 'text-forest-green', slug: 'robotics-engineering' },
+                 { icon: Shield, title: 'AI Ethics & Safety', color: 'text-icy-blue', slug: 'ai-ethics-safety' },
+                 { icon: Car, title: 'Autonomous Systems', color: 'text-maple-red', slug: 'autonomous-systems' },
+                 { icon: Users, title: 'Workshop Creation', color: 'text-forest-green', slug: 'workshop-creation' },
+                 { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-icy-blue', slug: 'pitching-presentations' },
+                 { icon: Users, title: 'Networking & Leadership', color: 'text-maple-red', slug: 'networking-leadership' },
+                 { icon: Brain, title: 'Entrepreneurship', color: 'text-forest-green', slug: 'entrepreneurship' },
                ].map((area, index) => (
                                  <motion.div key={index} variants={fadeInUp}>
-                   <Card className="text-center hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
-                     <CardContent className="pt-6">
-                       <area.icon className={`h-12 w-12 mx-auto mb-4 ${area.color}`} />
-                       <h3 className="font-semibold text-sm">{area.title}</h3>
-                     </CardContent>
-                   </Card>
+                   <Link href={`/programs/${area.slug}`} className="block">
+                     <Card className="text-center hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
+                       <CardContent className="pt-6">
+                         <area.icon className={`h-12 w-12 mx-auto mb-4 ${area.color} group-hover:scale-110 transition-transform duration-300`} />
+                         <h3 className="font-semibold text-sm group-hover:text-primary transition-colors duration-300">{area.title}</h3>
+                       </CardContent>
+                     </Card>
+                   </Link>
                  </motion.div>
               ))}
             </motion.div>
