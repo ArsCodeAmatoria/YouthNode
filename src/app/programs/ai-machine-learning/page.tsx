@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Brain, ArrowRight, Code, Database, TrendingUp, Users, Home } from 'lucide-react';
+import { Brain, ArrowRight, Code, Database, TrendingUp, Home } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeInUp = {

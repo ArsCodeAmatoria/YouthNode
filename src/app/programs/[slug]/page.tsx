@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Brain, Cpu, Plane, Car, Heart, Cog, Shield, Users, TrendingUp, Home } from 'lucide-react';
+import { ArrowRight, Brain, Cpu, Car, Shield, Users, TrendingUp, Home } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { use } from 'react';
+import { LucideIcon } from 'lucide-react';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -25,7 +26,7 @@ const staggerContainer = {
 // Program data with detailed information
 const programData: Record<string, {
   title: string;
-  icon: any;
+  icon: LucideIcon;
   color: string;
   description: string;
   skills: string[];
@@ -45,7 +46,7 @@ const programData: Record<string, {
   },
   'robotics-engineering': {
     title: 'Robotics & Engineering',
-    icon: Cog,
+    icon: Cpu,
     color: 'forest-green',
     description: 'Build intelligent robots and automated systems that solve real-world problems. Work with ROS, embedded systems, and advanced sensors to create the next generation of Canadian robotics.',
     skills: ['ROS (Robot Operating System)', 'Embedded C/C++ programming', 'Sensor integration & fusion', 'Computer vision for robotics', 'Mechanical design & 3D printing'],
