@@ -445,8 +445,206 @@ export default function YouthNode() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section className="py-24 bg-background">
+             {/* Funding & Sustainability */}
+       <section className="py-24 bg-muted/30">
+         <div className="container mx-auto px-6 lg:px-12">
+           <motion.div
+             initial="initial"
+             whileInView="animate"
+             viewport={{ once: true }}
+             variants={staggerContainer}
+           >
+             <motion.h2 
+               className="text-4xl lg:text-5xl font-bold mb-12 text-center"
+               variants={fadeInUp}
+             >
+               Funding & Sustainability
+             </motion.h2>
+             
+             <motion.div 
+               className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+               variants={staggerContainer}
+             >
+               <motion.div variants={fadeInUp}>
+                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/10">
+                   <CardHeader>
+                     <CardTitle className="text-lg text-icy-blue-dark">Government Grants</CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <ul className="text-sm text-muted-foreground space-y-1">
+                       <li>• Canada Digital Adoption Program</li>
+                       <li>• Canada Summer Jobs (wage subsidies)</li>
+                       <li>• IRAP (NRC) - tech R&D funding</li>
+                       <li>• Innovative Solutions Canada</li>
+                       <li>• Mitacs Accelerate/Edge internships</li>
+                       <li>• Skills Development Fund (Provincial)</li>
+                     </ul>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+
+               <motion.div variants={fadeInUp}>
+                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-maple-red-light/10">
+                   <CardHeader>
+                     <CardTitle className="text-lg text-maple-red-dark">Private Foundations</CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <ul className="text-sm text-muted-foreground space-y-1">
+                       <li>• RBC Future Launch</li>
+                       <li>• TELUS Friendly Future Foundation</li>
+                       <li>• Google.org AI/tech training grants</li>
+                       <li>• Microsoft Philanthropies</li>
+                       <li>• Trillium Foundation (Ontario)</li>
+                       <li>• Local community foundations</li>
+                     </ul>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+
+               <motion.div variants={fadeInUp}>
+                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-forest-green-light/10">
+                   <CardHeader>
+                     <CardTitle className="text-lg text-forest-green-dark">Revenue Streams</CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <ul className="text-sm text-muted-foreground space-y-1">
+                       <li>• Corporate workshop training</li>
+                       <li>• Sponsorships (AWS, NVIDIA, Shopify)</li>
+                       <li>• Crowdfunding campaigns</li>
+                       <li>• GitHub Sponsors</li>
+                       <li>• Consultation services</li>
+                       <li>• Premium mentorship programs</li>
+                     </ul>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+             </motion.div>
+
+             <motion.div 
+               variants={fadeInUp}
+               className="text-center bg-gradient-to-r from-icy-blue/10 via-maple-red/10 to-forest-green/10 rounded-3xl p-8"
+             >
+               <h3 className="text-2xl font-bold mb-4 text-gradient-canadian">
+                 Sustainable Impact Model
+               </h3>
+               <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                 Our diversified funding approach ensures long-term sustainability while maintaining our 
+                 nonprofit mission. Government partnerships provide foundational support, private foundations 
+                 enable program expansion, and earned revenue creates financial independence—all focused on 
+                 building Canada&apos;s innovation ecosystem.
+               </p>
+             </motion.div>
+           </motion.div>
+         </div>
+       </section>
+
+       {/* Career Pathways & Tech Tracks */}
+       <section className="py-24 bg-background">
+         <div className="container mx-auto px-6 lg:px-12">
+           <motion.div
+             initial="initial"
+             whileInView="animate"
+             viewport={{ once: true }}
+             variants={staggerContainer}
+           >
+             <motion.h2 
+               className="text-4xl lg:text-5xl font-bold mb-12 text-center"
+               variants={fadeInUp}
+             >
+               Career Pathways & Funnels
+             </motion.h2>
+             
+             <motion.div 
+               className="grid lg:grid-cols-3 gap-8 mb-12"
+               variants={staggerContainer}
+             >
+               <motion.div variants={fadeInUp}>
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/15">
+                   <CardHeader>
+                     <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
+                       <Brain className="h-6 w-6 text-icy-blue" />
+                       Skill Development Tracks
+                     </CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <ul className="text-sm text-muted-foreground space-y-2">
+                       <li><strong className="text-icy-blue">AI/ML:</strong> Python, TensorFlow, PyTorch</li>
+                       <li><strong className="text-icy-blue">AI Art:</strong> Midjourney, RunwayML</li>
+                       <li><strong className="text-icy-blue">AI Video:</strong> Pika Labs, Sora, Runway</li>
+                       <li><strong className="text-icy-blue">Drones:</strong> ROS, PX4 navigation</li>
+                       <li><strong className="text-icy-blue">Autonomous Driving:</strong> CARLA simulators</li>
+                       <li><strong className="text-icy-blue">Quantum:</strong> IBM Qiskit, D-Wave, Xanadu</li>
+                       <li><strong className="text-icy-blue">HealthTech:</strong> Bioinformatics, ML diagnostics</li>
+                     </ul>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+
+               <motion.div variants={fadeInUp}>
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/15">
+                   <CardHeader>
+                     <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
+                       <TrendingUp className="h-6 w-6 text-maple-red" />
+                       Job Placement Funnel
+                     </CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <ul className="text-sm text-muted-foreground space-y-2">
+                       <li>• <strong>Partner Networks:</strong> CDL, Techstars Canada</li>
+                       <li>• <strong>Portfolio Development:</strong> Project showcases</li>
+                       <li>• <strong>Resume Training:</strong> Technical storytelling</li>
+                       <li>• <strong>Apprenticeships:</strong> Hands-on company experience</li>
+                       <li>• <strong>Interview Prep:</strong> Technical & behavioral</li>
+                       <li>• <strong>Industry Connections:</strong> Mentor networks</li>
+                       <li>• <strong>Placement Support:</strong> Ongoing career guidance</li>
+                     </ul>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+
+               <motion.div variants={fadeInUp}>
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/15">
+                   <CardHeader>
+                     <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
+                       <Cog className="h-6 w-6 text-forest-green" />
+                       Startup Incubator
+                     </CardTitle>
+                   </CardHeader>
+                   <CardContent>
+                     <ul className="text-sm text-muted-foreground space-y-2">
+                       <li>• <strong>Bootcamp Program:</strong> Top student selection</li>
+                       <li>• <strong>MVP Development:</strong> Microfunded prototypes</li>
+                       <li>• <strong>Startup Visa Support:</strong> Immigration pathway</li>
+                       <li>• <strong>Seed Funding:</strong> Crowdfunded + donor grants</li>
+                       <li>• <strong>Accelerator Network:</strong> Canadian ecosystem</li>
+                       <li>• <strong>Mentorship:</strong> Industry veteran guidance</li>
+                       <li>• <strong>Demo Days:</strong> Investor pitch events</li>
+                     </ul>
+                   </CardContent>
+                 </Card>
+               </motion.div>
+             </motion.div>
+
+             <motion.div 
+               variants={fadeInUp}
+               className="text-center bg-gradient-to-r from-icy-blue/10 via-maple-red/10 to-forest-green/10 rounded-3xl p-8"
+             >
+               <h3 className="text-2xl font-bold mb-4 text-gradient-canadian">
+                 Complete Innovation Pipeline
+               </h3>
+               <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                 From first project to startup founder—our comprehensive pathway system ensures every 
+                 student has multiple routes to success. Whether joining established companies through 
+                 our job funnel or launching their own ventures through our incubator, YouthNode graduates 
+                 enter the workforce ready to lead Canada&apos;s tech transformation.
+               </p>
+             </motion.div>
+           </motion.div>
+         </div>
+       </section>
+
+       {/* Partners */}
+       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial="initial"
