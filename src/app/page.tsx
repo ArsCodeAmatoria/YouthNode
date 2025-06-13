@@ -75,9 +75,11 @@ export default function YouthNode() {
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-black">
         {/* Three.js Mathematical Background */}
-        <ThreeJSBackground />
+        <div className="absolute inset-0 z-0">
+          <ThreeJSBackground />
+        </div>
         
-        <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
+        <div className="container mx-auto px-6 lg:px-12 text-center relative z-20">
           <motion.div
             className="max-w-4xl mx-auto"
             initial="initial"

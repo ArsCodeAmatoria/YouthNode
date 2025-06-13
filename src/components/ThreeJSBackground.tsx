@@ -190,10 +190,11 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
   return (
     <div 
       ref={mountRef} 
-      className={`fixed inset-0 -z-10 ${className}`}
+      className={`absolute inset-0 ${className}`}
       style={{ 
         pointerEvents: 'none',
-        opacity: 0.8
+        opacity: 0.8,
+        zIndex: 1
       }} 
     />
   );
