@@ -67,14 +67,14 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
         o += vec4(C, 0.0) - 0.008 / (length(p) - 0.108);
         o += -1.2;
         
-        // Add Canadian color theme
-        vec3 canadianColor = mix(
-          vec3(0.8, 0.1, 0.1), // Maple red
-          vec3(0.2, 0.6, 0.9), // Icy blue
+        // Add tech color theme
+        vec3 techColor = mix(
+          vec3(0.6, 0.9, 0.2), // Lime green
+          vec3(0.4, 0.4, 0.4), // Tech gray
           sin(t * 0.3 + length(p) * 3.0) * 0.5 + 0.5
         );
         
-        o.rgb = mix(o.rgb, canadianColor, 0.3);
+        o.rgb = mix(o.rgb, techColor, 0.4);
         o.a = clamp(o.r + o.g + o.b, 0.0, 0.8);
         
         gl_FragColor = o;

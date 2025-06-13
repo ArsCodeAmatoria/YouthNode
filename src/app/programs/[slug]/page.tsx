@@ -37,7 +37,7 @@ const programData: Record<string, {
   'generative-art-video': {
     title: 'Generative Art & Video',
     icon: Cpu,
-    color: 'maple-red',
+    color: 'lime-green',
     description: 'Create stunning AI-generated art and video content using cutting-edge generative models. Master tools like Midjourney, DALL-E, Runway, and Sora to build the future of creative technology.',
     skills: ['Midjourney & DALL-E mastery', 'Runway ML video generation', 'ComfyUI workflows', 'Stable Diffusion training', 'AI video editing'],
     applications: ['Digital marketing campaigns', 'Entertainment & film industry', 'Social media content creation', 'NFT and blockchain art', 'Educational content production'],
@@ -47,7 +47,7 @@ const programData: Record<string, {
   'robotics-engineering': {
     title: 'Robotics & Engineering',
     icon: Cpu,
-    color: 'forest-green',
+    color: 'accent-green',
     description: 'Build intelligent robots and automated systems that solve real-world problems. Work with ROS, embedded systems, and advanced sensors to create the next generation of Canadian robotics.',
     skills: ['ROS (Robot Operating System)', 'Embedded C/C++ programming', 'Sensor integration & fusion', 'Computer vision for robotics', 'Mechanical design & 3D printing'],
     applications: ['Manufacturing automation', 'Healthcare robotics', 'Agricultural automation', 'Space exploration robotics', 'Service & companion robots'],
@@ -57,7 +57,7 @@ const programData: Record<string, {
   'ai-ethics-safety': {
     title: 'AI Ethics & Safety',
     icon: Shield,
-    color: 'icy-blue',
+    color: 'tech-gray',
     description: 'Ensure AI systems are safe, fair, and beneficial for all Canadians. Study bias detection, interpretability, and responsible AI deployment in critical systems.',
     skills: ['AI bias detection & mitigation', 'Explainable AI (XAI)', 'Privacy-preserving ML', 'AI governance frameworks', 'Ethical decision-making systems'],
     applications: ['Healthcare AI safety', 'Financial services compliance', 'Government AI policy', 'Autonomous vehicle safety', 'Social media algorithm auditing'],
@@ -67,7 +67,7 @@ const programData: Record<string, {
   'autonomous-systems': {
     title: 'Autonomous Systems',
     icon: Car,
-    color: 'maple-red',
+    color: 'lime-green',
     description: 'Design self-driving vehicles and autonomous navigation systems. Work with LIDAR, computer vision, and path planning to build Canadian autonomous vehicle technology.',
     skills: ['Computer vision & LIDAR', 'Path planning algorithms', 'Sensor fusion', 'Real-time decision making', 'Vehicle control systems'],
     applications: ['Autonomous vehicles', 'Smart city transportation', 'Warehouse automation', 'Mining & construction vehicles', 'Maritime autonomous systems'],
@@ -77,7 +77,7 @@ const programData: Record<string, {
   'workshop-creation': {
     title: 'Workshop Creation',
     icon: Users,
-    color: 'forest-green',
+    color: 'accent-green',
     description: 'Learn to design and deliver engaging technical workshops that teach others cutting-edge skills. Develop presentation, curriculum design, and community building expertise.',
     skills: ['Curriculum design & development', 'Public speaking & presentation', 'Interactive learning techniques', 'Community engagement', 'Educational technology tools'],
     applications: ['Corporate training programs', 'University guest lectures', 'Conference workshops', 'Online course creation', 'Tech community events'],
@@ -87,7 +87,7 @@ const programData: Record<string, {
   'pitching-presentations': {
     title: 'Pitching & Presentations',
     icon: TrendingUp,
-    color: 'icy-blue',
+    color: 'tech-gray',
     description: 'Master the art of compelling technical presentations and startup pitches. Learn storytelling, slide design, and persuasive communication for Canadian innovation ecosystems.',
     skills: ['Storytelling & narrative structure', 'Slide design & visual communication', 'Public speaking confidence', 'Pitch deck development', 'Investor communication'],
     applications: ['Startup pitch competitions', 'Technical conference presentations', 'Client proposals & demos', 'Funding applications', 'Research presentations'],
@@ -97,7 +97,7 @@ const programData: Record<string, {
   'networking-leadership': {
     title: 'Networking & Leadership',
     icon: Users,
-    color: 'maple-red',
+    color: 'lime-green',
     description: 'Build powerful professional networks and develop leadership skills essential for Canadian tech careers. Learn relationship building, team management, and influence.',
     skills: ['Professional relationship building', 'Team leadership & management', 'Conflict resolution', 'Strategic thinking', 'Personal branding'],
     applications: ['Tech team leadership', 'Professional networking events', 'Mentorship programs', 'Industry partnerships', 'Career advancement'],
@@ -107,7 +107,7 @@ const programData: Record<string, {
   'entrepreneurship': {
     title: 'Entrepreneurship',
     icon: Brain,
-    color: 'forest-green',
+    color: 'accent-green',
     description: 'Launch and scale technology startups in the Canadian innovation ecosystem. Learn business model design, market validation, and fundraising from successful Canadian entrepreneurs.',
     skills: ['Business model development', 'Market research & validation', 'Financial planning & fundraising', 'Product-market fit', 'Scale-up strategies'],
     applications: ['Tech startup founding', 'Corporate innovation labs', 'Venture capital analysis', 'Business plan development', 'Innovation consulting'],
@@ -117,7 +117,7 @@ const programData: Record<string, {
   'quant-trading': {
     title: 'Quantitative Trading',
     icon: LineChart,
-    color: 'icy-blue',
+    color: 'tech-gray',
     description: 'Master the intersection of finance and mathematics. Build sophisticated trading models, analyze market patterns, and develop high-frequency trading systems for Canadian financial markets.',
     skills: ['Statistical Arbitrage', 'Time Series Analysis', 'Machine Learning for Finance', 'Risk Management', 'High-Frequency Trading'],
     applications: ['Market Making Strategies', 'Portfolio Optimization', 'Options Trading', 'Statistical Arbitrage Systems', 'Risk Analysis Tools'],
@@ -127,7 +127,7 @@ const programData: Record<string, {
   'algorithmic-trading': {
     title: 'Algorithmic Trading',
     icon: TrendingUp,
-    color: 'maple-red',
+    color: 'lime-green',
     description: 'Design and implement automated trading systems. Learn to build, test, and deploy trading algorithms that operate in real-time across multiple Canadian and global markets.',
     skills: ['Trading Algorithm Design', 'Backtesting Systems', 'Market Microstructure', 'Real-time Data Processing', 'Trading Infrastructure'],
     applications: ['Automated Trading Systems', 'Market Making Bots', 'Signal Generation', 'Order Execution', 'Alpha Strategy Development'],
@@ -137,7 +137,7 @@ const programData: Record<string, {
   'web3-blockchain': {
     title: 'Web3 & Blockchain',
     icon: Wallet,
-    color: 'forest-green',
+    color: 'accent-green',
     description: 'Build the future of decentralized finance and Web3 applications. Learn blockchain development, smart contracts, and DeFi protocols while working with Canadian crypto innovators.',
     skills: ['Smart Contract Development', 'DeFi Protocol Design', 'Blockchain Architecture', 'Web3 Integration', 'Cryptographic Systems'],
     applications: ['DeFi Platforms', 'NFT Marketplaces', 'DAO Frameworks', 'Cross-chain Bridges', 'Digital Asset Systems'],
@@ -147,7 +147,7 @@ const programData: Record<string, {
   'fintech-innovation': {
     title: 'FinTech Innovation',
     icon: Coins,
-    color: 'icy-blue',
+    color: 'tech-gray',
     description: 'Transform traditional finance with cutting-edge technology. Build next-generation payment systems, lending platforms, and financial infrastructure for Canadian institutions.',
     skills: ['Payment Systems Development', 'Banking APIs', 'Regulatory Technology', 'Financial Data Analysis', 'Security & Compliance'],
     applications: ['Digital Banking Platforms', 'Payment Processing', 'Lending Systems', 'Wealth Management Tools', 'Regulatory Compliance'],
@@ -177,7 +177,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
       {/* Navigation Header */}
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-6 py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-icy-blue transition-colors group">
+          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-tech-gray transition-colors group">
             <Home className="h-6 w-6 group-hover:scale-110 transition-transform" />
             <span className="font-bold text-lg">YouthNode</span>
           </Link>
@@ -185,7 +185,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden canadian-gradient min-h-[60vh] flex items-center justify-center canadian-pattern pt-20">
+      <section className="relative overflow-hidden tech-gradient min-h-[60vh] flex items-center justify-center canadian-pattern pt-20">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -197,7 +197,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               <IconComponent className={`h-16 w-16 mx-auto text-${program.color} mb-4`} />
             </motion.div>
             <motion.h1 
-              className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-canadian"
+              className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-tech"
               variants={fadeInUp}
             >
               {program.title}
@@ -211,7 +211,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
             <motion.div variants={fadeInUp}>
               <Button 
                 size="lg" 
-                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl northern-glow hover-lift`}
+                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl tech-glow hover-lift`}
               >
                 Apply to Program
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -243,9 +243,9 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-icy-blue-dark">
+                    <CardTitle className="text-xl text-tech-gray-dark">
                       Core Skills
                     </CardTitle>
                   </CardHeader>
@@ -260,9 +260,9 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-maple-red-dark">
+                    <CardTitle className="text-xl text-lime-green-dark">
                       Real Applications
                     </CardTitle>
                   </CardHeader>
@@ -277,9 +277,9 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-forest-green-dark">
+                    <CardTitle className="text-xl text-accent-green-dark">
                       Career Paths
                     </CardTitle>
                   </CardHeader>
@@ -357,7 +357,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 
                 size="lg" 
-                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl northern-glow hover-lift`}
+                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl tech-glow hover-lift`}
               >
                 Apply Now
               </Button>

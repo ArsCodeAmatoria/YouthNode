@@ -26,7 +26,7 @@ export default function Web3Blockchain() {
       {/* Navigation Header */}
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-6 py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-icy-blue transition-colors group">
+          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-tech-gray transition-colors group">
             <Home className="h-6 w-6 group-hover:scale-110 transition-transform" />
             <span className="font-bold text-lg">YouthNode</span>
           </Link>
@@ -34,7 +34,7 @@ export default function Web3Blockchain() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden canadian-gradient min-h-[60vh] flex items-center justify-center canadian-pattern pt-20">
+      <section className="relative overflow-hidden tech-gradient min-h-[60vh] flex items-center justify-center canadian-pattern pt-20">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -43,10 +43,10 @@ export default function Web3Blockchain() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <Wallet className="h-16 w-16 mx-auto text-forest-green mb-4" />
+              <Wallet className="h-16 w-16 mx-auto text-accent-green mb-4" />
             </motion.div>
             <motion.h1 
-              className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-canadian"
+              className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-tech"
               variants={fadeInUp}
             >
               Web3 & Blockchain
@@ -61,7 +61,7 @@ export default function Web3Blockchain() {
             <motion.div variants={fadeInUp}>
               <Button 
                 size="lg" 
-                className="bg-forest-green hover:bg-forest-green-dark text-white px-8 py-6 text-lg rounded-2xl maple-leaf-shadow hover-lift"
+                className="bg-accent-green hover:bg-accent-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
               >
                 Apply to Program
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -93,10 +93,10 @@ export default function Web3Blockchain() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
-                      <Code className="h-6 w-6 text-forest-green" />
+                    <CardTitle className="text-xl text-accent-green-dark flex items-center gap-3">
+                      <Code className="h-6 w-6 text-accent-green" />
                       Core Technologies
                     </CardTitle>
                   </CardHeader>
@@ -113,10 +113,10 @@ export default function Web3Blockchain() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
-                      <Database className="h-6 w-6 text-maple-red" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <Database className="h-6 w-6 text-lime-green" />
                       DeFi Development
                     </CardTitle>
                   </CardHeader>
@@ -133,10 +133,10 @@ export default function Web3Blockchain() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
-                      <Shield className="h-6 w-6 text-icy-blue" />
+                    <CardTitle className="text-xl text-tech-gray-dark flex items-center gap-3">
+                      <Shield className="h-6 w-6 text-tech-gray" />
                       Security & Infrastructure
                     </CardTitle>
                   </CardHeader>
@@ -188,7 +188,7 @@ export default function Web3Blockchain() {
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="hover-lift h-full liquid-glass">
                     <CardHeader>
-                      <CardTitle className="text-lg text-forest-green">{partner.org}</CardTitle>
+                      <CardTitle className="text-lg text-accent-green">{partner.org}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">{partner.focus}</p>
@@ -202,7 +202,7 @@ export default function Web3Blockchain() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-northern-lights/5 via-background to-forest-green/10">
+      <section className="py-24 bg-gradient-to-br from-tech-gray/5 via-background to-accent-green/10">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <motion.div
             initial="initial"
@@ -226,7 +226,7 @@ export default function Web3Blockchain() {
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 
                 size="lg" 
-                className="bg-forest-green hover:bg-forest-green-dark text-white px-8 py-6 text-lg rounded-2xl maple-leaf-shadow hover-lift"
+                className="bg-accent-green hover:bg-accent-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
               >
                 Apply Now
               </Button>

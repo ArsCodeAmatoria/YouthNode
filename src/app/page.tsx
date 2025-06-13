@@ -101,7 +101,7 @@ export default function YouthNode() {
                          <motion.div variants={fadeInUp}>
                <Button 
                  size="lg" 
-                 className="bg-maple-red hover:bg-maple-red-dark text-white px-8 py-6 text-lg rounded-2xl group maple-leaf-shadow hover-lift northern-glow backdrop-blur-sm border border-maple-red/30"
+                 className="bg-lime-green hover:bg-lime-green-dark text-white px-8 py-6 text-lg rounded-2xl group lime-shadow hover-lift tech-glow backdrop-blur-sm border border-lime-green/30"
                  onClick={() => scrollToSection('mission')}
                >
                  Read the Mission
@@ -123,10 +123,10 @@ export default function YouthNode() {
             className="grid lg:grid-cols-2 gap-12"
           >
                          <motion.div variants={fadeInUp}>
-                                <Card className="h-full border-icy-blue/30 bg-gradient-to-br from-card to-icy-blue-light/20 hover-lift liquid-glass">
+                                <Card className="h-full border-tech-gray/30 bg-gradient-to-br from-card to-tech-gray-light/20 hover-lift liquid-glass">
                  <CardHeader>
-                   <CardTitle className="text-3xl text-icy-blue-dark flex items-center gap-3">
-                     <Users className="h-8 w-8 text-icy-blue" />
+                   <CardTitle className="text-3xl text-tech-gray-dark flex items-center gap-3">
+                     <Users className="h-8 w-8 text-tech-gray" />
                      Our Mission
                    </CardTitle>
                  </CardHeader>
@@ -142,10 +142,10 @@ export default function YouthNode() {
              </motion.div>
 
                          <motion.div variants={fadeInUp}>
-                                <Card className="h-full border-maple-red/30 bg-gradient-to-br from-card to-maple-red-light/20 hover-lift maple-leaf-shadow">
+                                <Card className="h-full border-lime-green/30 bg-gradient-to-br from-card to-lime-green-light/20 hover-lift lime-shadow">
                  <CardHeader>
-                   <CardTitle className="text-3xl text-maple-red-dark flex items-center gap-3">
-                     <TrendingUp className="h-8 w-8 text-maple-red" />
+                   <CardTitle className="text-3xl text-lime-green-dark flex items-center gap-3">
+                     <TrendingUp className="h-8 w-8 text-lime-green" />
                      Our Vision
                    </CardTitle>
                  </CardHeader>
@@ -183,15 +183,15 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-4xl font-bold text-maple-red mb-2">#23</div>
+                <div className="text-4xl font-bold text-lime-green mb-2">#23</div>
                 <p className="text-sm text-muted-foreground">Global Innovation Index Ranking</p>
               </motion.div>
               <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-4xl font-bold text-icy-blue mb-2">67%</div>
+                <div className="text-4xl font-bold text-tech-gray mb-2">67%</div>
                 <p className="text-sm text-muted-foreground">of AI talent leaves for Silicon Valley</p>
               </motion.div>
               <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-4xl font-bold text-forest-green mb-2">$2.1B</div>
+                <div className="text-4xl font-bold text-accent-green mb-2">$2.1B</div>
                 <p className="text-sm text-muted-foreground">Investment gap vs. US per capita</p>
               </motion.div>
             </motion.div>
@@ -241,9 +241,9 @@ export default function YouthNode() {
              >
                {/* Brain Drain Chart */}
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/10">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/10">
                    <CardHeader>
-                     <CardTitle className="text-xl text-maple-red-dark text-center">
+                     <CardTitle className="text-xl text-lime-green-dark text-center">
                        Canadian Talent Migration
                      </CardTitle>
                    </CardHeader>
@@ -274,7 +274,7 @@ export default function YouthNode() {
                        />
                      </div>
                      <p className="text-sm text-muted-foreground text-center">
-                       <strong className="text-maple-red">67% of Canadian AI talent</strong> leaves for 
+                       <strong className="text-lime-green">67% of Canadian AI talent</strong> leaves for 
                        Silicon Valley. YouthNode creates compelling reasons to stay.
                      </p>
                    </CardContent>
@@ -283,9 +283,9 @@ export default function YouthNode() {
 
                {/* Innovation Rankings */}
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/10">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/10">
                    <CardHeader>
-                     <CardTitle className="text-xl text-icy-blue-dark text-center">
+                     <CardTitle className="text-xl text-tech-gray-dark text-center">
                        Global Innovation Potential
                      </CardTitle>
                    </CardHeader>
@@ -322,8 +322,8 @@ export default function YouthNode() {
                        />
                      </div>
                      <p className="text-sm text-muted-foreground text-center">
-                       Canada ranks <strong className="text-icy-blue">#23 globally</strong> but has 
-                       potential for <strong className="text-forest-green">top 10</strong> with proper youth development.
+                       Canada ranks <strong className="text-tech-gray">#23 globally</strong> but has 
+                       potential for <strong className="text-accent-green">top 10</strong> with proper youth development.
                      </p>
                    </CardContent>
                  </Card>
@@ -331,9 +331,9 @@ export default function YouthNode() {
 
                {/* Economic Impact */}
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/10">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/10">
                    <CardHeader>
-                     <CardTitle className="text-xl text-forest-green-dark text-center">
+                     <CardTitle className="text-xl text-accent-green-dark text-center">
                        Economic Impact Projection
                      </CardTitle>
                    </CardHeader>
@@ -370,7 +370,7 @@ export default function YouthNode() {
                        />
                      </div>
                      <p className="text-sm text-muted-foreground text-center">
-                       Projected <strong className="text-forest-green">$9.1B annual GDP contribution</strong> 
+                       Projected <strong className="text-accent-green">$9.1B annual GDP contribution</strong> 
                        by 2032 through retained Canadian talent.
                      </p>
                    </CardContent>
@@ -384,9 +384,9 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/10">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/10">
                    <CardHeader>
-                     <CardTitle className="text-2xl text-icy-blue-dark text-center">
+                     <CardTitle className="text-2xl text-tech-gray-dark text-center">
                        Canadian-Born Gen Z Advantages
                      </CardTitle>
                    </CardHeader>
@@ -440,9 +440,9 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/10">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/10">
                    <CardHeader>
-                     <CardTitle className="text-2xl text-forest-green-dark text-center">
+                     <CardTitle className="text-2xl text-accent-green-dark text-center">
                        Job Creation Potential
                      </CardTitle>
                    </CardHeader>
@@ -501,19 +501,19 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp} className="text-center">
-                 <div className="text-4xl font-bold text-maple-red mb-2">85%</div>
+                 <div className="text-4xl font-bold text-lime-green mb-2">85%</div>
                  <p className="text-sm text-muted-foreground">Higher startup success rate for teams with Canadian-born founders</p>
                </motion.div>
                <motion.div variants={fadeInUp} className="text-center">
-                 <div className="text-4xl font-bold text-icy-blue mb-2">3.2x</div>
+                 <div className="text-4xl font-bold text-tech-gray mb-2">3.2x</div>
                  <p className="text-sm text-muted-foreground">More likely to stay in Canada post-graduation vs foreign students</p>
                </motion.div>
                <motion.div variants={fadeInUp} className="text-center">
-                 <div className="text-4xl font-bold text-forest-green mb-2">$127K</div>
+                 <div className="text-4xl font-bold text-accent-green mb-2">$127K</div>
                  <p className="text-sm text-muted-foreground">Average starting salary for YouthNode-skilled developers</p>
                </motion.div>
                <motion.div variants={fadeInUp} className="text-center">
-                 <div className="text-4xl font-bold text-maple-red mb-2">42%</div>
+                 <div className="text-4xl font-bold text-lime-green mb-2">42%</div>
                  <p className="text-sm text-muted-foreground">Faster time-to-productivity in Canadian companies</p>
                </motion.div>
              </motion.div>
@@ -543,9 +543,9 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
                              <motion.div variants={fadeInUp}>
-                 <Card className="border-forest-green/20 hover:border-forest-green/40 transition-colors">
+                 <Card className="border-accent-green/20 hover:border-accent-green/40 transition-colors">
                    <CardHeader>
-                     <CardTitle className="text-forest-green">Project-Oriented Learning</CardTitle>
+                     <CardTitle className="text-accent-green">Project-Oriented Learning</CardTitle>
                    </CardHeader>
                    <CardContent>
                      <p className="text-muted-foreground">
@@ -558,9 +558,9 @@ export default function YouthNode() {
                </motion.div>
 
                              <motion.div variants={fadeInUp}>
-                 <Card className="border-icy-blue/20 hover:border-icy-blue/40 transition-colors">
+                 <Card className="border-tech-gray/20 hover:border-tech-gray/40 transition-colors">
                    <CardHeader>
-                     <CardTitle className="text-icy-blue">Communication & Leadership Hub</CardTitle>
+                     <CardTitle className="text-tech-gray">Communication & Leadership Hub</CardTitle>
                    </CardHeader>
                    <CardContent>
                      <p className="text-muted-foreground">
@@ -573,9 +573,9 @@ export default function YouthNode() {
                </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="border-maple-red/20 hover:border-maple-red/40 transition-colors">
+                <Card className="border-lime-green/20 hover:border-lime-green/40 transition-colors">
                   <CardHeader>
-                    <CardTitle className="text-maple-red">Future-Focused Curriculum</CardTitle>
+                    <CardTitle className="text-lime-green">Future-Focused Curriculum</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">
@@ -605,7 +605,7 @@ export default function YouthNode() {
        </section>
 
        {/* Learning Methodology */}
-       <section className="py-24 bg-gradient-to-br from-northern-lights/5 via-background to-forest-green/5">
+       <section className="py-24 bg-gradient-to-br from-tech-gray/5 via-background to-accent-green/5">
          <div className="container mx-auto px-6 lg:px-12">
            <motion.div
              initial="initial"
@@ -626,10 +626,10 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/15">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                    <CardHeader>
-                     <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
-                       <Cog className="h-6 w-6 text-icy-blue" />
+                     <CardTitle className="text-xl text-tech-gray-dark flex items-center gap-3">
+                       <Cog className="h-6 w-6 text-tech-gray" />
                        Project-Based Learning
                      </CardTitle>
                    </CardHeader>
@@ -645,10 +645,10 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/15">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                    <CardHeader>
-                     <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
-                       <Users className="h-6 w-6 text-maple-red" />
+                     <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                       <Users className="h-6 w-6 text-lime-green" />
                        Workshop Leadership
                      </CardTitle>
                    </CardHeader>
@@ -664,10 +664,10 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/15">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
                    <CardHeader>
-                     <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
-                       <TrendingUp className="h-6 w-6 text-forest-green" />
+                     <CardTitle className="text-xl text-accent-green-dark flex items-center gap-3">
+                       <TrendingUp className="h-6 w-6 text-accent-green" />
                        Pitch & Network Hub
                      </CardTitle>
                    </CardHeader>
@@ -685,9 +685,9 @@ export default function YouthNode() {
 
              <motion.div 
                variants={fadeInUp}
-               className="text-center bg-gradient-to-r from-icy-blue/10 via-maple-red/10 to-forest-green/10 rounded-3xl p-8"
+               className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-accent-green/10 rounded-3xl p-8"
              >
-               <h3 className="text-2xl font-bold mb-4 text-gradient-canadian">
+               <h3 className="text-2xl font-bold mb-4 text-gradient-tech">
                  The YouthNode Experience
                </h3>
                <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -722,27 +722,27 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
                              {[
-                 { icon: Brain, title: 'AI & Machine Learning', color: 'text-icy-blue', slug: 'ai-machine-learning' },
-                 { icon: Cpu, title: 'Generative Art & Video', color: 'text-maple-red', slug: 'generative-art-video' },
-                 { icon: Brain, title: 'Quantum Computing', color: 'text-forest-green', slug: 'quantum-computing' },
-                 { icon: Plane, title: 'Drones & Automation', color: 'text-icy-blue', slug: 'drones-automation' },
-                 { icon: Heart, title: 'HealthTech', color: 'text-maple-red', slug: 'healthtech' },
-                 { icon: Cog, title: 'Robotics & Engineering', color: 'text-forest-green', slug: 'robotics-engineering' },
-                 { icon: Shield, title: 'AI Ethics & Safety', color: 'text-icy-blue', slug: 'ai-ethics-safety' },
-                 { icon: Car, title: 'Autonomous Systems', color: 'text-maple-red', slug: 'autonomous-systems' },
-                 { icon: LineChart, title: 'Quantitative Trading', color: 'text-icy-blue', slug: 'quant-trading' },
-                 { icon: TrendingUp, title: 'Algorithmic Trading', color: 'text-maple-red', slug: 'algorithmic-trading' },
-                 { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-forest-green', slug: 'web3-blockchain' },
-                 { icon: Coins, title: 'FinTech Innovation', color: 'text-icy-blue', slug: 'fintech-innovation' },
-                 { icon: Shield, title: 'Cybersecurity', color: 'text-maple-red', slug: 'cybersecurity' },
-                 { icon: Users, title: 'Workshop Creation', color: 'text-forest-green', slug: 'workshop-creation' },
-                 { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-icy-blue', slug: 'pitching-presentations' },
-                 { icon: Users, title: 'Networking & Leadership', color: 'text-maple-red', slug: 'networking-leadership' },
-                 { icon: Brain, title: 'Entrepreneurship', color: 'text-forest-green', slug: 'entrepreneurship' },
+                 { icon: Brain, title: 'AI & Machine Learning', color: 'text-tech-gray', slug: 'ai-machine-learning' },
+                 { icon: Cpu, title: 'Generative Art & Video', color: 'text-lime-green', slug: 'generative-art-video' },
+                 { icon: Brain, title: 'Quantum Computing', color: 'text-accent-green', slug: 'quantum-computing' },
+                 { icon: Plane, title: 'Drones & Automation', color: 'text-tech-gray', slug: 'drones-automation' },
+                 { icon: Heart, title: 'HealthTech', color: 'text-lime-green', slug: 'healthtech' },
+                 { icon: Cog, title: 'Robotics & Engineering', color: 'text-accent-green', slug: 'robotics-engineering' },
+                 { icon: Shield, title: 'AI Ethics & Safety', color: 'text-tech-gray', slug: 'ai-ethics-safety' },
+                 { icon: Car, title: 'Autonomous Systems', color: 'text-lime-green', slug: 'autonomous-systems' },
+                 { icon: LineChart, title: 'Quantitative Trading', color: 'text-tech-gray', slug: 'quant-trading' },
+                 { icon: TrendingUp, title: 'Algorithmic Trading', color: 'text-lime-green', slug: 'algorithmic-trading' },
+                 { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-accent-green', slug: 'web3-blockchain' },
+                 { icon: Coins, title: 'FinTech Innovation', color: 'text-tech-gray', slug: 'fintech-innovation' },
+                 { icon: Shield, title: 'Cybersecurity', color: 'text-lime-green', slug: 'cybersecurity' },
+                 { icon: Users, title: 'Workshop Creation', color: 'text-accent-green', slug: 'workshop-creation' },
+                 { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-tech-gray', slug: 'pitching-presentations' },
+                 { icon: Users, title: 'Networking & Leadership', color: 'text-lime-green', slug: 'networking-leadership' },
+                 { icon: Brain, title: 'Entrepreneurship', color: 'text-accent-green', slug: 'entrepreneurship' },
                ].map((program, index) => (
                                  <motion.div key={index} variants={fadeInUp}>
                    <Link href={`/programs/${program.slug}`} className="block">
-                     <Card className="text-center hover-lift h-full liquid-glass bg-gradient-to-br from-card to-northern-lights/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
+                     <Card className="text-center hover-lift h-full liquid-glass bg-gradient-to-br from-card to-tech-gray/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
                        <CardContent className="pt-6">
                          <program.icon className={`h-12 w-12 mx-auto mb-4 ${program.color} group-hover:scale-110 transition-transform duration-300`} />
                          <h3 className="font-semibold text-sm group-hover:text-primary transition-colors duration-300">{program.title}</h3>
@@ -777,9 +777,9 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-icy-blue-light/10">
+                 <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-tech-gray-light/10">
                    <CardHeader>
-                     <CardTitle className="text-lg text-icy-blue-dark">Government Grants</CardTitle>
+                     <CardTitle className="text-lg text-tech-gray-dark">Government Grants</CardTitle>
                    </CardHeader>
                    <CardContent>
                      <ul className="text-sm text-muted-foreground space-y-1">
@@ -795,9 +795,9 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-maple-red-light/10">
+                 <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-lime-green-light/10">
                    <CardHeader>
-                     <CardTitle className="text-lg text-maple-red-dark">Private Foundations</CardTitle>
+                     <CardTitle className="text-lg text-lime-green-dark">Private Foundations</CardTitle>
                    </CardHeader>
                    <CardContent>
                      <ul className="text-sm text-muted-foreground space-y-1">
@@ -813,9 +813,9 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-forest-green-light/10">
+                 <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-accent-green-light/10">
                    <CardHeader>
-                     <CardTitle className="text-lg text-forest-green-dark">Revenue Streams</CardTitle>
+                     <CardTitle className="text-lg text-accent-green-dark">Revenue Streams</CardTitle>
                    </CardHeader>
                    <CardContent>
                      <ul className="text-sm text-muted-foreground space-y-1">
@@ -833,9 +833,9 @@ export default function YouthNode() {
 
              <motion.div 
                variants={fadeInUp}
-               className="text-center bg-gradient-to-r from-icy-blue/10 via-maple-red/10 to-forest-green/10 rounded-3xl p-8"
+               className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-accent-green/10 rounded-3xl p-8"
              >
-               <h3 className="text-2xl font-bold mb-4 text-gradient-canadian">
+               <h3 className="text-2xl font-bold mb-4 text-gradient-tech">
                  Sustainable Impact Model
                </h3>
                <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -870,32 +870,32 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/15">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                    <CardHeader>
-                     <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
-                       <Brain className="h-6 w-6 text-icy-blue" />
+                     <CardTitle className="text-xl text-tech-gray-dark flex items-center gap-3">
+                       <Brain className="h-6 w-6 text-tech-gray" />
                        Skill Development Tracks
                      </CardTitle>
                    </CardHeader>
                    <CardContent>
                      <ul className="text-sm text-muted-foreground space-y-2">
-                       <li><strong className="text-icy-blue">AI/ML:</strong> Python, TensorFlow, PyTorch</li>
-                       <li><strong className="text-icy-blue">AI Art:</strong> Midjourney, RunwayML</li>
-                       <li><strong className="text-icy-blue">AI Video:</strong> Pika Labs, Sora, Runway</li>
-                       <li><strong className="text-icy-blue">Drones:</strong> ROS, PX4 navigation</li>
-                       <li><strong className="text-icy-blue">Autonomous Driving:</strong> CARLA simulators</li>
-                       <li><strong className="text-icy-blue">Quantum:</strong> IBM Qiskit, D-Wave, Xanadu</li>
-                       <li><strong className="text-icy-blue">HealthTech:</strong> Bioinformatics, ML diagnostics</li>
+                       <li><strong className="text-tech-gray">AI/ML:</strong> Python, TensorFlow, PyTorch</li>
+                       <li><strong className="text-tech-gray">AI Art:</strong> Midjourney, RunwayML</li>
+                       <li><strong className="text-tech-gray">AI Video:</strong> Pika Labs, Sora, Runway</li>
+                       <li><strong className="text-tech-gray">Drones:</strong> ROS, PX4 navigation</li>
+                       <li><strong className="text-tech-gray">Autonomous Driving:</strong> CARLA simulators</li>
+                       <li><strong className="text-tech-gray">Quantum:</strong> IBM Qiskit, D-Wave, Xanadu</li>
+                       <li><strong className="text-tech-gray">HealthTech:</strong> Bioinformatics, ML diagnostics</li>
                      </ul>
                    </CardContent>
                  </Card>
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/15">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                    <CardHeader>
-                     <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
-                       <TrendingUp className="h-6 w-6 text-maple-red" />
+                     <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                       <TrendingUp className="h-6 w-6 text-lime-green" />
                        Job Placement Funnel
                      </CardTitle>
                    </CardHeader>
@@ -914,10 +914,10 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/15">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
                    <CardHeader>
-                     <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
-                       <Cog className="h-6 w-6 text-forest-green" />
+                     <CardTitle className="text-xl text-accent-green-dark flex items-center gap-3">
+                       <Cog className="h-6 w-6 text-accent-green" />
                        Startup Incubator
                      </CardTitle>
                    </CardHeader>
@@ -938,9 +938,9 @@ export default function YouthNode() {
 
              <motion.div 
                variants={fadeInUp}
-               className="text-center bg-gradient-to-r from-icy-blue/10 via-maple-red/10 to-forest-green/10 rounded-3xl p-8"
+               className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-accent-green/10 rounded-3xl p-8"
              >
-               <h3 className="text-2xl font-bold mb-4 text-gradient-canadian">
+               <h3 className="text-2xl font-bold mb-4 text-gradient-tech">
                  Complete Innovation Pipeline
                </h3>
                <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -989,7 +989,7 @@ export default function YouthNode() {
                 { name: 'UBC & SFU', description: 'Student collaboration programs' },
               ].map((partner, index) => (
                                  <motion.div key={index} variants={fadeInUp}>
-                   <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-northern-lights/8">
+                   <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-tech-gray/8">
                      <CardHeader>
                        <CardTitle className="text-lg text-foreground">{partner.name}</CardTitle>
                      </CardHeader>
@@ -1005,7 +1005,7 @@ export default function YouthNode() {
       </section>
 
              {/* Get Involved */}
-       <section className="py-24 bg-gradient-to-br from-background via-northern-lights/5 to-icy-blue-light/10 canadian-pattern">
+       <section className="py-24 bg-gradient-to-br from-background via-tech-gray/5 to-tech-gray-light/10 canadian-pattern">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial="initial"
@@ -1026,9 +1026,9 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="text-center h-full border-icy-blue/20">
+                <Card className="text-center h-full border-tech-gray/20">
                   <CardHeader>
-                    <CardTitle className="text-icy-blue">For Students</CardTitle>
+                    <CardTitle className="text-tech-gray">For Students</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                                          <p className="text-muted-foreground">
@@ -1036,7 +1036,7 @@ export default function YouthNode() {
                        workshop leadership, and networking opportunities that will transform you into 
                        a confident innovator and communicator.
                      </p>
-                                         <Button className="bg-icy-blue hover:bg-icy-blue-dark text-white w-full northern-glow hover-lift">
+                                         <Button className="bg-tech-gray hover:bg-tech-gray-dark text-white w-full tech-glow hover-lift">
                        Join the Pilot Program
                      </Button>
                   </CardContent>
@@ -1044,9 +1044,9 @@ export default function YouthNode() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center h-full border-forest-green/20">
+                <Card className="text-center h-full border-accent-green/20">
                   <CardHeader>
-                    <CardTitle className="text-forest-green">For Companies</CardTitle>
+                    <CardTitle className="text-accent-green">For Companies</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                                          <p className="text-muted-foreground">
@@ -1054,7 +1054,7 @@ export default function YouthNode() {
                        communicate, lead, and innovate. Our students bring project portfolios, 
                        presentation skills, and real-world problem-solving experience.
                      </p>
-                                         <Button className="bg-forest-green hover:bg-forest-green-dark text-white w-full maple-leaf-shadow hover-lift">
+                                         <Button className="bg-accent-green hover:bg-accent-green-dark text-white w-full lime-shadow hover-lift">
                        Partner With Us
                      </Button>
                   </CardContent>
@@ -1062,16 +1062,16 @@ export default function YouthNode() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center h-full border-maple-red/20">
+                <Card className="text-center h-full border-lime-green/20">
                   <CardHeader>
-                    <CardTitle className="text-maple-red">For Donors</CardTitle>
+                    <CardTitle className="text-lime-green">For Donors</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                                          <p className="text-muted-foreground">
                        Invest in Canada&apos;s innovation future. Your support creates opportunities 
                        and builds the talent pipeline of tomorrow.
                      </p>
-                                         <Button className="bg-maple-red hover:bg-maple-red-dark text-white w-full maple-leaf-shadow hover-lift">
+                                         <Button className="bg-lime-green hover:bg-lime-green-dark text-white w-full lime-shadow hover-lift">
                        Fund the Future
                      </Button>
                   </CardContent>
@@ -1087,7 +1087,7 @@ export default function YouthNode() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-maple-red">YouthNode</h3>
+              <h3 className="text-2xl font-bold mb-4 text-lime-green">YouthNode</h3>
               <p className="text-muted-foreground mb-4">
                 Building Canada&apos;s Innovation Future
               </p>
@@ -1110,9 +1110,9 @@ export default function YouthNode() {
             <div>
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex gap-4">
-                <Twitter className="h-5 w-5 text-muted-foreground hover:text-icy-blue cursor-pointer transition-colors" />
-                <Linkedin className="h-5 w-5 text-muted-foreground hover:text-icy-blue cursor-pointer transition-colors" />
-                <Github className="h-5 w-5 text-muted-foreground hover:text-icy-blue cursor-pointer transition-colors" />
+                <Twitter className="h-5 w-5 text-muted-foreground hover:text-tech-gray cursor-pointer transition-colors" />
+                <Linkedin className="h-5 w-5 text-muted-foreground hover:text-tech-gray cursor-pointer transition-colors" />
+                <Github className="h-5 w-5 text-muted-foreground hover:text-tech-gray cursor-pointer transition-colors" />
               </div>
             </div>
           </div>

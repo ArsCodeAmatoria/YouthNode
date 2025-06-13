@@ -26,7 +26,7 @@ export default function CybersecurityProgram() {
       {/* Navigation */}
       <nav className="bg-background/95 backdrop-blur-sm border-b sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-maple-red hover:text-maple-red-dark transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-lime-green hover:text-lime-green-dark transition-colors">
             <Home className="h-5 w-5" />
             Back to Home
           </Link>
@@ -34,7 +34,7 @@ export default function CybersecurityProgram() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-maple-red/10 via-background to-maple-red/5 py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-lime-green/10 via-background to-lime-green/5 py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -43,14 +43,14 @@ export default function CybersecurityProgram() {
             variants={staggerContainer}
           >
             <motion.div 
-              className="inline-flex items-center justify-center w-20 h-20 bg-maple-red/20 rounded-full mb-8"
+              className="inline-flex items-center justify-center w-20 h-20 bg-lime-green/20 rounded-full mb-8"
               variants={fadeInUp}
             >
-              <Shield className="h-10 w-10 text-maple-red" />
+              <Shield className="h-10 w-10 text-lime-green" />
             </motion.div>
             
             <motion.h1 
-              className="text-5xl lg:text-6xl font-bold mb-6 text-gradient-canadian"
+              className="text-5xl lg:text-6xl font-bold mb-6 text-gradient-tech"
               variants={fadeInUp}
             >
               Cybersecurity Program
@@ -64,7 +64,7 @@ export default function CybersecurityProgram() {
             </motion.p>
             
             <motion.div variants={fadeInUp} className="space-x-4">
-              <Button size="lg" className="bg-maple-red hover:bg-maple-red-dark text-white">
+              <Button size="lg" className="bg-lime-green hover:bg-lime-green-dark text-white">
                 Apply Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -98,10 +98,10 @@ export default function CybersecurityProgram() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
-                      <Shield className="h-6 w-6 text-icy-blue" />
+                    <CardTitle className="text-xl text-tech-gray-dark flex items-center gap-3">
+                      <Shield className="h-6 w-6 text-tech-gray" />
                       Blue Team Defense
                     </CardTitle>
                   </CardHeader>
@@ -119,10 +119,10 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
-                      <Bug className="h-6 w-6 text-maple-red" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <Bug className="h-6 w-6 text-lime-green" />
                       Red Team Offense
                     </CardTitle>
                   </CardHeader>
@@ -140,10 +140,10 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
-                      <Eye className="h-6 w-6 text-forest-green" />
+                    <CardTitle className="text-xl text-accent-green-dark flex items-center gap-3">
+                      <Eye className="h-6 w-6 text-accent-green" />
                       Malware Analysis
                     </CardTitle>
                   </CardHeader>
@@ -186,9 +186,9 @@ export default function CybersecurityProgram() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Terminal className="h-12 w-12 mx-auto mb-4 text-maple-red" />
+                    <Terminal className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">Kali Linux</h3>
                     <p className="text-sm text-muted-foreground">
                       Master the premier penetration testing distribution with 600+ security tools
@@ -198,9 +198,9 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Network className="h-12 w-12 mx-auto mb-4 text-icy-blue" />
+                    <Network className="h-12 w-12 mx-auto mb-4 text-tech-gray" />
                     <h3 className="font-bold text-lg mb-2">Hack The Box</h3>
                     <p className="text-sm text-muted-foreground">
                       Practice on real-world scenarios with HTB Academy and live machine challenges
@@ -210,9 +210,9 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Bug className="h-12 w-12 mx-auto mb-4 text-forest-green" />
+                    <Bug className="h-12 w-12 mx-auto mb-4 text-accent-green" />
                     <h3 className="font-bold text-lg mb-2">Metasploit</h3>
                     <p className="text-sm text-muted-foreground">
                       Learn exploitation techniques with the world&apos;s most used penetration testing framework
@@ -222,9 +222,9 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Eye className="h-12 w-12 mx-auto mb-4 text-maple-red" />
+                    <Eye className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">Wireshark</h3>
                     <p className="text-sm text-muted-foreground">
                       Analyze network traffic and detect security threats with advanced packet analysis
@@ -234,9 +234,9 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Database className="h-12 w-12 mx-auto mb-4 text-icy-blue" />
+                    <Database className="h-12 w-12 mx-auto mb-4 text-tech-gray" />
                     <h3 className="font-bold text-lg mb-2">Splunk SIEM</h3>
                     <p className="text-sm text-muted-foreground">
                       Master enterprise security information and event management systems
@@ -246,9 +246,9 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Skull className="h-12 w-12 mx-auto mb-4 text-forest-green" />
+                    <Skull className="h-12 w-12 mx-auto mb-4 text-accent-green" />
                     <h3 className="font-bold text-lg mb-2">Ghidra</h3>
                     <p className="text-sm text-muted-foreground">
                       Reverse engineer malware with NSA&apos;s powerful software analysis suite
@@ -258,9 +258,9 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Lock className="h-12 w-12 mx-auto mb-4 text-maple-red" />
+                    <Lock className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">Burp Suite</h3>
                     <p className="text-sm text-muted-foreground">
                       Professional web application security testing with automated scanning
@@ -270,9 +270,9 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Shield className="h-12 w-12 mx-auto mb-4 text-icy-blue" />
+                    <Shield className="h-12 w-12 mx-auto mb-4 text-tech-gray" />
                     <h3 className="font-bold text-lg mb-2">YARA</h3>
                     <p className="text-sm text-muted-foreground">
                       Create detection rules for malware identification and threat hunting
@@ -339,10 +339,10 @@ export default function CybersecurityProgram() {
                 }
               ].map((partner, index) => (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-northern-lights/10">
+                  <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                     <CardHeader>
-                      <CardTitle className="text-lg text-maple-red-dark">{partner.name}</CardTitle>
-                      <p className="text-sm text-maple-red">{partner.role}</p>
+                      <CardTitle className="text-lg text-lime-green-dark">{partner.name}</CardTitle>
+                      <p className="text-sm text-lime-green">{partner.role}</p>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">{partner.description}</p>
@@ -356,7 +356,7 @@ export default function CybersecurityProgram() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-maple-red/10 via-background to-maple-red/5">
+      <section className="py-24 bg-gradient-to-br from-lime-green/10 via-background to-lime-green/5">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <motion.div
             initial="initial"
@@ -366,7 +366,7 @@ export default function CybersecurityProgram() {
             className="max-w-4xl mx-auto"
           >
             <motion.h2 
-              className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-canadian"
+              className="text-4xl lg:text-5xl font-bold mb-6 text-gradient-tech"
               variants={fadeInUp}
             >
               Defend Canada&apos;s Digital Future
@@ -379,7 +379,7 @@ export default function CybersecurityProgram() {
               master the skills needed to protect our nation&apos;s digital infrastructure.
             </motion.p>
             <motion.div variants={fadeInUp} className="space-x-4">
-              <Button size="lg" className="bg-maple-red hover:bg-maple-red-dark text-white">
+              <Button size="lg" className="bg-lime-green hover:bg-lime-green-dark text-white">
                 Apply Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
