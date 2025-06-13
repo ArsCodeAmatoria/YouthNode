@@ -769,6 +769,7 @@ export default function YouthNode() {
                  { icon: TrendingUp, title: 'Algorithmic Trading', color: 'text-maple-red', slug: 'algorithmic-trading' },
                  { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-forest-green', slug: 'web3-blockchain' },
                  { icon: Coins, title: 'FinTech Innovation', color: 'text-icy-blue', slug: 'fintech-innovation' },
+                 { icon: Shield, title: 'Cybersecurity', color: 'text-maple-red', slug: 'cybersecurity' },
                  { icon: Users, title: 'Workshop Creation', color: 'text-forest-green', slug: 'workshop-creation' },
                  { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-icy-blue', slug: 'pitching-presentations' },
                  { icon: Users, title: 'Networking & Leadership', color: 'text-maple-red', slug: 'networking-leadership' },
