@@ -49,6 +49,7 @@ import {
   Wallet,
   Coins
 } from 'lucide-react';
+import ThreeJSBackground from '@/components/ThreeJSBackground';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -72,8 +73,14 @@ export default function YouthNode() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative overflow-hidden canadian-gradient min-h-screen flex items-center justify-center canadian-pattern">
-        <div className="container mx-auto px-6 lg:px-12 text-center">
+      <section className="relative overflow-hidden min-h-screen flex items-center justify-center">
+        {/* Three.js Mathematical Background */}
+        <ThreeJSBackground />
+        
+        {/* Canadian Gradient Overlay */}
+        <div className="absolute inset-0 canadian-gradient opacity-80 canadian-pattern" />
+        
+        <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
           <motion.div
             className="max-w-4xl mx-auto"
             initial="initial"
@@ -81,13 +88,13 @@ export default function YouthNode() {
             variants={staggerContainer}
           >
                          <motion.h1 
-               className="text-5xl lg:text-7xl font-bold mb-6 text-gradient-canadian"
+               className="text-5xl lg:text-7xl font-bold mb-6 text-gradient-canadian drop-shadow-lg hero-text-glow"
                variants={fadeInUp}
              >
                Building Canada&apos;s Innovation Future
              </motion.h1>
             <motion.p 
-              className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+              className="text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-md"
               variants={fadeInUp}
             >
               Empowering Gen Z with skills in AI, Deep Tech, and Emerging Industries
@@ -95,7 +102,7 @@ export default function YouthNode() {
                          <motion.div variants={fadeInUp}>
                <Button 
                  size="lg" 
-                 className="bg-maple-red hover:bg-maple-red-dark text-white px-8 py-6 text-lg rounded-2xl group maple-leaf-shadow hover-lift northern-glow"
+                 className="bg-maple-red hover:bg-maple-red-dark text-white px-8 py-6 text-lg rounded-2xl group maple-leaf-shadow hover-lift northern-glow backdrop-blur-sm"
                  onClick={() => scrollToSection('mission')}
                >
                  Read the Mission
@@ -105,42 +112,42 @@ export default function YouthNode() {
           </motion.div>
         </div>
         
-                 {/* Floating Elements */}
-         <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                 {/* Enhanced Floating Elements */}
+         <div className="absolute inset-0 overflow-hidden pointer-events-none z-5">
            <motion.div 
-             className="absolute top-20 left-20 w-32 h-32 bg-icy-blue/20 rounded-full northern-glow blur-sm"
+             className="absolute top-20 left-20 w-32 h-32 bg-icy-blue/30 rounded-full northern-glow blur-sm backdrop-blur-sm"
              animate={{ 
                y: [0, -20, 0],
                scale: [1, 1.1, 1],
-               opacity: [0.3, 0.6, 0.3]
+               opacity: [0.4, 0.7, 0.4]
              }}
              transition={{ duration: 6, repeat: Infinity }}
            />
            <motion.div 
-             className="absolute bottom-20 right-20 w-24 h-24 bg-forest-green/20 rounded-full maple-leaf-shadow blur-sm"
+             className="absolute bottom-20 right-20 w-24 h-24 bg-forest-green/30 rounded-full maple-leaf-shadow blur-sm backdrop-blur-sm"
              animate={{ 
                y: [0, 20, 0],
                scale: [1, 1.2, 1],
-               opacity: [0.4, 0.7, 0.4]
+               opacity: [0.5, 0.8, 0.5]
              }}
              transition={{ duration: 4, repeat: Infinity }}
            />
            <motion.div 
-             className="absolute top-1/2 right-40 w-16 h-16 bg-maple-red/20 rounded-full northern-glow blur-sm"
+             className="absolute top-1/2 right-40 w-16 h-16 bg-maple-red/30 rounded-full northern-glow blur-sm backdrop-blur-sm"
              animate={{ 
                y: [0, -10, 0],
                rotate: [0, 180, 360],
-               opacity: [0.2, 0.5, 0.2]
+               opacity: [0.3, 0.6, 0.3]
              }}
              transition={{ duration: 8, repeat: Infinity }}
            />
            <motion.div 
-             className="absolute top-1/3 left-1/2 w-20 h-20 bg-northern-lights/30 rounded-full blur-md"
+             className="absolute top-1/3 left-1/2 w-20 h-20 bg-northern-lights/40 rounded-full blur-md backdrop-blur-sm"
              animate={{ 
                x: [-10, 10, -10],
                y: [-5, 5, -5],
                scale: [1, 1.3, 1],
-               opacity: [0.1, 0.4, 0.1]
+               opacity: [0.2, 0.5, 0.2]
              }}
              transition={{ duration: 10, repeat: Infinity }}
            />
