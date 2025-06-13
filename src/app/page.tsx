@@ -1118,7 +1118,7 @@ export default function YouthNode() {
           </div>
           
           <div className="border-t border-border pt-8 text-center text-muted-foreground">
-            <p>© 2024 YouthNode. Nonprofit organization registration pending.</p>
+                            <p>© 2025 YouthNode. Nonprofit organization registration pending.</p>
           </div>
         </div>
       </footer>
