@@ -156,68 +156,6 @@ export default function AIMachineLearning() {
         </div>
       </section>
 
-      {/* Curriculum Timeline */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6 lg:px-12">
-          <motion.div
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto"
-          >
-            <motion.h2 
-              className="text-4xl font-bold mb-12 text-center"
-              variants={fadeInUp}
-            >
-              12-Month Learning Journey
-            </motion.h2>
-            
-            <div className="space-y-8">
-              {[
-                {
-                  phase: "Months 1-3: Foundations",
-                  topics: ["Python Programming", "Statistics & Linear Algebra", "Data Manipulation", "Basic ML Algorithms"],
-                  project: "Build a Canadian housing price predictor"
-                },
-                {
-                  phase: "Months 4-6: Deep Learning",
-                  topics: ["Neural Networks", "Computer Vision", "NLP Basics", "TensorFlow/PyTorch"],
-                  project: "Create AI art generator for Canadian landmarks"
-                },
-                {
-                  phase: "Months 7-9: Advanced Applications",
-                  topics: ["Transformers", "Reinforcement Learning", "MLOps", "Model Deployment"],
-                  project: "Deploy healthcare AI for Canadian medical data"
-                },
-                {
-                  phase: "Months 10-12: Specialization",
-                  topics: ["Research Methods", "Industry Applications", "Team Leadership", "Ethics & Bias"],
-                  project: "Lead team project solving Canadian industry challenge"
-                }
-              ].map((phase, index) => (
-                <motion.div key={index} variants={fadeInUp}>
-                  <Card className="hover-lift frost-border">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-icy-blue rounded-full flex items-center justify-center text-white font-bold">
-                          {index + 1}
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-icy-blue-dark mb-2">{phase.phase}</h3>
-                          <p className="text-muted-foreground mb-3">{phase.topics.join(" • ")}</p>
-                          <p className="text-sm text-forest-green"><strong>Capstone:</strong> {phase.project}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Canadian Industry Focus */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
