@@ -12,7 +12,7 @@ import { LucideIcon } from 'lucide-react';
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.4, ease: "easeOut" }
+  transition: { duration: 0.3, ease: "easeOut" }
 };
 
 const staggerContainer = {
@@ -227,7 +227,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            viewport={{ once: true, margin: "0px 0px -200px 0px" }}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -243,7 +243,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-icy-blue-dark">
                       Core Skills
@@ -260,7 +260,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-maple-red-dark">
                       Real Applications
@@ -277,7 +277,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-forest-green-dark">
                       Career Paths
@@ -303,7 +303,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            viewport={{ once: true, margin: "0px 0px -200px 0px" }}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -320,7 +320,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
             >
               {program.partners.map((partner, index) => (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="hover-lift h-full frost-border text-center">
+                  <Card className="hover-lift h-full liquid-glass text-center">
                     <CardContent className="p-6">
                       <h3 className={`text-lg font-semibold text-${program.color}`}>{partner}</h3>
                     </CardContent>
@@ -338,7 +338,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            viewport={{ once: true, margin: "0px 0px -200px 0px" }}
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >

@@ -9,7 +9,7 @@ import Link from 'next/link';
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.4, ease: "easeOut" }
+  transition: { duration: 0.3, ease: "easeOut" }
 };
 
 const staggerContainer = {
@@ -77,7 +77,7 @@ export default function AIMachineLearning() {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            viewport={{ once: true, margin: "0px 0px -200px 0px" }}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -93,7 +93,7 @@ export default function AIMachineLearning() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-icy-blue-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
                       <Code className="h-6 w-6 text-icy-blue" />
@@ -113,7 +113,7 @@ export default function AIMachineLearning() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-maple-red-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
                       <Database className="h-6 w-6 text-maple-red" />
@@ -133,7 +133,7 @@ export default function AIMachineLearning() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-forest-green-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
                       <TrendingUp className="h-6 w-6 text-forest-green" />
@@ -162,7 +162,7 @@ export default function AIMachineLearning() {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            viewport={{ once: true, margin: "0px 0px -200px 0px" }}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -186,7 +186,7 @@ export default function AIMachineLearning() {
                 { company: "Scale AI", focus: "AI supply chain innovation" }
               ].map((partner, index) => (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="hover-lift h-full frost-border">
+                  <Card className="hover-lift h-full liquid-glass">
                     <CardHeader>
                       <CardTitle className="text-lg">{partner.company}</CardTitle>
                     </CardHeader>
@@ -207,7 +207,7 @@ export default function AIMachineLearning() {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+            viewport={{ once: true, margin: "0px 0px -200px 0px" }}
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
