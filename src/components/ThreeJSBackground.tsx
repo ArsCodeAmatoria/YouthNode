@@ -38,29 +38,37 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     sceneRef.current = scene;
     rendererRef.current = renderer;
 
-    // Create geometry for points
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(10000 * 3); // 10000 points, 3 coordinates each
-    const colors = new Float32Array(10000 * 3); // RGB for each point
+    // Create flowing lines geometry
+    const numLines = 100;
+    const pointsPerLine = 200;
+    const lines: THREE.Line[] = [];
+    const geometries: THREE.BufferGeometry[] = [];
+    const materials: THREE.LineBasicMaterial[] = [];
 
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    for (let lineIndex = 0; lineIndex < numLines; lineIndex++) {
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(pointsPerLine * 3);
+      const colors = new Float32Array(pointsPerLine * 3);
 
-    // Create material
-    const material = new THREE.PointsMaterial({
-      size: 2,
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.8,
-      sizeAttenuation: true
-    });
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Create points mesh
-    const points = new THREE.Points(geometry, material);
-    scene.add(points);
+      const material = new THREE.LineBasicMaterial({
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.4,
+        linewidth: 2
+      });
+
+      const line = new THREE.Line(geometry, material);
+      lines.push(line);
+      geometries.push(geometry);
+      materials.push(material);
+      scene.add(line);
+    }
 
     // Camera position
-    camera.position.z = 100;
+    camera.position.z = 50;
 
     // Animation variables
     let t = 0;
@@ -72,16 +80,17 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       const d = Math.sqrt(k * k + e * e);
       const mag = d * d / 99 + Math.sin(t) / 6 + 0.5;
       
-      const q = 99 - e * Math.sin(Math.atan2(k, e) * 7) / d + k * (3 + Math.cos(d * d - t) * 2);
+      const q = 99 - e * Math.sin(Math.atan2(k, e) * 7) / (d || 0.001) + k * (3 + Math.cos(d * d - t) * 2);
       const c = d / 2 + e / 69 - t / 16;
       
-      const pointX = q * Math.sin(c);
-      const pointY = (q + 19 * d) * Math.cos(c);
+      const pointX = q * Math.sin(c) * 0.1;
+      const pointY = (q + 19 * d) * Math.cos(c) * 0.1;
+      const pointZ = Math.sin(d + t * 2) * 5;
       
       return {
-        x: pointX * 0.3, // Scale down for Three.js scene
-        y: pointY * 0.3,
-        z: Math.sin(d + t) * 10, // Add Z component for 3D effect
+        x: pointX,
+        y: pointY,
+        z: pointZ,
         intensity: mag
       };
     };
@@ -90,49 +99,53 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     const animate = () => {
       t += Math.PI / 45;
 
-      const positions = geometry.attributes.position.array as Float32Array;
-      const colors = geometry.attributes.color.array as Float32Array;
+      lines.forEach((line, lineIndex) => {
+        const geometry = line.geometry;
+        const positions = geometry.attributes.position.array as Float32Array;
+        const colors = geometry.attributes.color.array as Float32Array;
 
-      for (let i = 0; i < 10000; i++) {
-        const x = i % 200;
-        const y = Math.floor(i / 55);
-        
-        const point = calculatePoint(x, y, t);
-        
-        // Set position
-        positions[i * 3] = point.x;
-        positions[i * 3 + 1] = point.y;
-        positions[i * 3 + 2] = point.z;
-        
-        // Set color based on intensity and Canadian theme
-        const intensity = Math.abs(point.intensity);
-        
-        // Canadian colors: red, white, blue
-        if (intensity > 0.7) {
-          // Maple red
-          colors[i * 3] = 0.8 + intensity * 0.2; // R
-          colors[i * 3 + 1] = 0.1 + intensity * 0.3; // G
-          colors[i * 3 + 2] = 0.1 + intensity * 0.3; // B
-        } else if (intensity > 0.4) {
-          // Icy blue
-          colors[i * 3] = 0.3 + intensity * 0.4; // R
-          colors[i * 3 + 1] = 0.6 + intensity * 0.4; // G
-          colors[i * 3 + 2] = 0.9; // B
-        } else {
-          // White/light
-          const white = 0.8 + intensity * 0.2;
-          colors[i * 3] = white; // R
-          colors[i * 3 + 1] = white; // G
-          colors[i * 3 + 2] = white; // B
+        // Create flowing lines based on the mathematical formula
+        for (let i = 0; i < pointsPerLine; i++) {
+          const x = (lineIndex * 2) + (i * 0.5) - 50;
+          const y = (i * 0.3) - 30;
+          
+          const point = calculatePoint(x, y, t + lineIndex * 0.1);
+          
+          // Set position
+          positions[i * 3] = point.x;
+          positions[i * 3 + 1] = point.y;
+          positions[i * 3 + 2] = point.z;
+          
+          // Set color based on intensity and Canadian theme
+          const intensity = Math.abs(point.intensity);
+          const phase = (lineIndex / numLines) * Math.PI * 2;
+          
+          if (intensity > 0.7) {
+            // Maple red flowing
+            colors[i * 3] = 0.8 + Math.sin(t + phase) * 0.2; // R
+            colors[i * 3 + 1] = 0.1; // G
+            colors[i * 3 + 2] = 0.1; // B
+          } else if (intensity > 0.4) {
+            // Icy blue flowing
+            colors[i * 3] = 0.2; // R
+            colors[i * 3 + 1] = 0.6 + Math.cos(t + phase) * 0.3; // G
+            colors[i * 3 + 2] = 0.9 + Math.sin(t + phase) * 0.1; // B
+          } else {
+            // White/aurora flowing
+            const aurora = 0.7 + Math.sin(t * 2 + phase) * 0.3;
+            colors[i * 3] = aurora; // R
+            colors[i * 3 + 1] = aurora + 0.1; // G
+            colors[i * 3 + 2] = aurora + 0.2; // B
+          }
         }
-      }
 
-      geometry.attributes.position.needsUpdate = true;
-      geometry.attributes.color.needsUpdate = true;
+        geometry.attributes.position.needsUpdate = true;
+        geometry.attributes.color.needsUpdate = true;
+      });
 
-      // Slowly rotate the entire scene
-      points.rotation.y += 0.002;
-      points.rotation.x += 0.001;
+      // Gentle camera movement
+      camera.position.x = Math.sin(t * 0.1) * 2;
+      camera.position.y = Math.cos(t * 0.15) * 1;
 
       renderer.render(scene, camera);
       animationIdRef.current = requestAnimationFrame(animate);
@@ -164,16 +177,12 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
         currentMount.removeChild(renderer.domElement);
       }
       
+      // Clean up geometries and materials
+      geometries.forEach(geometry => geometry.dispose());
+      materials.forEach(material => material.dispose());
+      
       if (renderer) {
         renderer.dispose();
-      }
-      
-      if (geometry) {
-        geometry.dispose();
-      }
-      
-      if (material) {
-        material.dispose();
       }
     };
   }, []);
@@ -184,7 +193,7 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       className={`fixed inset-0 -z-10 ${className}`}
       style={{ 
         pointerEvents: 'none',
-        opacity: 0.6
+        opacity: 0.8
       }} 
     />
   );

@@ -73,12 +73,9 @@ export default function YouthNode() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen flex items-center justify-center">
+      <section className="relative overflow-hidden min-h-screen flex items-center justify-center bg-black">
         {/* Three.js Mathematical Background */}
         <ThreeJSBackground />
-        
-        {/* Canadian Gradient Overlay */}
-        <div className="absolute inset-0 canadian-gradient opacity-80 canadian-pattern" />
         
         <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
           <motion.div
@@ -88,13 +85,13 @@ export default function YouthNode() {
             variants={staggerContainer}
           >
                          <motion.h1 
-               className="text-5xl lg:text-7xl font-bold mb-6 text-gradient-canadian drop-shadow-lg hero-text-glow"
+               className="text-5xl lg:text-7xl font-bold mb-6 text-white drop-shadow-lg"
                variants={fadeInUp}
              >
                Building Canada&apos;s Innovation Future
              </motion.h1>
             <motion.p 
-              className="text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-md"
+              className="text-xl lg:text-2xl text-white/80 mb-8 max-w-3xl mx-auto drop-shadow-md"
               variants={fadeInUp}
             >
               Empowering Gen Z with skills in AI, Deep Tech, and Emerging Industries
@@ -102,7 +99,7 @@ export default function YouthNode() {
                          <motion.div variants={fadeInUp}>
                <Button 
                  size="lg" 
-                 className="bg-maple-red hover:bg-maple-red-dark text-white px-8 py-6 text-lg rounded-2xl group maple-leaf-shadow hover-lift northern-glow backdrop-blur-sm"
+                 className="bg-maple-red hover:bg-maple-red-dark text-white px-8 py-6 text-lg rounded-2xl group maple-leaf-shadow hover-lift northern-glow backdrop-blur-sm border border-maple-red/30"
                  onClick={() => scrollToSection('mission')}
                >
                  Read the Mission
@@ -111,47 +108,6 @@ export default function YouthNode() {
              </motion.div>
           </motion.div>
         </div>
-        
-                 {/* Enhanced Floating Elements */}
-         <div className="absolute inset-0 overflow-hidden pointer-events-none z-5">
-           <motion.div 
-             className="absolute top-20 left-20 w-32 h-32 bg-icy-blue/30 rounded-full northern-glow blur-sm backdrop-blur-sm"
-             animate={{ 
-               y: [0, -20, 0],
-               scale: [1, 1.1, 1],
-               opacity: [0.4, 0.7, 0.4]
-             }}
-             transition={{ duration: 6, repeat: Infinity }}
-           />
-           <motion.div 
-             className="absolute bottom-20 right-20 w-24 h-24 bg-forest-green/30 rounded-full maple-leaf-shadow blur-sm backdrop-blur-sm"
-             animate={{ 
-               y: [0, 20, 0],
-               scale: [1, 1.2, 1],
-               opacity: [0.5, 0.8, 0.5]
-             }}
-             transition={{ duration: 4, repeat: Infinity }}
-           />
-           <motion.div 
-             className="absolute top-1/2 right-40 w-16 h-16 bg-maple-red/30 rounded-full northern-glow blur-sm backdrop-blur-sm"
-             animate={{ 
-               y: [0, -10, 0],
-               rotate: [0, 180, 360],
-               opacity: [0.3, 0.6, 0.3]
-             }}
-             transition={{ duration: 8, repeat: Infinity }}
-           />
-           <motion.div 
-             className="absolute top-1/3 left-1/2 w-20 h-20 bg-northern-lights/40 rounded-full blur-md backdrop-blur-sm"
-             animate={{ 
-               x: [-10, 10, -10],
-               y: [-5, 5, -5],
-               scale: [1, 1.3, 1],
-               opacity: [0.2, 0.5, 0.2]
-             }}
-             transition={{ duration: 10, repeat: Infinity }}
-           />
-         </div>
       </section>
 
       {/* Mission & Vision */}
