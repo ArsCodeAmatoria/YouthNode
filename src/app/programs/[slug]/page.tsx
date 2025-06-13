@@ -10,15 +10,15 @@ import { use } from 'react';
 import { LucideIcon } from 'lucide-react';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
+  initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.4, ease: "easeOut" }
 };
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.05
     }
   }
 };
@@ -227,7 +227,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -303,7 +303,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             variants={staggerContainer}
             className="max-w-6xl mx-auto"
           >
@@ -338,7 +338,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
           <motion.div
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
