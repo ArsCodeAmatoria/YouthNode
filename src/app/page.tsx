@@ -1088,10 +1088,10 @@ export default function YouthNode() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-2xl font-bold mb-4 text-maple-red">YouthNode</h3>
-              <p className="text-background/80 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Building Canada&apos;s Innovation Future
               </p>
-              <div className="flex items-center gap-2 text-background/80">
+              <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4" />
                 <span>Made with ❤️ in Canada</span>
               </div>
@@ -1099,7 +1099,7 @@ export default function YouthNode() {
             
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
-              <div className="space-y-2 text-background/80">
+              <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4" />
                   <span>hello@youthnode.org</span>
@@ -1110,14 +1110,14 @@ export default function YouthNode() {
             <div>
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex gap-4">
-                <Twitter className="h-5 w-5 text-background/80 hover:text-icy-blue cursor-pointer transition-colors" />
-                <Linkedin className="h-5 w-5 text-background/80 hover:text-icy-blue cursor-pointer transition-colors" />
-                <Github className="h-5 w-5 text-background/80 hover:text-icy-blue cursor-pointer transition-colors" />
+                <Twitter className="h-5 w-5 text-muted-foreground hover:text-icy-blue cursor-pointer transition-colors" />
+                <Linkedin className="h-5 w-5 text-muted-foreground hover:text-icy-blue cursor-pointer transition-colors" />
+                <Github className="h-5 w-5 text-muted-foreground hover:text-icy-blue cursor-pointer transition-colors" />
               </div>
             </div>
           </div>
           
-          <div className="border-t border-background/20 pt-8 text-center text-background/60">
+          <div className="border-t border-border pt-8 text-center text-muted-foreground">
             <p>© 2024 YouthNode. Nonprofit organization registration pending.</p>
           </div>
         </div>
