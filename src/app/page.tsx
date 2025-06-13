@@ -1083,7 +1083,7 @@ export default function YouthNode() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12">
+      <footer className="bg-background text-foreground py-12 border-t border-border">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
