@@ -9,8 +9,6 @@ interface ThreeJSBackgroundProps {
 
 export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundProps) {
   const mountRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const animationIdRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -18,12 +16,7 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
 
     // Scene setup
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
     
     const renderer = new THREE.WebGLRenderer({ 
       alpha: true, 
@@ -31,122 +24,73 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.className = 'threejs-canvas';
     mountRef.current.appendChild(renderer.domElement);
 
-    // Store references
-    sceneRef.current = scene;
-    rendererRef.current = renderer;
+    // GLSL Shader - Planetary Timer
+    const vertexShader = `
+      void main() {
+        gl_Position = vec4(position, 1.0);
+      }
+    `;
 
-    // Create flowing lines geometry
-    const numLines = 100;
-    const pointsPerLine = 200;
-    const lines: THREE.Line[] = [];
-    const geometries: THREE.BufferGeometry[] = [];
-    const materials: THREE.LineBasicMaterial[] = [];
-
-    for (let lineIndex = 0; lineIndex < numLines; lineIndex++) {
-      const geometry = new THREE.BufferGeometry();
-      const positions = new Float32Array(pointsPerLine * 3);
-      const colors = new Float32Array(pointsPerLine * 3);
-
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-      const material = new THREE.LineBasicMaterial({
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.4,
-        linewidth: 2
-      });
-
-      const line = new THREE.Line(geometry, material);
-      lines.push(line);
-      geometries.push(geometry);
-      materials.push(material);
-      scene.add(line);
-    }
-
-    // Camera position
-    camera.position.z = 50;
-
-    // Animation variables
-    let t = 0;
-
-    // Mathematical function from the provided formula
-    const calculatePoint = (x: number, y: number, t: number) => {
-      const k = 9 * Math.cos(x / 8);
-      const e = y / 8 - 12.5;
-      const d = Math.sqrt(k * k + e * e);
-      const mag = d * d / 99 + Math.sin(t) / 6 + 0.5;
+    const fragmentShader = `
+      uniform float t;
+      uniform vec2 r;
       
-      const q = 99 - e * Math.sin(Math.atan2(k, e) * 7) / (d || 0.001) + k * (3 + Math.cos(d * d - t) * 2);
-      const c = d / 2 + e / 69 - t / 16;
-      
-      const pointX = q * Math.sin(c) * 0.1;
-      const pointY = (q + 19 * d) * Math.cos(c) * 0.1;
-      const pointZ = Math.sin(d + t * 2) * 5;
-      
-      return {
-        x: pointX,
-        y: pointY,
-        z: pointZ,
-        intensity: mag
-      };
-    };
+      void main() {
+        vec2 FC = gl_FragCoord.xy;
+        vec4 o = vec4(0.0);
+        
+        // Planetary timer GLSL art
+        vec2 p = (FC.xy * 2.0 - r) / r.x * 0.25;
+        vec3 C = vec3(0.0);
+        
+        for(float i = 1.0; i < 99.0; i++) {
+          float j = i;
+          vec2 q = p - vec2(
+            sin(5.0 + cos(t * 0.5) + sin(t * 0.5) / j * 99.0) * 0.4,
+            sin(t * 0.5 - j)
+          ) * 0.1;
+          C += 0.0025 / length(q * 5.0);
+        }
+        
+        o += vec4(C, 0.0) - 0.008 / (length(p) - 0.108);
+        o += -1.2;
+        
+        // Add Canadian color theme
+        vec3 canadianColor = mix(
+          vec3(0.8, 0.1, 0.1), // Maple red
+          vec3(0.2, 0.6, 0.9), // Icy blue
+          sin(t * 0.3 + length(p) * 3.0) * 0.5 + 0.5
+        );
+        
+        o.rgb = mix(o.rgb, canadianColor, 0.3);
+        o.a = clamp(o.r + o.g + o.b, 0.0, 0.8);
+        
+        gl_FragColor = o;
+      }
+    `;
+
+    // Create shader material
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        t: { value: 0.0 },
+        r: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+      },
+      vertexShader,
+      fragmentShader,
+      transparent: true,
+      blending: THREE.AdditiveBlending
+    });
+
+    // Create fullscreen quad
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
 
     // Animation loop
     const animate = () => {
-      t += Math.PI / 45;
-
-      lines.forEach((line, lineIndex) => {
-        const geometry = line.geometry;
-        const positions = geometry.attributes.position.array as Float32Array;
-        const colors = geometry.attributes.color.array as Float32Array;
-
-        // Create flowing lines based on the mathematical formula
-        for (let i = 0; i < pointsPerLine; i++) {
-          const x = (lineIndex * 2) + (i * 0.5) - 50;
-          const y = (i * 0.3) - 30;
-          
-          const point = calculatePoint(x, y, t + lineIndex * 0.1);
-          
-          // Set position
-          positions[i * 3] = point.x;
-          positions[i * 3 + 1] = point.y;
-          positions[i * 3 + 2] = point.z;
-          
-          // Set color based on intensity and Canadian theme
-          const intensity = Math.abs(point.intensity);
-          const phase = (lineIndex / numLines) * Math.PI * 2;
-          
-          if (intensity > 0.7) {
-            // Maple red flowing
-            colors[i * 3] = 0.8 + Math.sin(t + phase) * 0.2; // R
-            colors[i * 3 + 1] = 0.1; // G
-            colors[i * 3 + 2] = 0.1; // B
-          } else if (intensity > 0.4) {
-            // Icy blue flowing
-            colors[i * 3] = 0.2; // R
-            colors[i * 3 + 1] = 0.6 + Math.cos(t + phase) * 0.3; // G
-            colors[i * 3 + 2] = 0.9 + Math.sin(t + phase) * 0.1; // B
-          } else {
-            // White/aurora flowing
-            const aurora = 0.7 + Math.sin(t * 2 + phase) * 0.3;
-            colors[i * 3] = aurora; // R
-            colors[i * 3 + 1] = aurora + 0.1; // G
-            colors[i * 3 + 2] = aurora + 0.2; // B
-          }
-        }
-
-        geometry.attributes.position.needsUpdate = true;
-        geometry.attributes.color.needsUpdate = true;
-      });
-
-      // Gentle camera movement
-      camera.position.x = Math.sin(t * 0.1) * 2;
-      camera.position.y = Math.cos(t * 0.15) * 1;
-
+      material.uniforms.t.value += 0.016; // ~60fps timing
       renderer.render(scene, camera);
       animationIdRef.current = requestAnimationFrame(animate);
     };
@@ -155,11 +99,11 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
 
     // Handle window resize
     const handleResize = () => {
-      if (!camera || !renderer) return;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
       
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(width, height);
+      material.uniforms.r.value.set(width, height);
     };
 
     window.addEventListener('resize', handleResize);
@@ -177,13 +121,9 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
         currentMount.removeChild(renderer.domElement);
       }
       
-      // Clean up geometries and materials
-      geometries.forEach(geometry => geometry.dispose());
-      materials.forEach(material => material.dispose());
-      
-      if (renderer) {
-        renderer.dispose();
-      }
+      geometry.dispose();
+      material.dispose();
+      renderer.dispose();
     };
   }, []);
 
@@ -193,7 +133,7 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       className={`absolute inset-0 ${className}`}
       style={{ 
         pointerEvents: 'none',
-        opacity: 0.8,
+        opacity: 0.6,
         zIndex: 1
       }} 
     />
