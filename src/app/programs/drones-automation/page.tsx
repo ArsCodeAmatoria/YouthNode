@@ -93,7 +93,7 @@ export default function DronesAutomation() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/15">
+                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
                       <Cpu className="h-6 w-6 text-icy-blue" />
@@ -113,7 +113,7 @@ export default function DronesAutomation() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/15">
+                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
                       <Globe className="h-6 w-6 text-maple-red" />
@@ -133,7 +133,7 @@ export default function DronesAutomation() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/15">
+                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
                       <TrendingUp className="h-6 w-6 text-forest-green" />

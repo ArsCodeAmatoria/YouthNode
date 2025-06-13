@@ -123,7 +123,7 @@ export default function YouthNode() {
             className="grid lg:grid-cols-2 gap-12"
           >
                          <motion.div variants={fadeInUp}>
-               <Card className="h-full border-icy-blue/30 bg-gradient-to-br from-snow-white to-icy-blue-light/20 hover-lift frost-border">
+                                <Card className="h-full border-icy-blue/30 bg-gradient-to-br from-card to-icy-blue-light/20 hover-lift frost-border">
                  <CardHeader>
                    <CardTitle className="text-3xl text-icy-blue-dark flex items-center gap-3">
                      <Users className="h-8 w-8 text-icy-blue" />
@@ -142,7 +142,7 @@ export default function YouthNode() {
              </motion.div>
 
                          <motion.div variants={fadeInUp}>
-               <Card className="h-full border-maple-red/30 bg-gradient-to-br from-snow-white to-maple-red-light/20 hover-lift maple-leaf-shadow">
+                                <Card className="h-full border-maple-red/30 bg-gradient-to-br from-card to-maple-red-light/20 hover-lift maple-leaf-shadow">
                  <CardHeader>
                    <CardTitle className="text-3xl text-maple-red-dark flex items-center gap-3">
                      <TrendingUp className="h-8 w-8 text-maple-red" />
@@ -241,7 +241,7 @@ export default function YouthNode() {
              >
                {/* Brain Drain Chart */}
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/10">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/10">
                    <CardHeader>
                      <CardTitle className="text-xl text-maple-red-dark text-center">
                        Canadian Talent Migration
@@ -283,7 +283,7 @@ export default function YouthNode() {
 
                {/* Innovation Rankings */}
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/10">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/10">
                    <CardHeader>
                      <CardTitle className="text-xl text-icy-blue-dark text-center">
                        Global Innovation Potential
@@ -331,7 +331,7 @@ export default function YouthNode() {
 
                {/* Economic Impact */}
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/10">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/10">
                    <CardHeader>
                      <CardTitle className="text-xl text-forest-green-dark text-center">
                        Economic Impact Projection
@@ -384,7 +384,7 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/10">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/10">
                    <CardHeader>
                      <CardTitle className="text-2xl text-icy-blue-dark text-center">
                        Canadian-Born Gen Z Advantages
@@ -440,7 +440,7 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/10">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/10">
                    <CardHeader>
                      <CardTitle className="text-2xl text-forest-green-dark text-center">
                        Job Creation Potential
@@ -626,7 +626,7 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/15">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/15">
                    <CardHeader>
                      <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
                        <Cog className="h-6 w-6 text-icy-blue" />
@@ -645,7 +645,7 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/15">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/15">
                    <CardHeader>
                      <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
                        <Users className="h-6 w-6 text-maple-red" />
@@ -664,7 +664,7 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/15">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/15">
                    <CardHeader>
                      <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
                        <TrendingUp className="h-6 w-6 text-forest-green" />
@@ -702,7 +702,7 @@ export default function YouthNode() {
        </section>
 
        {/* Program Areas */}
-      <section id="programs" className="py-24 bg-muted/30">
+      <section id="programs" className="py-24 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial="initial"
@@ -742,7 +742,7 @@ export default function YouthNode() {
                ].map((program, index) => (
                                  <motion.div key={index} variants={fadeInUp}>
                    <Link href={`/programs/${program.slug}`} className="block">
-                     <Card className="text-center hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
+                     <Card className="text-center hover-lift h-full frost-border bg-gradient-to-br from-card to-northern-lights/10 transition-all duration-300 hover:scale-105 hover:shadow-lg group cursor-pointer">
                        <CardContent className="pt-6">
                          <program.icon className={`h-12 w-12 mx-auto mb-4 ${program.color} group-hover:scale-110 transition-transform duration-300`} />
                          <h3 className="font-semibold text-sm group-hover:text-primary transition-colors duration-300">{program.title}</h3>
@@ -757,7 +757,7 @@ export default function YouthNode() {
       </section>
 
              {/* Funding & Sustainability */}
-       <section className="py-24 bg-muted/30">
+       <section className="py-24 bg-background">
          <div className="container mx-auto px-6 lg:px-12">
            <motion.div
              initial="initial"
@@ -777,7 +777,7 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/10">
+                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-card to-icy-blue-light/10">
                    <CardHeader>
                      <CardTitle className="text-lg text-icy-blue-dark">Government Grants</CardTitle>
                    </CardHeader>
@@ -795,7 +795,7 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-maple-red-light/10">
+                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-card to-maple-red-light/10">
                    <CardHeader>
                      <CardTitle className="text-lg text-maple-red-dark">Private Foundations</CardTitle>
                    </CardHeader>
@@ -813,7 +813,7 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-forest-green-light/10">
+                 <Card className="hover-lift h-full frost-border bg-gradient-to-br from-card to-forest-green-light/10">
                    <CardHeader>
                      <CardTitle className="text-lg text-forest-green-dark">Revenue Streams</CardTitle>
                    </CardHeader>
@@ -870,7 +870,7 @@ export default function YouthNode() {
                variants={staggerContainer}
              >
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/15">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/15">
                    <CardHeader>
                      <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
                        <Brain className="h-6 w-6 text-icy-blue" />
@@ -892,7 +892,7 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/15">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/15">
                    <CardHeader>
                      <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
                        <TrendingUp className="h-6 w-6 text-maple-red" />
@@ -914,7 +914,7 @@ export default function YouthNode() {
                </motion.div>
 
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/15">
+                 <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/15">
                    <CardHeader>
                      <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
                        <Cog className="h-6 w-6 text-forest-green" />
@@ -989,7 +989,7 @@ export default function YouthNode() {
                 { name: 'UBC & SFU', description: 'Student collaboration programs' },
               ].map((partner, index) => (
                                  <motion.div key={index} variants={fadeInUp}>
-                   <Card className="hover-lift h-full frost-border bg-gradient-to-br from-snow-white to-northern-lights/8">
+                   <Card className="hover-lift h-full frost-border bg-gradient-to-br from-card to-northern-lights/8">
                      <CardHeader>
                        <CardTitle className="text-lg text-foreground">{partner.name}</CardTitle>
                      </CardHeader>
@@ -1005,7 +1005,7 @@ export default function YouthNode() {
       </section>
 
              {/* Get Involved */}
-       <section className="py-24 bg-gradient-to-br from-snow-white via-northern-lights/5 to-icy-blue-light/10 canadian-pattern">
+       <section className="py-24 bg-gradient-to-br from-background via-northern-lights/5 to-icy-blue-light/10 canadian-pattern">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial="initial"

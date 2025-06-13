@@ -98,7 +98,7 @@ export default function CybersecurityProgram() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-icy-blue-light/15">
+                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-icy-blue-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-icy-blue-dark flex items-center gap-3">
                       <Shield className="h-6 w-6 text-icy-blue" />
@@ -119,7 +119,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/15">
+                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-maple-red-dark flex items-center gap-3">
                       <Bug className="h-6 w-6 text-maple-red" />
@@ -140,7 +140,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-forest-green-light/15">
+                <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-forest-green-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-forest-green-dark flex items-center gap-3">
                       <Eye className="h-6 w-6 text-forest-green" />
@@ -186,7 +186,7 @@ export default function CybersecurityProgram() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Terminal className="h-12 w-12 mx-auto mb-4 text-maple-red" />
                     <h3 className="font-bold text-lg mb-2">Kali Linux</h3>
@@ -198,7 +198,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Network className="h-12 w-12 mx-auto mb-4 text-icy-blue" />
                     <h3 className="font-bold text-lg mb-2">Hack The Box</h3>
@@ -210,7 +210,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Bug className="h-12 w-12 mx-auto mb-4 text-forest-green" />
                     <h3 className="font-bold text-lg mb-2">Metasploit</h3>
@@ -222,7 +222,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Eye className="h-12 w-12 mx-auto mb-4 text-maple-red" />
                     <h3 className="font-bold text-lg mb-2">Wireshark</h3>
@@ -234,7 +234,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Database className="h-12 w-12 mx-auto mb-4 text-icy-blue" />
                     <h3 className="font-bold text-lg mb-2">Splunk SIEM</h3>
@@ -246,7 +246,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Skull className="h-12 w-12 mx-auto mb-4 text-forest-green" />
                     <h3 className="font-bold text-lg mb-2">Ghidra</h3>
@@ -258,7 +258,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Lock className="h-12 w-12 mx-auto mb-4 text-maple-red" />
                     <h3 className="font-bold text-lg mb-2">Burp Suite</h3>
@@ -270,7 +270,7 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                <Card className="text-center hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                   <CardContent className="pt-6">
                     <Shield className="h-12 w-12 mx-auto mb-4 text-icy-blue" />
                     <h3 className="font-bold text-lg mb-2">YARA</h3>
@@ -353,7 +353,7 @@ export default function CybersecurityProgram() {
                 }
               ].map((quarter, index) => (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-maple-red-light/10">
+                  <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-maple-red-light/10">
                     <CardHeader>
                       <CardTitle className="text-xl text-maple-red-dark">
                         {quarter.quarter}: {quarter.title}
@@ -431,7 +431,7 @@ export default function CybersecurityProgram() {
                 }
               ].map((partner, index) => (
                 <motion.div key={index} variants={fadeInUp}>
-                  <Card className="h-full hover-lift frost-border bg-gradient-to-br from-snow-white to-northern-lights/10">
+                  <Card className="h-full hover-lift frost-border bg-gradient-to-br from-card to-northern-lights/10">
                     <CardHeader>
                       <CardTitle className="text-lg text-maple-red-dark">{partner.name}</CardTitle>
                       <p className="text-sm text-maple-red">{partner.role}</p>
