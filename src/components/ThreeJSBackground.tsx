@@ -10,6 +10,10 @@ interface ThreeJSBackgroundProps {
 export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundProps) {
   const mountRef = useRef<HTMLDivElement>(null);
   const animationIdRef = useRef<number | null>(null);
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const materialRef = useRef<THREE.ShaderMaterial | null>(null);
+  const cameraRef = useRef<THREE.OrthographicCamera | null>(null);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -20,11 +24,17 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     
     const renderer = new THREE.WebGLRenderer({ 
       alpha: true, 
-      antialias: true 
+      antialias: true,
+      preserveDrawingBuffer: true
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     mountRef.current.appendChild(renderer.domElement);
+
+    // Store references
+    sceneRef.current = scene;
+    rendererRef.current = renderer;
+    cameraRef.current = camera;
 
     // GLSL Shader - Planetary Timer
     const vertexShader = `
@@ -83,48 +93,113 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       blending: THREE.AdditiveBlending
     });
 
+    materialRef.current = material;
+
     // Create fullscreen quad
     const geometry = new THREE.PlaneGeometry(2, 2);
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    // Animation loop
+    // Animation loop with proper checks
     const animate = () => {
-      material.uniforms.t.value += 0.016; // ~60fps timing
-      renderer.render(scene, camera);
+      // Check if all references are still valid
+      if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) {
+        return;
+      }
+
+      materialRef.current.uniforms.t.value += 0.016; // ~60fps timing
+      rendererRef.current.render(sceneRef.current, cameraRef.current);
       animationIdRef.current = requestAnimationFrame(animate);
     };
 
+    // Start animation
     animate();
 
     // Handle window resize
     const handleResize = () => {
+      if (!rendererRef.current || !materialRef.current) return;
+      
       const width = window.innerWidth;
       const height = window.innerHeight;
       
-      renderer.setSize(width, height);
-      material.uniforms.r.value.set(width, height);
+      rendererRef.current.setSize(width, height);
+      materialRef.current.uniforms.r.value.set(width, height);
+    };
+
+    // Handle visibility change to ensure animation continues
+    const handleVisibilityChange = () => {
+      if (!document.hidden && !animationIdRef.current) {
+        // Restart animation if it stopped
+        animate();
+      }
+    };
+
+    // Handle page focus to restart animation
+    const handleFocus = () => {
+      if (!animationIdRef.current) {
+        animate();
+      }
     };
 
     window.addEventListener('resize', handleResize);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleFocus);
 
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
       
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
+        animationIdRef.current = null;
       }
       
       const currentMount = mountRef.current;
-      if (currentMount && renderer.domElement) {
-        currentMount.removeChild(renderer.domElement);
+      if (currentMount && rendererRef.current?.domElement && currentMount.contains(rendererRef.current.domElement)) {
+        currentMount.removeChild(rendererRef.current.domElement);
       }
       
       geometry.dispose();
-      material.dispose();
-      renderer.dispose();
+      if (materialRef.current) {
+        materialRef.current.dispose();
+      }
+      if (rendererRef.current) {
+        rendererRef.current.dispose();
+      }
+      
+      // Clear refs
+      sceneRef.current = null;
+      rendererRef.current = null;
+      materialRef.current = null;
+      cameraRef.current = null;
     };
+  }, []);
+
+  // Additional effect to ensure animation restarts after navigation
+  useEffect(() => {
+    const checkAndRestart = () => {
+      if (!animationIdRef.current && materialRef.current && rendererRef.current && sceneRef.current && cameraRef.current) {
+        const animate = () => {
+          if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) {
+            return;
+          }
+
+          materialRef.current.uniforms.t.value += 0.016;
+          rendererRef.current.render(sceneRef.current, cameraRef.current);
+          animationIdRef.current = requestAnimationFrame(animate);
+        };
+        
+        animate();
+      }
+    };
+
+    // Check immediately and after a short delay
+    checkAndRestart();
+    const timer = setTimeout(checkAndRestart, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
