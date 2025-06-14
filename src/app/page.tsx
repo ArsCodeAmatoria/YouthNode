@@ -48,7 +48,9 @@ import {
   LineChart,
   Wallet,
   Coins,
-  Gamepad2
+  Gamepad2,
+  Calculator,
+  Eye
 } from 'lucide-react';
 import ThreeJSBackground from '@/components/ThreeJSBackground';
 
@@ -780,6 +782,8 @@ export default function YouthNode() {
                 { icon: Shield, title: 'AI Ethics & Safety', color: 'text-lime-green-dark', slug: 'ai-ethics-safety' },
                 { icon: Car, title: 'Autonomous Systems', color: 'text-lime-green-dark', slug: 'autonomous-systems' },
                 { icon: Gamepad2, title: 'Gaming Development', color: 'text-lime-green-dark', slug: 'gaming-development' },
+                { icon: Calculator, title: 'Mathematical Modeling', color: 'text-lime-green-dark', slug: 'mathematical-modeling' },
+                { icon: Eye, title: 'Psychology & Technology', color: 'text-lime-green-dark', slug: 'psychology-tech' },
                 { icon: LineChart, title: 'Quantitative Trading', color: 'text-lime-green-dark', slug: 'quant-trading' },
                 { icon: TrendingUp, title: 'Algorithmic Trading', color: 'text-lime-green-dark', slug: 'algorithmic-trading' },
                 { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-lime-green-dark', slug: 'web3-blockchain' },
