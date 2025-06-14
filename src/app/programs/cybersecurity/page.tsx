@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Shield, Lock, Bug, Skull, Eye, ArrowLeft, Terminal, Network, Database } from 'lucide-react';
-import Link from 'next/link';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -23,18 +22,18 @@ const staggerContainer = {
 export default function CybersecurityProgram() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="bg-background/95 backdrop-blur-sm border-b sticky top-0 z-50">
+      {/* Navigation Header */}
+      <header className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-6 py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-lime-green hover:text-lime-green-dark transition-colors">
-            <ArrowLeft className="h-5 w-5" />
-            Back to ArrowLeft
-          </Link>
+          <button onClick={() => window.location.href = "/#programs"} className="inline-flex items-center gap-2 text-white hover:text-lime-green transition-colors group cursor-pointer">
+            <ArrowLeft className="h-6 w-6 group-hover:scale-110 transition-transform" />
+            <span className="font-bold text-lg">YouthNode</span>
+          </button>
         </div>
-      </nav>
+      </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-lime-green/10 via-background to-lime-green/5 py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-lime-green/10 via-background to-lime-green/5 py-24 pt-20">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             className="max-w-4xl mx-auto text-center"

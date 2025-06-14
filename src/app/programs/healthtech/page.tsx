@@ -26,10 +26,10 @@ export default function HealthTech() {
       {/* Navigation Header */}
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-6 py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-lime-green transition-colors group">
+          <button onClick={() => window.location.href = "/#programs"} className="inline-flex items-center gap-2 text-white hover:text-lime-green transition-colors group cursor-pointer">
             <ArrowLeft className="h-6 w-6 group-hover:scale-110 transition-transform" />
             <span className="font-bold text-lg">YouthNode</span>
-          </Link>
+          </button>
         </div>
       </header>
 
