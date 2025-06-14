@@ -297,4 +297,9 @@
     50% { opacity: 0.95; }
     75% { opacity: 0.98; }
   }
+  
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
 }
