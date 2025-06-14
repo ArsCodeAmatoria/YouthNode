@@ -113,7 +113,7 @@ export default function AlgorithmicTrading() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
                       <Server className="h-6 w-6 text-lime-green" />
