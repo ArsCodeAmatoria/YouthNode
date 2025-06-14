@@ -13,7 +13,7 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const pointsRef = useRef<THREE.Points[]>([]);
+  const linesRef = useRef<THREE.Line[]>([]);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -35,100 +35,81 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     rendererRef.current = renderer;
     cameraRef.current = camera;
 
-    // Create canvas texture for billboard points
-    const createCircleTexture = (color: string, size: number = 64) => {
-      const canvas = document.createElement('canvas');
-      canvas.width = size;
-      canvas.height = size;
-      const context = canvas.getContext('2d')!;
-      
-      // Create radial gradient
-      const gradient = context.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
-      gradient.addColorStop(0, color);
-      gradient.addColorStop(0.5, color.replace('1)', '0.5)'));
-      gradient.addColorStop(1, color.replace('1)', '0)'));
-      
-      context.fillStyle = gradient;
-      context.fillRect(0, 0, size, size);
-      
-      return new THREE.CanvasTexture(canvas);
-    };
+    // Create multiple line systems with different patterns
+    const lines: THREE.Line[] = [];
+    const numLines = 8;
+    const pointsPerLine = 200;
 
-    // Create different colored textures
-    const textures = [
-      createCircleTexture('rgba(255, 255, 255, 1)'), // White
-      createCircleTexture('rgba(255, 20, 147, 1)'), // Hot pink
-      createCircleTexture('rgba(255, 105, 180, 1)'), // Hot pink light
-      createCircleTexture('rgba(199, 21, 133, 1)'), // Medium violet red
+    // Color palette - tech colors with higher contrast
+    const colors = [
+      new THREE.Color(0.9, 0.8, 0.2),  // bright lime-green
+      new THREE.Color(0.8, 0.8, 0.9),  // bright tech-gray/blue
+      new THREE.Color(0.4, 0.9, 0.6),  // bright accent-green
+      new THREE.Color(1.0, 1.0, 1.0),  // pure white
     ];
 
-    // Create multiple point systems
-    const pointSystems: THREE.Points[] = [];
-    const numSystems = 4;
-    const pointsPerSystem = 500;
-
-    for (let s = 0; s < numSystems; s++) {
+    for (let i = 0; i < numLines; i++) {
       const geometry = new THREE.BufferGeometry();
-      const positions = new Float32Array(pointsPerSystem * 3);
-      const colors = new Float32Array(pointsPerSystem * 3);
-      const sizes = new Float32Array(pointsPerSystem);
+      const positions = new Float32Array(pointsPerLine * 3);
+      const lineColors = new Float32Array(pointsPerLine * 3);
 
-      // Generate random positions and properties
-      for (let i = 0; i < pointsPerSystem; i++) {
-        // Position
-        positions[i * 3] = (Math.random() - 0.5) * 100;
-        positions[i * 3 + 1] = (Math.random() - 0.5) * 100;
-        positions[i * 3 + 2] = (Math.random() - 0.5) * 100;
-
-        // Colors - vary based on system
-        const baseColor = new THREE.Color();
-        switch (s) {
-          case 0:
-            baseColor.setHSL(0, 0, 0.8 + Math.random() * 0.2); // White variations
-            break;
-          case 1:
-            baseColor.setHSL(0.92, 0.9, 0.6 + Math.random() * 0.3); // Hot pink variations
-            break;
-          case 2:
-            baseColor.setHSL(0.88, 0.8, 0.7 + Math.random() * 0.3); // Hot pink light variations
-            break;
-          case 3:
-            baseColor.setHSL(0.85, 0.85, 0.5 + Math.random() * 0.3); // Medium violet red variations
-            break;
-        }
+      // Generate line path - different patterns for each line
+      for (let j = 0; j < pointsPerLine; j++) {
+        const t = j / (pointsPerLine - 1);
+        const angle = t * Math.PI * 4 + (i * Math.PI * 0.25);
+        const radius = 20 + i * 5;
         
-        colors[i * 3] = baseColor.r;
-        colors[i * 3 + 1] = baseColor.g;
-        colors[i * 3 + 2] = baseColor.b;
+        // Create flowing, organic paths
+        const x = Math.sin(angle) * radius + Math.sin(angle * 3) * 5;
+        const y = Math.cos(angle * 0.7) * radius * 0.5 + Math.sin(t * Math.PI * 6) * 10;
+        const z = Math.sin(angle * 0.5) * 15 + Math.cos(t * Math.PI * 4) * 8;
 
-        // Sizes
-        sizes[i] = 10 + Math.random() * 20;
+        positions[j * 3] = x;
+        positions[j * 3 + 1] = y;
+        positions[j * 3 + 2] = z;
+
+        // Color gradient along the line with higher intensity
+        const color = colors[i % colors.length];
+        const intensity = 0.6 + 0.4 * Math.sin(t * Math.PI); // Increased base intensity
+        
+        lineColors[j * 3] = color.r * intensity;
+        lineColors[j * 3 + 1] = color.g * intensity;
+        lineColors[j * 3 + 2] = color.b * intensity;
       }
 
       geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-      geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+      geometry.setAttribute('color', new THREE.BufferAttribute(lineColors, 3));
 
-      // Create material with billboard texture
-      const material = new THREE.PointsMaterial({
-        size: 15,
-        map: textures[s],
-        transparent: true,
-        opacity: 0.8,
+      // Set initial draw range to 0 (nothing visible)
+      geometry.setDrawRange(0, 0);
+
+      // Create line material with higher opacity and glow effect
+      const material = new THREE.LineBasicMaterial({
         vertexColors: true,
-        blending: THREE.AdditiveBlending,
-        sizeAttenuation: true,
-        alphaTest: 0.1
+        transparent: true,
+        opacity: 0.95, // Increased opacity
+        linewidth: 3   // Thicker lines
       });
 
-      const points = new THREE.Points(geometry, material);
-      pointSystems.push(points);
-      scene.add(points);
+      const line = new THREE.Line(geometry, material);
+      
+      // Store animation data
+      line.userData = {
+        maxPoints: pointsPerLine,
+        currentPoints: 0,
+        speed: 0.5 + Math.random() * 1.5,
+        phase: i * 0.3,
+        direction: 1
+      };
+
+      lines.push(line);
+      scene.add(line);
     }
 
-    pointsRef.current = pointSystems;
+    linesRef.current = lines;
 
-    camera.position.set(0, 0, 50);
+    // Position camera
+    camera.position.set(0, 0, 80);
 
     // Animation loop
     const animate = () => {
@@ -138,41 +119,35 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       
       const time = Date.now() * 0.001;
       
-      // Animate each point system
-      pointsRef.current.forEach((points, index) => {
-        if (points) {
-          // Rotate each system differently
-          points.rotation.x = time * (0.1 + index * 0.05);
-          points.rotation.y = time * (0.15 + index * 0.03);
-          points.rotation.z = time * (0.05 + index * 0.02);
-          
-          // Subtle scaling animation
-          const scale = 1 + Math.sin(time * 2 + index) * 0.1;
-          points.scale.setScalar(scale);
-          
-          // Update individual point positions for floating effect
-          const positions = points.geometry.attributes.position.array as Float32Array;
-          const originalPositions = points.userData.originalPositions;
-          
-          if (!originalPositions) {
-            // Store original positions on first run
-            points.userData.originalPositions = new Float32Array(positions.length);
-            points.userData.originalPositions.set(positions);
-          } else {
-            // Apply floating motion
-            for (let i = 0; i < positions.length; i += 3) {
-              positions[i] = originalPositions[i] + Math.sin(time * 2 + i * 0.01) * 2;
-              positions[i + 1] = originalPositions[i + 1] + Math.cos(time * 1.5 + i * 0.01) * 2;
-              positions[i + 2] = originalPositions[i + 2] + Math.sin(time * 1.8 + i * 0.01) * 2;
-            }
-            points.geometry.attributes.position.needsUpdate = true;
-          }
-        }
+      // Animate each line's draw range
+      linesRef.current.forEach((line, index) => {
+        const userData = line.userData;
+        
+        // Calculate current draw range based on time and line-specific parameters
+        const phase = time * userData.speed + userData.phase;
+        const progress = (Math.sin(phase) + 1) * 0.5; // 0 to 1
+        
+        // Dynamic point count that creates flowing effect
+        const targetPoints = Math.floor(progress * userData.maxPoints);
+        userData.currentPoints = targetPoints;
+        
+        // Update draw range
+        line.geometry.setDrawRange(0, Math.max(2, userData.currentPoints));
+        
+        // Rotate lines for dynamic movement
+        line.rotation.x = time * 0.1 * (index % 2 === 0 ? 1 : -1);
+        line.rotation.y = time * 0.15 + index * 0.2;
+        line.rotation.z = time * 0.05 * (index % 3 === 0 ? 1 : -1);
+        
+        // Subtle scaling animation
+        const scale = 0.8 + 0.2 * Math.sin(time * 2 + index);
+        line.scale.setScalar(scale);
       });
       
-      // Subtle camera movement
-      cameraRef.current.position.x = Math.sin(time * 0.1) * 5;
-      cameraRef.current.position.y = Math.cos(time * 0.15) * 3;
+      // Camera movement for dynamic perspective
+      cameraRef.current.position.x = Math.sin(time * 0.1) * 10;
+      cameraRef.current.position.y = Math.cos(time * 0.08) * 8;
+      cameraRef.current.position.z = 80 + Math.sin(time * 0.12) * 15;
       cameraRef.current.lookAt(0, 0, 0);
       
       rendererRef.current.render(sceneRef.current, cameraRef.current);
@@ -225,18 +200,13 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
         currentMount.removeChild(rendererRef.current.domElement);
       }
       
-      // Dispose of geometries, materials, and textures
-      pointSystems.forEach(points => {
-        points.geometry.dispose();
-        if (points.material instanceof THREE.PointsMaterial) {
-          points.material.dispose();
-          if (points.material.map) {
-            points.material.map.dispose();
-          }
+      // Dispose of geometries and materials
+      lines.forEach(line => {
+        line.geometry.dispose();
+        if (line.material instanceof THREE.LineBasicMaterial) {
+          line.material.dispose();
         }
       });
-      
-      textures.forEach(texture => texture.dispose());
       
       if (rendererRef.current) {
         rendererRef.current.dispose();
@@ -246,7 +216,7 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       sceneRef.current = null;
       rendererRef.current = null;
       cameraRef.current = null;
-      pointsRef.current = [];
+      linesRef.current = [];
     };
   }, []);
 
@@ -262,32 +232,28 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
           const time = Date.now() * 0.001;
           
           // Continue animation logic
-          pointsRef.current.forEach((points, index) => {
-            if (points) {
-              points.rotation.x = time * (0.1 + index * 0.05);
-              points.rotation.y = time * (0.15 + index * 0.03);
-              points.rotation.z = time * (0.05 + index * 0.02);
-              
-              const scale = 1 + Math.sin(time * 2 + index) * 0.1;
-              points.scale.setScalar(scale);
-              
-              // Update positions
-              const positions = points.geometry.attributes.position.array as Float32Array;
-              const originalPositions = points.userData.originalPositions;
-              
-              if (originalPositions) {
-                for (let i = 0; i < positions.length; i += 3) {
-                  positions[i] = originalPositions[i] + Math.sin(time * 2 + i * 0.01) * 2;
-                  positions[i + 1] = originalPositions[i + 1] + Math.cos(time * 1.5 + i * 0.01) * 2;
-                  positions[i + 2] = originalPositions[i + 2] + Math.sin(time * 1.8 + i * 0.01) * 2;
-                }
-                points.geometry.attributes.position.needsUpdate = true;
-              }
-            }
+          linesRef.current.forEach((line, index) => {
+            const userData = line.userData;
+            
+            const phase = time * userData.speed + userData.phase;
+            const progress = (Math.sin(phase) + 1) * 0.5;
+            
+            const targetPoints = Math.floor(progress * userData.maxPoints);
+            userData.currentPoints = targetPoints;
+            
+            line.geometry.setDrawRange(0, Math.max(2, userData.currentPoints));
+            
+            line.rotation.x = time * 0.1 * (index % 2 === 0 ? 1 : -1);
+            line.rotation.y = time * 0.15 + index * 0.2;
+            line.rotation.z = time * 0.05 * (index % 3 === 0 ? 1 : -1);
+            
+            const scale = 0.8 + 0.2 * Math.sin(time * 2 + index);
+            line.scale.setScalar(scale);
           });
           
-          cameraRef.current.position.x = Math.sin(time * 0.1) * 5;
-          cameraRef.current.position.y = Math.cos(time * 0.15) * 3;
+          cameraRef.current.position.x = Math.sin(time * 0.1) * 10;
+          cameraRef.current.position.y = Math.cos(time * 0.08) * 8;
+          cameraRef.current.position.z = 80 + Math.sin(time * 0.12) * 15;
           cameraRef.current.lookAt(0, 0, 0);
           
           rendererRef.current.render(sceneRef.current, cameraRef.current);
@@ -310,7 +276,7 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       className={`absolute inset-0 ${className}`}
       style={{ 
         pointerEvents: 'none',
-        opacity: 0.6,
+        opacity: 0.9,
         zIndex: 1
       }} 
     />
