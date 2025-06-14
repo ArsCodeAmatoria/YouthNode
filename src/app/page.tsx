@@ -125,7 +125,7 @@ export default function YouthNode() {
             >
               <div className="bg-lime-green/20 border border-lime-green/40 rounded-full px-6 py-2 backdrop-blur-sm">
                 <span className="text-lime-green-dark font-semibold text-sm">
-                  🚀 2-Year Pilot Program • Launching 2025
+                  2-Year Pilot Program • Launching 2025
                 </span>
               </div>
             </motion.div>
@@ -163,18 +163,18 @@ export default function YouthNode() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    Equip Canadian-born Gen Z with future-critical skills through project-oriented, 
-                    hands-on learning experiences. Beyond technical mastery, we develop confident 
-                    communicators, skilled networkers, and innovative entrepreneurs who can pitch 
-                    ideas, run workshops, and lead the next generation of Canadian innovation.
+                    Discover and develop exceptional Canadian talent through project-oriented, 
+                    hands-on learning experiences. We identify high-potential Gen Z individuals and 
+                    equip them with the skills, networks, and confidence needed to create innovative 
+                    Canadian businesses that compete globally while staying rooted at home.
                   </p>
                   <div className="bg-lime-green/10 border border-lime-green/30 rounded-lg p-4">
                     <p className="text-sm text-lime-green-dark font-semibold mb-1">
-                      🚀 PILOT PROGRAM
+                      PILOT PROGRAM
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      This is a 2-year pilot initiative designed to validate our approach and measure impact 
-                      before scaling across Canada.
+                      This is a 2-year pilot initiative designed to identify exceptional Canadian talent and 
+                      foster the creation of innovative Canadian businesses before scaling nationwide.
                     </p>
                   </div>
                 </CardContent>
@@ -191,9 +191,10 @@ export default function YouthNode() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    A Canada that no longer exports innovation—but leads it. We envision a nation 
-                    where homegrown talent drives breakthrough technologies and creates the companies 
-                    of tomorrow, right here at home.
+                    A Canada where exceptional talent stays home to build world-class businesses. 
+                    We envision a thriving ecosystem of Canadian-founded companies that compete 
+                    globally, retain top talent domestically, and establish Canada as the premier 
+                    destination for innovation and entrepreneurship.
                   </p>
                 </CardContent>
               </Card>
@@ -1073,16 +1074,16 @@ export default function YouthNode() {
                   <CardContent className="space-y-4">
                     <div className="bg-lime-green/10 border border-lime-green/30 rounded-lg p-3 mb-4">
                       <p className="text-xs text-lime-green-dark font-semibold mb-1">
-                        🚀 LIMITED PILOT COHORT
+                        LIMITED PILOT COHORT
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        2-year program • 2025-2027 • Apply early for priority consideration
+                        2-year program • 2025-2027 • Seeking exceptional Canadian talent
                       </p>
                     </div>
                     <p className="text-muted-foreground">
-                      Ready to build the future? Join our pilot program for project-based learning, 
-                      workshop leadership, and networking opportunities that will transform you into 
-                      a confident innovator and communicator.
+                      Are you exceptional Canadian talent ready to build a world-class business? 
+                      Join our pilot program to develop your skills, build your network, and gain 
+                      the confidence to create innovative companies that compete globally from Canada.
                     </p>
                     <Button className="bg-tech-gray hover:bg-tech-gray-dark text-white w-full tech-glow hover-lift">
                       Join the Pilot Program
@@ -1098,9 +1099,9 @@ export default function YouthNode() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-muted-foreground">
-                      Partner with us to access a pipeline of technical talent who can also 
-                      communicate, lead, and innovate. Our students bring project portfolios, 
-                      presentation skills, and real-world problem-solving experience.
+                      Partner with us to discover exceptional Canadian talent before they create 
+                      competing businesses. Our participants bring technical excellence, leadership 
+                      skills, and entrepreneurial mindset—perfect for key roles or future partnerships.
                     </p>
                     <Button className="bg-lime-green hover:bg-lime-green-dark text-white w-full lime-shadow hover-lift">
                       Partner With Us
@@ -1168,7 +1169,7 @@ export default function YouthNode() {
           <div className="border-t border-border pt-8 text-center text-muted-foreground">
             <p>© 2025 YouthNode. Nonprofit organization registration pending.</p>
             <p className="text-sm mt-2">
-              🚀 Pilot Program 2025-2027 • Building Canada&apos;s Innovation Future
+              Pilot Program 2025-2027 • Discovering Talent • Creating Canadian Businesses
             </p>
           </div>
         </div>
