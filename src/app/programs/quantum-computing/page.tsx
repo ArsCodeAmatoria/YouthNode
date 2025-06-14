@@ -115,8 +115,8 @@ export default function QuantumComputing() {
               <motion.div variants={fadeInUp}>
                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-tech-gray-dark flex items-center gap-3">
-                      <Globe className="h-6 w-6 text-tech-gray" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <Globe className="h-6 w-6 text-lime-green" />
                       Real Applications
                     </CardTitle>
                   </CardHeader>

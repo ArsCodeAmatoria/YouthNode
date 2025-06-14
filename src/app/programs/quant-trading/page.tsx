@@ -43,7 +43,7 @@ export default function QuantTrading() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <LineChart className="h-16 w-16 mx-auto text-tech-gray mb-4" />
+              <LineChart className="h-16 w-16 mx-auto text-lime-green mb-4" />
             </motion.div>
             <motion.h1 
               className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-tech"
@@ -61,7 +61,7 @@ export default function QuantTrading() {
             <motion.div variants={fadeInUp}>
               <Button 
                 size="lg" 
-                className="bg-tech-gray hover:bg-tech-gray-dark text-white px-8 py-6 text-lg rounded-2xl tech-glow hover-lift"
+                className="bg-lime-green hover:bg-lime-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
               >
                 Apply to Program
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -95,8 +95,8 @@ export default function QuantTrading() {
               <motion.div variants={fadeInUp}>
                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-tech-gray-dark flex items-center gap-3">
-                      <Brain className="h-6 w-6 text-tech-gray" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <Brain className="h-6 w-6 text-lime-green" />
                       Core Technologies
                     </CardTitle>
                   </CardHeader>
@@ -188,7 +188,7 @@ export default function QuantTrading() {
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="hover-lift h-full liquid-glass">
                     <CardHeader>
-                      <CardTitle className="text-lg text-tech-gray">{partner.org}</CardTitle>
+                      <CardTitle className="text-lg text-lime-green">{partner.org}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">{partner.focus}</p>
@@ -226,7 +226,7 @@ export default function QuantTrading() {
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 
                 size="lg" 
-                className="bg-tech-gray hover:bg-tech-gray-dark text-white px-8 py-6 text-lg rounded-2xl tech-glow hover-lift"
+                className="bg-lime-green hover:bg-lime-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
               >
                 Apply Now
               </Button>

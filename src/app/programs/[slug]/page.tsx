@@ -211,7 +211,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
             <motion.div variants={fadeInUp}>
               <Button 
                 size="lg" 
-                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl tech-glow hover-lift`}
+                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift`}
               >
                 Apply to Program
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -245,7 +245,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               <motion.div variants={fadeInUp}>
                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-tech-gray-dark">
+                    <CardTitle className="text-xl text-lime-green-dark">
                       Core Skills
                     </CardTitle>
                   </CardHeader>
@@ -357,7 +357,7 @@ export default function ProgramPage({ params }: ProgramPageProps) {
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 
                 size="lg" 
-                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl tech-glow hover-lift`}
+                className={`bg-${program.color} hover:bg-${program.color}-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift`}
               >
                 Apply Now
               </Button>

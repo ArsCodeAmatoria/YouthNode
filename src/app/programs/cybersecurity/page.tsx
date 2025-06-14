@@ -100,8 +100,8 @@ export default function CybersecurityProgram() {
               <motion.div variants={fadeInUp}>
                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-tech-gray-dark flex items-center gap-3">
-                      <Shield className="h-6 w-6 text-tech-gray" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <Shield className="h-6 w-6 text-lime-green" />
                       Blue Team Defense
                     </CardTitle>
                   </CardHeader>
@@ -200,7 +200,7 @@ export default function CybersecurityProgram() {
               <motion.div variants={fadeInUp}>
                 <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Network className="h-12 w-12 mx-auto mb-4 text-tech-gray" />
+                    <Network className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">Hack The Box</h3>
                     <p className="text-sm text-muted-foreground">
                       Practice on real-world scenarios with HTB Academy and live machine challenges
@@ -236,7 +236,7 @@ export default function CybersecurityProgram() {
               <motion.div variants={fadeInUp}>
                 <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Database className="h-12 w-12 mx-auto mb-4 text-tech-gray" />
+                    <Database className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">Splunk SIEM</h3>
                     <p className="text-sm text-muted-foreground">
                       Master enterprise security information and event management systems
@@ -272,7 +272,7 @@ export default function CybersecurityProgram() {
               <motion.div variants={fadeInUp}>
                 <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Shield className="h-12 w-12 mx-auto mb-4 text-tech-gray" />
+                    <Shield className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">YARA</h3>
                     <p className="text-sm text-muted-foreground">
                       Create detection rules for malware identification and threat hunting
