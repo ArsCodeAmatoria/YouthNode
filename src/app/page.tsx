@@ -827,7 +827,7 @@ export default function YouthNode() {
             </motion.h2>
             
             <motion.div 
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto"
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
@@ -1025,7 +1025,7 @@ export default function YouthNode() {
             </motion.h2>
             
             <motion.div 
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
               variants={staggerContainer}
             >
               {[
@@ -1147,7 +1147,7 @@ export default function YouthNode() {
       {/* Footer */}
       <footer className="bg-background text-foreground py-12 border-t border-border">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-4xl mx-auto">
             <div>
               <h3 className="text-2xl font-bold mb-4 text-foreground">YouthNode</h3>
               <p className="text-muted-foreground mb-4">
@@ -1179,7 +1179,7 @@ export default function YouthNode() {
             </div>
           </div>
           
-          <div className="border-t border-border pt-8 text-center text-muted-foreground">
+          <div className="border-t border-border pt-8 text-center text-muted-foreground max-w-4xl mx-auto">
             <p>© 2025 YouthNode. Nonprofit organization registration pending.</p>
             <p className="text-sm mt-2">
               Pilot Program 2025-2027 • Discovering Talent • Creating Canadian Businesses
