@@ -1,6 +1,13 @@
-# YouthNode
-
 <div align="center">
+
+```
+██╗   ██╗ ██████╗ ██╗   ██╗████████╗██╗  ██╗███╗   ██╗ ██████╗ ██████╗ ███████╗
+╚██╗ ██╔╝██╔═══██╗██║   ██║╚══██╔══╝██║  ██║████╗  ██║██╔═══██╗██╔══██╗██╔════╝
+ ╚████╔╝ ██║   ██║██║   ██║   ██║   ███████║██╔██╗ ██║██║   ██║██║  ██║█████╗  
+  ╚██╔╝  ██║   ██║██║   ██║   ██║   ██╔══██║██║╚██╗██║██║   ██║██║  ██║██╔══╝  
+   ██║   ╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚██████╔╝██████╔╝███████╗
+   ╚═╝    ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝
+```
 
 **Building Canada's Innovation Future**
 
@@ -120,7 +127,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 **Email:** hello@youthnode.org  
-**Website:** [youthnode.org](https://youthnode.org)
+**Website:** [youth-node.vercel.app](https://youth-node.vercel.app/)
 
 ---
 
