@@ -12,21 +12,20 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
   const animationIdRef = useRef<number | null>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const materialRef = useRef<THREE.ShaderMaterial | null>(null);
-  const cameraRef = useRef<THREE.OrthographicCamera | null>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const pointsRef = useRef<THREE.Points[]>([]);
 
   useEffect(() => {
     if (!mountRef.current) return;
 
     // Scene setup
     const scene = new THREE.Scene();
-    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ 
       alpha: true, 
-      antialias: true,
-      preserveDrawingBuffer: true
+      antialias: true
     });
+    
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     mountRef.current.appendChild(renderer.domElement);
@@ -36,78 +35,146 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     rendererRef.current = renderer;
     cameraRef.current = camera;
 
-    // GLSL Shader - Planetary Timer
-    const vertexShader = `
-      void main() {
-        gl_Position = vec4(position, 1.0);
-      }
-    `;
-
-    const fragmentShader = `
-      uniform float t;
-      uniform vec2 r;
+    // Create canvas texture for billboard points
+    const createCircleTexture = (color: string, size: number = 64) => {
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const context = canvas.getContext('2d')!;
       
-      void main() {
-        vec2 FC = gl_FragCoord.xy;
-        vec4 o = vec4(0.0);
-        
-        // Planetary timer GLSL art
-        vec2 p = (FC.xy * 2.0 - r) / r.x * 0.25;
-        vec3 C = vec3(0.0);
-        
-        for(float i = 1.0; i < 99.0; i++) {
-          float j = i;
-          vec2 q = p - vec2(
-            sin(5.0 + cos(t * 0.5) + sin(t * 0.5) / j * 99.0) * 0.4,
-            sin(t * 0.5 - j)
-          ) * 0.1;
-          C += 0.0025 / length(q * 5.0);
+      // Create radial gradient
+      const gradient = context.createRadialGradient(size/2, size/2, 0, size/2, size/2, size/2);
+      gradient.addColorStop(0, color);
+      gradient.addColorStop(0.5, color.replace('1)', '0.5)'));
+      gradient.addColorStop(1, color.replace('1)', '0)'));
+      
+      context.fillStyle = gradient;
+      context.fillRect(0, 0, size, size);
+      
+      return new THREE.CanvasTexture(canvas);
+    };
+
+    // Create different colored textures
+    const textures = [
+      createCircleTexture('rgba(255, 255, 255, 1)'), // White
+      createCircleTexture('rgba(255, 20, 147, 1)'), // Hot pink
+      createCircleTexture('rgba(255, 105, 180, 1)'), // Hot pink light
+      createCircleTexture('rgba(199, 21, 133, 1)'), // Medium violet red
+    ];
+
+    // Create multiple point systems
+    const pointSystems: THREE.Points[] = [];
+    const numSystems = 4;
+    const pointsPerSystem = 500;
+
+    for (let s = 0; s < numSystems; s++) {
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(pointsPerSystem * 3);
+      const colors = new Float32Array(pointsPerSystem * 3);
+      const sizes = new Float32Array(pointsPerSystem);
+
+      // Generate random positions and properties
+      for (let i = 0; i < pointsPerSystem; i++) {
+        // Position
+        positions[i * 3] = (Math.random() - 0.5) * 100;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 100;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 100;
+
+        // Colors - vary based on system
+        const baseColor = new THREE.Color();
+        switch (s) {
+          case 0:
+            baseColor.setHSL(0, 0, 0.8 + Math.random() * 0.2); // White variations
+            break;
+          case 1:
+            baseColor.setHSL(0.92, 0.9, 0.6 + Math.random() * 0.3); // Hot pink variations
+            break;
+          case 2:
+            baseColor.setHSL(0.88, 0.8, 0.7 + Math.random() * 0.3); // Hot pink light variations
+            break;
+          case 3:
+            baseColor.setHSL(0.85, 0.85, 0.5 + Math.random() * 0.3); // Medium violet red variations
+            break;
         }
         
-        o += vec4(C, 0.0) - 0.008 / (length(p) - 0.108);
-        o += -1.2;
-        
-        // Add tech color theme
-        vec3 techColor = mix(
-          vec3(0.6, 0.9, 0.2), // Lime green
-          vec3(0.4, 0.4, 0.4), // Tech gray
-          sin(t * 0.3 + length(p) * 3.0) * 0.5 + 0.5
-        );
-        
-        o.rgb = mix(o.rgb, techColor, 0.4);
-        o.a = clamp(o.r + o.g + o.b, 0.0, 0.8);
-        
-        gl_FragColor = o;
+        colors[i * 3] = baseColor.r;
+        colors[i * 3 + 1] = baseColor.g;
+        colors[i * 3 + 2] = baseColor.b;
+
+        // Sizes
+        sizes[i] = 10 + Math.random() * 20;
       }
-    `;
 
-    // Create shader material
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        t: { value: 0.0 },
-        r: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
-      },
-      vertexShader,
-      fragmentShader,
-      transparent: true,
-      blending: THREE.AdditiveBlending
-    });
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 
-    materialRef.current = material;
+      // Create material with billboard texture
+      const material = new THREE.PointsMaterial({
+        size: 15,
+        map: textures[s],
+        transparent: true,
+        opacity: 0.8,
+        vertexColors: true,
+        blending: THREE.AdditiveBlending,
+        sizeAttenuation: true,
+        alphaTest: 0.1
+      });
 
-    // Create fullscreen quad
-    const geometry = new THREE.PlaneGeometry(2, 2);
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
+      const points = new THREE.Points(geometry, material);
+      pointSystems.push(points);
+      scene.add(points);
+    }
 
-    // Animation loop with proper checks
+    pointsRef.current = pointSystems;
+
+    camera.position.set(0, 0, 50);
+
+    // Animation loop
     const animate = () => {
-      // Check if all references are still valid
-      if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) {
+      if (!sceneRef.current || !rendererRef.current || !cameraRef.current) {
         return;
       }
-
-      materialRef.current.uniforms.t.value += 0.016; // ~60fps timing
+      
+      const time = Date.now() * 0.001;
+      
+      // Animate each point system
+      pointsRef.current.forEach((points, index) => {
+        if (points) {
+          // Rotate each system differently
+          points.rotation.x = time * (0.1 + index * 0.05);
+          points.rotation.y = time * (0.15 + index * 0.03);
+          points.rotation.z = time * (0.05 + index * 0.02);
+          
+          // Subtle scaling animation
+          const scale = 1 + Math.sin(time * 2 + index) * 0.1;
+          points.scale.setScalar(scale);
+          
+          // Update individual point positions for floating effect
+          const positions = points.geometry.attributes.position.array as Float32Array;
+          const originalPositions = points.userData.originalPositions;
+          
+          if (!originalPositions) {
+            // Store original positions on first run
+            points.userData.originalPositions = new Float32Array(positions.length);
+            points.userData.originalPositions.set(positions);
+          } else {
+            // Apply floating motion
+            for (let i = 0; i < positions.length; i += 3) {
+              positions[i] = originalPositions[i] + Math.sin(time * 2 + i * 0.01) * 2;
+              positions[i + 1] = originalPositions[i + 1] + Math.cos(time * 1.5 + i * 0.01) * 2;
+              positions[i + 2] = originalPositions[i + 2] + Math.sin(time * 1.8 + i * 0.01) * 2;
+            }
+            points.geometry.attributes.position.needsUpdate = true;
+          }
+        }
+      });
+      
+      // Subtle camera movement
+      cameraRef.current.position.x = Math.sin(time * 0.1) * 5;
+      cameraRef.current.position.y = Math.cos(time * 0.15) * 3;
+      cameraRef.current.lookAt(0, 0, 0);
+      
       rendererRef.current.render(sceneRef.current, cameraRef.current);
       animationIdRef.current = requestAnimationFrame(animate);
     };
@@ -115,26 +182,23 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     // Start animation
     animate();
 
-    // Handle window resize
+    // Handle resize
     const handleResize = () => {
-      if (!rendererRef.current || !materialRef.current) return;
+      if (!rendererRef.current || !cameraRef.current) return;
       
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      
-      rendererRef.current.setSize(width, height);
-      materialRef.current.uniforms.r.value.set(width, height);
+      cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+      cameraRef.current.updateProjectionMatrix();
+      rendererRef.current.setSize(window.innerWidth, window.innerHeight);
     };
 
-    // Handle visibility change to ensure animation continues
+    // Handle visibility change
     const handleVisibilityChange = () => {
       if (!document.hidden && !animationIdRef.current) {
-        // Restart animation if it stopped
         animate();
       }
     };
 
-    // Handle page focus to restart animation
+    // Handle page focus
     const handleFocus = () => {
       if (!animationIdRef.current) {
         animate();
@@ -161,10 +225,19 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
         currentMount.removeChild(rendererRef.current.domElement);
       }
       
-      geometry.dispose();
-      if (materialRef.current) {
-        materialRef.current.dispose();
-      }
+      // Dispose of geometries, materials, and textures
+      pointSystems.forEach(points => {
+        points.geometry.dispose();
+        if (points.material instanceof THREE.PointsMaterial) {
+          points.material.dispose();
+          if (points.material.map) {
+            points.material.map.dispose();
+          }
+        }
+      });
+      
+      textures.forEach(texture => texture.dispose());
+      
       if (rendererRef.current) {
         rendererRef.current.dispose();
       }
@@ -172,21 +245,51 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       // Clear refs
       sceneRef.current = null;
       rendererRef.current = null;
-      materialRef.current = null;
       cameraRef.current = null;
+      pointsRef.current = [];
     };
   }, []);
 
   // Additional effect to ensure animation restarts after navigation
   useEffect(() => {
     const checkAndRestart = () => {
-      if (!animationIdRef.current && materialRef.current && rendererRef.current && sceneRef.current && cameraRef.current) {
+      if (!animationIdRef.current && sceneRef.current && rendererRef.current && cameraRef.current) {
         const animate = () => {
-          if (!materialRef.current || !rendererRef.current || !sceneRef.current || !cameraRef.current) {
+          if (!sceneRef.current || !rendererRef.current || !cameraRef.current) {
             return;
           }
 
-          materialRef.current.uniforms.t.value += 0.016;
+          const time = Date.now() * 0.001;
+          
+          // Continue animation logic
+          pointsRef.current.forEach((points, index) => {
+            if (points) {
+              points.rotation.x = time * (0.1 + index * 0.05);
+              points.rotation.y = time * (0.15 + index * 0.03);
+              points.rotation.z = time * (0.05 + index * 0.02);
+              
+              const scale = 1 + Math.sin(time * 2 + index) * 0.1;
+              points.scale.setScalar(scale);
+              
+              // Update positions
+              const positions = points.geometry.attributes.position.array as Float32Array;
+              const originalPositions = points.userData.originalPositions;
+              
+              if (originalPositions) {
+                for (let i = 0; i < positions.length; i += 3) {
+                  positions[i] = originalPositions[i] + Math.sin(time * 2 + i * 0.01) * 2;
+                  positions[i + 1] = originalPositions[i + 1] + Math.cos(time * 1.5 + i * 0.01) * 2;
+                  positions[i + 2] = originalPositions[i + 2] + Math.sin(time * 1.8 + i * 0.01) * 2;
+                }
+                points.geometry.attributes.position.needsUpdate = true;
+              }
+            }
+          });
+          
+          cameraRef.current.position.x = Math.sin(time * 0.1) * 5;
+          cameraRef.current.position.y = Math.cos(time * 0.15) * 3;
+          cameraRef.current.lookAt(0, 0, 0);
+          
           rendererRef.current.render(sceneRef.current, cameraRef.current);
           animationIdRef.current = requestAnimationFrame(animate);
         };
@@ -195,7 +298,6 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
       }
     };
 
-    // Check immediately and after a short delay
     checkAndRestart();
     const timer = setTimeout(checkAndRestart, 100);
 
