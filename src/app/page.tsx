@@ -43,12 +43,12 @@ import {
   MapPin,
   Mail,
   Twitter,
-  Linkedin,
   Github,
   LineChart,
   Wallet,
   Coins
 } from 'lucide-react';
+import { SocialIcon } from 'react-social-icons';
 import ThreeJSBackground from '@/components/ThreeJSBackground';
 
 const fadeInUp = {
@@ -1167,7 +1167,11 @@ export default function YouthNode() {
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex gap-4">
                 <Twitter className="h-5 w-5 text-muted-foreground hover:text-tech-gray-dark cursor-pointer transition-colors" />
-                <Linkedin className="h-5 w-5 text-muted-foreground hover:text-tech-gray-dark cursor-pointer transition-colors" />
+                <SocialIcon 
+                  network="tiktok" 
+                  style={{ height: 20, width: 20 }} 
+                  className="hover:opacity-70 cursor-pointer transition-opacity"
+                />
                 <Github className="h-5 w-5 text-muted-foreground hover:text-tech-gray-dark cursor-pointer transition-colors" />
               </div>
             </div>
