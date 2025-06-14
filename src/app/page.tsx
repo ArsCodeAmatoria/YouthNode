@@ -114,11 +114,21 @@ export default function YouthNode() {
                Building Canada&apos;s Innovation Future
              </motion.h1>
             <motion.p 
-              className="text-xl lg:text-2xl text-white/80 mb-8 max-w-3xl mx-auto drop-shadow-md"
+              className="text-xl lg:text-2xl text-white/80 mb-6 max-w-3xl mx-auto drop-shadow-md"
               variants={fadeInUp}
             >
               Empowering Gen Z with skills in AI, Deep Tech, and Emerging Industries
             </motion.p>
+            <motion.div 
+              className="mb-8 flex justify-center"
+              variants={fadeInUp}
+            >
+              <div className="bg-lime-green/20 border border-lime-green/40 rounded-full px-6 py-2 backdrop-blur-sm">
+                <span className="text-lime-green-dark font-semibold text-sm">
+                  🚀 2-Year Pilot Program • Launching 2025
+                </span>
+              </div>
+            </motion.div>
                          <motion.div variants={fadeInUp}>
                <Button 
                  size="lg" 
@@ -152,12 +162,21 @@ export default function YouthNode() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                     Equip Canadian-born Gen Z with future-critical skills through project-oriented, 
                     hands-on learning experiences. Beyond technical mastery, we develop confident 
                     communicators, skilled networkers, and innovative entrepreneurs who can pitch 
                     ideas, run workshops, and lead the next generation of Canadian innovation.
                   </p>
+                  <div className="bg-lime-green/10 border border-lime-green/30 rounded-lg p-4">
+                    <p className="text-sm text-lime-green-dark font-semibold mb-1">
+                      🚀 PILOT PROGRAM
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      This is a 2-year pilot initiative designed to validate our approach and measure impact 
+                      before scaling across Canada.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
@@ -1052,6 +1071,14 @@ export default function YouthNode() {
                     <CardTitle className="text-foreground">For Students</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
+                    <div className="bg-lime-green/10 border border-lime-green/30 rounded-lg p-3 mb-4">
+                      <p className="text-xs text-lime-green-dark font-semibold mb-1">
+                        🚀 LIMITED PILOT COHORT
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        2-year program • 2025-2027 • Apply early for priority consideration
+                      </p>
+                    </div>
                     <p className="text-muted-foreground">
                       Ready to build the future? Join our pilot program for project-based learning, 
                       workshop leadership, and networking opportunities that will transform you into 
@@ -1140,6 +1167,9 @@ export default function YouthNode() {
           
           <div className="border-t border-border pt-8 text-center text-muted-foreground">
             <p>© 2025 YouthNode. Nonprofit organization registration pending.</p>
+            <p className="text-sm mt-2">
+              🚀 Pilot Program 2025-2027 • Building Canada&apos;s Innovation Future
+            </p>
           </div>
         </div>
       </footer>
