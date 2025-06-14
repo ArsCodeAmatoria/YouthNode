@@ -40,11 +40,11 @@ export default function ThreeJSBackground({ className = '' }: ThreeJSBackgroundP
     const numLines = 8;
     const pointsPerLine = 200;
 
-    // Color palette - tech colors with higher contrast
+    // Color palette - consistent lime-green theme
     const colors = [
       new THREE.Color(0.9, 0.8, 0.2),  // bright lime-green
       new THREE.Color(0.8, 0.8, 0.9),  // bright tech-gray/blue
-      new THREE.Color(0.4, 0.9, 0.6),  // bright accent-green
+      new THREE.Color(0.6, 0.9, 0.3),  // lime-green variant
       new THREE.Color(1.0, 1.0, 1.0),  // pure white
     ];
 

@@ -140,10 +140,10 @@ export default function CybersecurityProgram() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-accent-green-dark flex items-center gap-3">
-                      <Eye className="h-6 w-6 text-accent-green" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <Eye className="h-6 w-6 text-lime-green" />
                       Malware Analysis
                     </CardTitle>
                   </CardHeader>
@@ -212,7 +212,7 @@ export default function CybersecurityProgram() {
               <motion.div variants={fadeInUp}>
                 <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Bug className="h-12 w-12 mx-auto mb-4 text-accent-green" />
+                    <Bug className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">Metasploit</h3>
                     <p className="text-sm text-muted-foreground">
                       Learn exploitation techniques with the world&apos;s most used penetration testing framework
@@ -248,7 +248,7 @@ export default function CybersecurityProgram() {
               <motion.div variants={fadeInUp}>
                 <Card className="text-center hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray/10">
                   <CardContent className="pt-6">
-                    <Skull className="h-12 w-12 mx-auto mb-4 text-accent-green" />
+                    <Skull className="h-12 w-12 mx-auto mb-4 text-lime-green" />
                     <h3 className="font-bold text-lg mb-2">Ghidra</h3>
                     <p className="text-sm text-muted-foreground">
                       Reverse engineer malware with NSA&apos;s powerful software analysis suite

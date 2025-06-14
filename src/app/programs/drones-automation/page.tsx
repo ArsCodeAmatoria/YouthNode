@@ -133,10 +133,10 @@ export default function DronesAutomation() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-accent-green-dark flex items-center gap-3">
-                      <TrendingUp className="h-6 w-6 text-accent-green" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <TrendingUp className="h-6 w-6 text-lime-green" />
                       Career Paths
                     </CardTitle>
                   </CardHeader>
@@ -200,7 +200,7 @@ export default function DronesAutomation() {
 
             <motion.div 
               variants={fadeInUp}
-              className="mt-16 text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-accent-green/10 rounded-3xl p-8"
+              className="mt-16 text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-lime-green/10 rounded-3xl p-8"
             >
               <h3 className="text-2xl font-bold mb-4 text-gradient-tech">
                 Canada&apos;s Drone Advantage

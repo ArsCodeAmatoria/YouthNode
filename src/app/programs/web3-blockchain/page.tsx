@@ -43,7 +43,7 @@ export default function Web3Blockchain() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <Wallet className="h-16 w-16 mx-auto text-accent-green mb-4" />
+              <Wallet className="h-16 w-16 mx-auto text-lime-green mb-4" />
             </motion.div>
             <motion.h1 
               className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-tech"
@@ -61,7 +61,7 @@ export default function Web3Blockchain() {
             <motion.div variants={fadeInUp}>
               <Button 
                 size="lg" 
-                className="bg-accent-green hover:bg-accent-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
+                className="bg-lime-green hover:bg-lime-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
               >
                 Apply to Program
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -93,10 +93,10 @@ export default function Web3Blockchain() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-accent-green-dark flex items-center gap-3">
-                      <Code className="h-6 w-6 text-accent-green" />
+                    <CardTitle className="text-xl text-lime-green-dark flex items-center gap-3">
+                      <Code className="h-6 w-6 text-lime-green" />
                       Core Technologies
                     </CardTitle>
                   </CardHeader>
@@ -188,7 +188,7 @@ export default function Web3Blockchain() {
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="hover-lift h-full liquid-glass">
                     <CardHeader>
-                      <CardTitle className="text-lg text-accent-green">{partner.org}</CardTitle>
+                      <CardTitle className="text-lg text-lime-green">{partner.org}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">{partner.focus}</p>
@@ -202,7 +202,7 @@ export default function Web3Blockchain() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-tech-gray/5 via-background to-accent-green/10">
+      <section className="py-24 bg-gradient-to-br from-tech-gray/5 via-background to-lime-green/10">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <motion.div
             initial="initial"
@@ -226,7 +226,7 @@ export default function Web3Blockchain() {
             <motion.div variants={fadeInUp} className="space-x-4">
               <Button 
                 size="lg" 
-                className="bg-accent-green hover:bg-accent-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
+                className="bg-lime-green hover:bg-lime-green-dark text-white px-8 py-6 text-lg rounded-2xl lime-shadow hover-lift"
               >
                 Apply Now
               </Button>

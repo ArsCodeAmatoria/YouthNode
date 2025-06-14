@@ -47,7 +47,7 @@ const programData: Record<string, {
   'robotics-engineering': {
     title: 'Robotics & Engineering',
     icon: Cpu,
-    color: 'accent-green',
+    color: 'lime-green',
     description: 'Build intelligent robots and automated systems that solve real-world problems. Work with ROS, embedded systems, and advanced sensors to create the next generation of Canadian robotics.',
     skills: ['ROS (Robot Operating System)', 'Embedded C/C++ programming', 'Sensor integration & fusion', 'Computer vision for robotics', 'Mechanical design & 3D printing'],
     applications: ['Manufacturing automation', 'Healthcare robotics', 'Agricultural automation', 'Space exploration robotics', 'Service & companion robots'],
@@ -77,7 +77,7 @@ const programData: Record<string, {
   'workshop-creation': {
     title: 'Workshop Creation',
     icon: Users,
-    color: 'accent-green',
+    color: 'lime-green',
     description: 'Learn to design and deliver engaging technical workshops that teach others cutting-edge skills. Develop presentation, curriculum design, and community building expertise.',
     skills: ['Curriculum design & development', 'Public speaking & presentation', 'Interactive learning techniques', 'Community engagement', 'Educational technology tools'],
     applications: ['Corporate training programs', 'University guest lectures', 'Conference workshops', 'Online course creation', 'Tech community events'],
@@ -107,7 +107,7 @@ const programData: Record<string, {
   'entrepreneurship': {
     title: 'Entrepreneurship',
     icon: Brain,
-    color: 'accent-green',
+    color: 'lime-green',
     description: 'Launch and scale technology startups in the Canadian innovation ecosystem. Learn business model design, market validation, and fundraising from successful Canadian entrepreneurs.',
     skills: ['Business model development', 'Market research & validation', 'Financial planning & fundraising', 'Product-market fit', 'Scale-up strategies'],
     applications: ['Tech startup founding', 'Corporate innovation labs', 'Venture capital analysis', 'Business plan development', 'Innovation consulting'],
@@ -137,7 +137,7 @@ const programData: Record<string, {
   'web3-blockchain': {
     title: 'Web3 & Blockchain',
     icon: Wallet,
-    color: 'accent-green',
+    color: 'lime-green',
     description: 'Build the future of decentralized finance and Web3 applications. Learn blockchain development, smart contracts, and DeFi protocols while working with Canadian crypto innovators.',
     skills: ['Smart Contract Development', 'DeFi Protocol Design', 'Blockchain Architecture', 'Web3 Integration', 'Cryptographic Systems'],
     applications: ['DeFi Platforms', 'NFT Marketplaces', 'DAO Frameworks', 'Cross-chain Bridges', 'Digital Asset Systems'],
@@ -277,9 +277,9 @@ export default function ProgramPage({ params }: ProgramPageProps) {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
-                    <CardTitle className="text-xl text-accent-green-dark">
+                    <CardTitle className="text-xl text-lime-green-dark">
                       Career Paths
                     </CardTitle>
                   </CardHeader>

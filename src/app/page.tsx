@@ -79,6 +79,27 @@ export default function YouthNode() {
           <ThreeJSBackground />
         </div>
         
+        {/* Vintage Digital Text Overlay */}
+        <div className="absolute top-8 right-8 z-30 text-right">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="vintage-digital-text"
+          >
+            <div className="text-lime-green-dark font-mono text-sm leading-tight">
+              <div className="mb-1">INNOVATION.PROTOCOL</div>
+              <div className="mb-1">STATUS: ACTIVE</div>
+              <div className="mb-1">LOCATION: CANADA</div>
+              <div className="mb-1">YEAR: 2025</div>
+              <div className="mb-1">TARGET: GEN_Z</div>
+              <div className="text-xs text-white/60 mt-2">
+                [CLASSIFIED]
+              </div>
+            </div>
+          </motion.div>
+        </div>
+        
         <div className="container mx-auto px-6 lg:px-12 text-center relative z-20">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -126,7 +147,7 @@ export default function YouthNode() {
               <Card className="h-full border-tech-gray/30 bg-gradient-to-br from-card to-tech-gray-light/20 hover-lift liquid-glass">
                 <CardHeader>
                   <CardTitle className="text-3xl text-foreground flex items-center gap-3">
-                    <Users className="h-8 w-8 text-tech-gray-dark" />
+                    <Users className="h-8 w-8 text-lime-green-dark" />
                     Our Mission
                   </CardTitle>
                 </CardHeader>
@@ -183,7 +204,7 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-4xl font-bold text-tech-gray-dark mb-2">#23</div>
+                <div className="text-4xl font-bold text-lime-green-dark mb-2">#23</div>
                 <p className="text-sm text-muted-foreground">Global Innovation Index Ranking</p>
               </motion.div>
               <motion.div variants={fadeInUp} className="text-center">
@@ -191,7 +212,7 @@ export default function YouthNode() {
                 <p className="text-sm text-muted-foreground">of AI talent leaves for Silicon Valley</p>
               </motion.div>
               <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-4xl font-bold text-accent-green-dark mb-2">$2.1B</div>
+                <div className="text-4xl font-bold text-lime-green-dark mb-2">$2.1B</div>
                 <p className="text-sm text-muted-foreground">Investment gap vs. US per capita</p>
               </motion.div>
             </motion.div>
@@ -323,7 +344,7 @@ export default function YouthNode() {
                     </div>
                                          <p className="text-sm text-muted-foreground text-center">
                        Canada ranks <strong className="text-tech-gray-dark">#23 globally</strong> but has 
-                       potential for <strong className="text-accent-green-dark">top 10</strong> with proper youth development.
+                       potential for <strong className="text-lime-green-dark">top 10</strong> with proper youth development.
                      </p>
                   </CardContent>
                 </Card>
@@ -331,7 +352,7 @@ export default function YouthNode() {
 
                              {/* Economic Impact */}
                <motion.div variants={fadeInUp}>
-                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/10">
+                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/10">
                    <CardHeader>
                      <CardTitle className="text-xl text-foreground text-center">
                        Economic Impact Projection
@@ -370,7 +391,7 @@ export default function YouthNode() {
                       />
                     </div>
                                          <p className="text-sm text-muted-foreground text-center">
-                       Projected <strong className="text-accent-green-dark">$9.1B annual GDP contribution</strong> 
+                       Projected <strong className="text-lime-green-dark">$9.1B annual GDP contribution</strong> 
                        by 2032 through retained Canadian talent.
                      </p>
                   </CardContent>
@@ -440,7 +461,7 @@ export default function YouthNode() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/10">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/10">
                   <CardHeader>
                     <CardTitle className="text-2xl text-foreground text-center">
                       Job Creation Potential
@@ -505,11 +526,11 @@ export default function YouthNode() {
                 <p className="text-sm text-muted-foreground">Higher startup success rate for teams with Canadian-born founders</p>
               </motion.div>
               <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-4xl font-bold text-tech-gray-dark mb-2">3.2x</div>
+                <div className="text-4xl font-bold text-lime-green-dark mb-2">3.2x</div>
                 <p className="text-sm text-muted-foreground">More likely to stay in Canada post-graduation vs foreign students</p>
               </motion.div>
               <motion.div variants={fadeInUp} className="text-center">
-                <div className="text-4xl font-bold text-accent-green-dark mb-2">$127K</div>
+                <div className="text-4xl font-bold text-lime-green-dark mb-2">$127K</div>
                 <p className="text-sm text-muted-foreground">Average starting salary for YouthNode-skilled developers</p>
               </motion.div>
               <motion.div variants={fadeInUp} className="text-center">
@@ -543,7 +564,7 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
               <motion.div variants={fadeInUp}>
-                <Card className="border-accent-green/20 hover:border-accent-green/40 transition-colors">
+                <Card className="border-lime-green/20 hover:border-lime-green/40 transition-colors">
                   <CardHeader>
                     <CardTitle className="text-foreground">Project-Oriented Learning</CardTitle>
                   </CardHeader>
@@ -605,7 +626,7 @@ export default function YouthNode() {
       </section>
 
       {/* Learning Methodology */}
-      <section className="py-24 bg-gradient-to-br from-tech-gray/5 via-background to-accent-green/5">
+      <section className="py-24 bg-gradient-to-br from-tech-gray/5 via-background to-lime-green/5">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial="initial"
@@ -629,7 +650,7 @@ export default function YouthNode() {
                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-foreground flex items-center gap-3">
-                      <Cog className="h-6 w-6 text-tech-gray-dark" />
+                      <Cog className="h-6 w-6 text-lime-green-dark" />
                       Project-Based Learning
                     </CardTitle>
                   </CardHeader>
@@ -664,10 +685,10 @@ export default function YouthNode() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-foreground flex items-center gap-3">
-                      <TrendingUp className="h-6 w-6 text-accent-green-dark" />
+                      <TrendingUp className="h-6 w-6 text-lime-green-dark" />
                       Pitch & Network Hub
                     </CardTitle>
                   </CardHeader>
@@ -685,7 +706,7 @@ export default function YouthNode() {
 
             <motion.div 
               variants={fadeInUp}
-              className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-accent-green/10 rounded-3xl p-8"
+              className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-lime-green/10 rounded-3xl p-8"
             >
               <h3 className="text-2xl font-bold mb-4 text-gradient-tech">
                 The YouthNode Experience
@@ -722,23 +743,23 @@ export default function YouthNode() {
               variants={staggerContainer}
             >
               {[
-                { icon: Brain, title: 'AI & Machine Learning', color: 'text-tech-gray-dark', slug: 'ai-machine-learning' },
+                { icon: Brain, title: 'AI & Machine Learning', color: 'text-lime-green-dark', slug: 'ai-machine-learning' },
                 { icon: Cpu, title: 'Generative Art & Video', color: 'text-lime-green-dark', slug: 'generative-art-video' },
-                { icon: Brain, title: 'Quantum Computing', color: 'text-accent-green-dark', slug: 'quantum-computing' },
-                { icon: Plane, title: 'Drones & Automation', color: 'text-tech-gray-dark', slug: 'drones-automation' },
+                { icon: Brain, title: 'Quantum Computing', color: 'text-lime-green-dark', slug: 'quantum-computing' },
+                { icon: Plane, title: 'Drones & Automation', color: 'text-lime-green-dark', slug: 'drones-automation' },
                 { icon: Heart, title: 'HealthTech', color: 'text-lime-green-dark', slug: 'healthtech' },
-                { icon: Cog, title: 'Robotics & Engineering', color: 'text-accent-green-dark', slug: 'robotics-engineering' },
-                { icon: Shield, title: 'AI Ethics & Safety', color: 'text-tech-gray-dark', slug: 'ai-ethics-safety' },
+                { icon: Cog, title: 'Robotics & Engineering', color: 'text-lime-green-dark', slug: 'robotics-engineering' },
+                { icon: Shield, title: 'AI Ethics & Safety', color: 'text-lime-green-dark', slug: 'ai-ethics-safety' },
                 { icon: Car, title: 'Autonomous Systems', color: 'text-lime-green-dark', slug: 'autonomous-systems' },
-                { icon: LineChart, title: 'Quantitative Trading', color: 'text-tech-gray-dark', slug: 'quant-trading' },
+                { icon: LineChart, title: 'Quantitative Trading', color: 'text-lime-green-dark', slug: 'quant-trading' },
                 { icon: TrendingUp, title: 'Algorithmic Trading', color: 'text-lime-green-dark', slug: 'algorithmic-trading' },
-                { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-accent-green-dark', slug: 'web3-blockchain' },
-                { icon: Coins, title: 'FinTech Innovation', color: 'text-tech-gray-dark', slug: 'fintech-innovation' },
+                { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-lime-green-dark', slug: 'web3-blockchain' },
+                { icon: Coins, title: 'FinTech Innovation', color: 'text-lime-green-dark', slug: 'fintech-innovation' },
                 { icon: Shield, title: 'Cybersecurity', color: 'text-lime-green-dark', slug: 'cybersecurity' },
-                { icon: Users, title: 'Workshop Creation', color: 'text-accent-green-dark', slug: 'workshop-creation' },
-                { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-tech-gray-dark', slug: 'pitching-presentations' },
+                { icon: Users, title: 'Workshop Creation', color: 'text-lime-green-dark', slug: 'workshop-creation' },
+                { icon: TrendingUp, title: 'Pitching & Presentations', color: 'text-lime-green-dark', slug: 'pitching-presentations' },
                 { icon: Users, title: 'Networking & Leadership', color: 'text-lime-green-dark', slug: 'networking-leadership' },
-                { icon: Brain, title: 'Entrepreneurship', color: 'text-accent-green-dark', slug: 'entrepreneurship' },
+                { icon: Brain, title: 'Entrepreneurship', color: 'text-lime-green-dark', slug: 'entrepreneurship' },
               ].map((program, index) => (
                 <motion.div key={index} variants={fadeInUp}>
                   <Link href={`/programs/${program.slug}`} className="block">
@@ -813,7 +834,7 @@ export default function YouthNode() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-accent-green-light/10">
+                <Card className="hover-lift h-full liquid-glass bg-gradient-to-br from-card to-lime-green-light/10">
                   <CardHeader>
                     <CardTitle className="text-lg text-foreground">Revenue Streams</CardTitle>
                   </CardHeader>
@@ -833,7 +854,7 @@ export default function YouthNode() {
 
             <motion.div 
               variants={fadeInUp}
-              className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-accent-green/10 rounded-3xl p-8"
+              className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-lime-green/10 rounded-3xl p-8"
             >
               <h3 className="text-2xl font-bold mb-4 text-gradient-tech">
                 Sustainable Impact Model
@@ -873,19 +894,19 @@ export default function YouthNode() {
                 <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-tech-gray-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-foreground flex items-center gap-3">
-                      <Brain className="h-6 w-6 text-tech-gray-dark" />
+                      <Brain className="h-6 w-6 text-lime-green-dark" />
                       Skill Development Tracks
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="text-sm text-muted-foreground space-y-2">
-                      <li><strong className="text-tech-gray-dark">AI/ML:</strong> Python, TensorFlow, PyTorch</li>
-                      <li><strong className="text-tech-gray-dark">AI Art:</strong> Midjourney, RunwayML</li>
-                      <li><strong className="text-tech-gray-dark">AI Video:</strong> Pika Labs, Sora, Runway</li>
-                      <li><strong className="text-tech-gray-dark">Drones:</strong> ROS, PX4 navigation</li>
-                      <li><strong className="text-tech-gray-dark">Autonomous Driving:</strong> CARLA simulators</li>
-                      <li><strong className="text-tech-gray-dark">Quantum:</strong> IBM Qiskit, D-Wave, Xanadu</li>
-                      <li><strong className="text-tech-gray-dark">HealthTech:</strong> Bioinformatics, ML diagnostics</li>
+                      <li>• <strong>AI/ML:</strong> Python, TensorFlow, PyTorch</li>
+                      <li>• <strong>AI Art:</strong> Midjourney, RunwayML</li>
+                      <li>• <strong>AI Video:</strong> Pika Labs, Sora, Runway</li>
+                      <li>• <strong>Drones:</strong> ROS, PX4 navigation</li>
+                      <li>• <strong>Autonomous Driving:</strong> CARLA simulators</li>
+                      <li>• <strong>Quantum:</strong> IBM Qiskit, D-Wave, Xanadu</li>
+                      <li>• <strong>HealthTech:</strong> Bioinformatics, ML diagnostics</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -914,10 +935,10 @@ export default function YouthNode() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-accent-green-light/15">
+                <Card className="h-full hover-lift liquid-glass bg-gradient-to-br from-card to-lime-green-light/15">
                   <CardHeader>
                     <CardTitle className="text-xl text-foreground flex items-center gap-3">
-                      <Cog className="h-6 w-6 text-accent-green-dark" />
+                      <Cog className="h-6 w-6 text-lime-green-dark" />
                       Startup Incubator
                     </CardTitle>
                   </CardHeader>
@@ -938,7 +959,7 @@ export default function YouthNode() {
 
             <motion.div 
               variants={fadeInUp}
-              className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-accent-green/10 rounded-3xl p-8"
+              className="text-center bg-gradient-to-r from-tech-gray/10 via-lime-green/10 to-lime-green/10 rounded-3xl p-8"
             >
               <h3 className="text-2xl font-bold mb-4 text-gradient-tech">
                 Complete Innovation Pipeline
@@ -1044,7 +1065,7 @@ export default function YouthNode() {
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <Card className="text-center h-full border-accent-green/20">
+                <Card className="text-center h-full border-lime-green/20">
                   <CardHeader>
                     <CardTitle className="text-foreground">For Companies</CardTitle>
                   </CardHeader>
@@ -1054,7 +1075,7 @@ export default function YouthNode() {
                       communicate, lead, and innovate. Our students bring project portfolios, 
                       presentation skills, and real-world problem-solving experience.
                     </p>
-                    <Button className="bg-accent-green hover:bg-accent-green-dark text-white w-full lime-shadow hover-lift">
+                    <Button className="bg-lime-green hover:bg-lime-green-dark text-white w-full lime-shadow hover-lift">
                       Partner With Us
                     </Button>
                   </CardContent>
