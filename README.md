@@ -4,6 +4,8 @@
 
 A whitepaper-style website for YouthNode, a nonprofit organization dedicated to empowering Canadian-born Gen Z with skills in AI, Deep Tech, and Emerging Industries.
 
+![Image](https://github.com/user-attachments/assets/6e78ca4d-03f1-4596-9e0d-67bd4ddcfea4)
+
 ## Mission
 
 Equip Canadian-born Gen Z with future-critical skills through hands-on learning, real-world work funnels, and startup creation opportunities. We bridge the gap between traditional education and emerging technology demands.
