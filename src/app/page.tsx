@@ -80,21 +80,23 @@ export default function YouthNode() {
         </div>
         
         {/* Vertical Footer Message */}
-        <div className="absolute top-1/2 right-8 z-30 transform -translate-y-1/2">
+        <div className="absolute top-1/2 right-4 z-30 transform -translate-y-1/2">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
             className="vintage-digital-text"
           >
-            <div className="text-lime-green-dark font-mono text-sm leading-relaxed writing-mode-vertical">
-              <div className="mb-4">STATUS: ACTIVE</div>
-              <div className="mb-4">LOCATION: CANADA</div>
-              <div className="mb-4">YEAR: 2025</div>
-              <div className="mb-4">TARGET: GEN_Z</div>
-              <div className="text-xs text-white/60 mt-6">
-                [CLASSIFIED]
-              </div>
+            <div className="text-lime-green-dark font-mono text-sm writing-mode-vertical">
+              <span>STATUS: ACTIVE</span>
+              <span className="mx-2">•</span>
+              <span>LOCATION: CANADA</span>
+              <span className="mx-2">•</span>
+              <span>YEAR: 2025</span>
+              <span className="mx-2">•</span>
+              <span>TARGET: GEN_Z</span>
+              <span className="mx-2">•</span>
+              <span className="text-white/60">[CLASSIFIED]</span>
             </div>
           </motion.div>
         </div>
