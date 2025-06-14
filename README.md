@@ -10,6 +10,8 @@
 
 **🍁 Building Canada's Innovation Future 🍁**
 
+![Image](https://github.com/user-attachments/assets/6e78ca4d-03f1-4596-9e0d-67bd4ddcfea4)
+
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
