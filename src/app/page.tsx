@@ -123,10 +123,17 @@ export default function YouthNode() {
               className="mb-8 flex justify-center"
               variants={fadeInUp}
             >
-              <div className="bg-lime-green/20 border border-lime-green/40 rounded-full px-6 py-2 backdrop-blur-sm">
-                <span className="text-lime-green-dark font-semibold text-sm">
-                  2-Year Pilot Program • Launching 2025
-                </span>
+              <div className="relative bg-gradient-to-r from-indigo-600/25 to-purple-600/25 border border-indigo-400/50 rounded-full px-8 py-3 backdrop-blur-md shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 rounded-full blur-md"></div>
+                <div className="relative flex items-center gap-3">
+                  <div className="w-2 h-2 bg-indigo-300 rounded-full animate-pulse"></div>
+                  <span className="text-indigo-100 font-bold text-sm tracking-wide uppercase">
+                    2-Year Pilot Program
+                  </span>
+                  <span className="text-indigo-200/80 font-medium text-sm">
+                    • Launching 2025
+                  </span>
+                </div>
               </div>
             </motion.div>
                          <motion.div variants={fadeInUp}>
