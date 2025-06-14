@@ -43,12 +43,13 @@ import {
   MapPin,
   Mail,
   Twitter,
+  Twitch,
   Github,
   LineChart,
   Wallet,
-  Coins
+  Coins,
+  Gamepad2
 } from 'lucide-react';
-import { SocialIcon } from 'react-social-icons';
 import ThreeJSBackground from '@/components/ThreeJSBackground';
 
 const fadeInUp = {
@@ -778,6 +779,7 @@ export default function YouthNode() {
                 { icon: Cog, title: 'Robotics & Engineering', color: 'text-lime-green-dark', slug: 'robotics-engineering' },
                 { icon: Shield, title: 'AI Ethics & Safety', color: 'text-lime-green-dark', slug: 'ai-ethics-safety' },
                 { icon: Car, title: 'Autonomous Systems', color: 'text-lime-green-dark', slug: 'autonomous-systems' },
+                { icon: Gamepad2, title: 'Gaming Development', color: 'text-lime-green-dark', slug: 'gaming-development' },
                 { icon: LineChart, title: 'Quantitative Trading', color: 'text-lime-green-dark', slug: 'quant-trading' },
                 { icon: TrendingUp, title: 'Algorithmic Trading', color: 'text-lime-green-dark', slug: 'algorithmic-trading' },
                 { icon: Wallet, title: 'Web3 & Blockchain', color: 'text-lime-green-dark', slug: 'web3-blockchain' },
@@ -1167,11 +1169,7 @@ export default function YouthNode() {
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex gap-4">
                 <Twitter className="h-5 w-5 text-muted-foreground hover:text-tech-gray-dark cursor-pointer transition-colors" />
-                <SocialIcon 
-                  network="tiktok" 
-                  style={{ height: 20, width: 20 }} 
-                  className="hover:opacity-70 cursor-pointer transition-opacity"
-                />
+                <Twitch className="h-5 w-5 text-muted-foreground hover:text-tech-gray-dark cursor-pointer transition-colors" />
                 <Github className="h-5 w-5 text-muted-foreground hover:text-tech-gray-dark cursor-pointer transition-colors" />
               </div>
             </div>
