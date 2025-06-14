@@ -82,21 +82,20 @@ export default function YouthNode() {
         {/* Vertical Footer Message */}
         <div className="absolute top-1/2 right-4 z-30 transform -translate-y-1/2">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             className="vintage-digital-text"
           >
-            <div className="text-lime-green-dark font-mono text-sm writing-mode-vertical">
-              <span>STATUS: ACTIVE</span>
-              <span className="mx-2">•</span>
-              <span>LOCATION: CANADA</span>
-              <span className="mx-2">•</span>
-              <span>YEAR: 2025</span>
-              <span className="mx-2">•</span>
-              <span>TARGET: GEN_Z</span>
-              <span className="mx-2">•</span>
-              <span className="text-white/60">[CLASSIFIED]</span>
+            <div className="font-mono text-sm writing-mode-vertical matrix-rain">
+              {'STATUS: ACTIVE • LOCATION: CANADA • YEAR: 2025 • TARGET: GEN_Z • [CLASSIFIED]'.split('').map((char, index) => {
+                const text = 'STATUS: ACTIVE • LOCATION: CANADA • YEAR: 2025 • TARGET: GEN_Z • [CLASSIFIED]';
+                const isClassified = index >= text.indexOf('[CLASSIFIED]') && index <= text.indexOf('[CLASSIFIED]') + '[CLASSIFIED]'.length - 1;
+                return (
+                  <span key={index} className={isClassified ? 'text-white/60' : 'text-lime-green-dark'}>
+                    {char}
+                  </span>
+                );
+              })}
             </div>
           </motion.div>
         </div>
