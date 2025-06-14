@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Shield, Lock, Bug, Skull, Eye, Home, Terminal, Network, Database } from 'lucide-react';
+import { ArrowRight, Shield, Lock, Bug, Skull, Eye, ArrowLeft, Terminal, Network, Database } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeInUp = {
@@ -27,8 +27,8 @@ export default function CybersecurityProgram() {
       <nav className="bg-background/95 backdrop-blur-sm border-b sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
           <Link href="/" className="inline-flex items-center gap-2 text-lime-green hover:text-lime-green-dark transition-colors">
-            <Home className="h-5 w-5" />
-            Back to Home
+            <ArrowLeft className="h-5 w-5" />
+            Back to ArrowLeft
           </Link>
         </div>
       </nav>

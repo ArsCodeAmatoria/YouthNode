@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Plane, ArrowRight, Cpu, Globe, TrendingUp, Home } from 'lucide-react';
+import { Plane, ArrowRight, Cpu, Globe, TrendingUp, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeInUp = {
@@ -26,8 +26,8 @@ export default function DronesAutomation() {
       {/* Navigation Header */}
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto px-6 py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-tech-gray transition-colors group">
-            <Home className="h-6 w-6 group-hover:scale-110 transition-transform" />
+          <Link href="/" className="inline-flex items-center gap-2 text-white hover:text-lime-green transition-colors group">
+            <ArrowLeft className="h-6 w-6 group-hover:scale-110 transition-transform" />
             <span className="font-bold text-lg">YouthNode</span>
           </Link>
         </div>
